@@ -30,11 +30,18 @@ var scion = {
                 scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
             }
             else if(module_type === "transaction") {
+
+                record_length = $('.form-record').length - 1;
+
+
                 scion.centralized_button(true, false, true, true);
                 actions = 'save';
-                $('.form-record')[0].reset();
+                $('.form-record')[record_length].reset();
                 if($('.image-previewer').length !== 0) {
                     $('.image-previewer').attr('src', '/images' + storage_url + '/default.png');
+                }
+                if($('#barcode').length !== 0) {
+                    $('#barcode').attr('src', '/images/default.png');
                 }
             }
             if(module_type === "transaction_2") {

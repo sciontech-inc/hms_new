@@ -28,7 +28,35 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
-        ]);
+        ],
+        [
+
+            'name' => 'NURSE STATION',
+            'code' => 'nurse_station',
+            'sort_no' => '2',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'user-nurse',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'FACILITY',
+            'code' => 'facility',
+            'sort_no' => '1',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '0',
+            'icon' => 'hospital',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ]
+    
+    );
         
         $app_module_data = array([
 
@@ -43,10 +71,10 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'PATIENT ADMISSION',
-            'code' => 'patient_admission',
+            'name' => 'PATIENT REGISTER',
+            'code' => 'patient_register',
             'app_id' => '4',
-            'sort_no' => '1',
+            'sort_no' => '2',
             'status' => '1',
             'created_by' => '1',
             'updated_by' => '1',
@@ -54,26 +82,17 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'PATIENT EMERGENCY',
-            'code' => 'patient_emergency',
-            'app_id' => '4',
+            'name' => 'ROOMS & BEDS',
+            'code' => 'rooms_beds',
+            'app_id' => '5',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',
             'updated_by' => '1',
 
         ],
-        [
-
-            'name' => 'PATIENT DISCHARGE',
-            'code' => 'patient_discharge',
-            'app_id' => '4',
-            'sort_no' => '1',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
+      
+       
     );
       
 

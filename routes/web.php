@@ -86,7 +86,6 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'PatientController@edit'                                        )->name('edit');
             Route::post         ('/update/{id}',                    'PatientController@update'                                      )->name('update');
             Route::post         ('/destroy',                        'PatientController@destroy'                                     )->name('delete');
-            Route::get          ('/list/{id}',                      'PatientController@get_list'                                    )->name('list');
         });
 
         Route::group(['prefix' => 'activity_log'], function() {

@@ -2,6 +2,7 @@ var additional_id = null;
 $(function() {
 
     project_type = 'app_module';
+    module_content = 'patient';
     modal_content = 'patient';
     module_url = '/actions/' + modal_content;
     module_type = 'transaction';
@@ -99,7 +100,7 @@ function error() {}
 function delete_success() {
 
     switch(module_content) {
-        case 'patients':
+        case 'patient':
             var form_id = $('.form-record')[0].id;
             $('#'+form_id)[0].reset();
             actions = 'save';
@@ -183,7 +184,7 @@ function generateData() {
 
     switch(module_content) {
         
-        case 'patients':
+        case 'patient':
 
             form_data = {
                 _token: _token,
@@ -421,7 +422,7 @@ function generateData() {
 
 function generateDeleteItems() {
     switch(module_content) {
-        case 'patients':
+        case 'patient':
             delete_data = [record_id];
             break;
     }
@@ -429,8 +430,8 @@ function generateDeleteItems() {
 
 // EXTRA FUNCTION
 function general_func() {
-    module_content = 'patients';
-    module_url = '/hms/patients';
+    module_content = 'patient';
+    module_url = '/actions/' + modal_content;
     module_type = 'transaction';
 
     if(record_id !== '') {
@@ -444,9 +445,6 @@ function general_func() {
         scion.centralized_button(true, false, true, true);
 
     }
-
-    $('#city').ph_locations({'location_type': 'cities'});
-    $('#city').ph_locations( 'fetch_list', [{"province_code": "1339"}]);
 }
 
 

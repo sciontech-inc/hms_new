@@ -2,6 +2,7 @@
 var delete_data = [];
 var record_id = null;
 var modal_content = null;
+var module_content = null;
 var module_url = null;
 var module_type = null;
 var project_type = null;

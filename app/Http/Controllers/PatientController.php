@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\GlobalFunction;
 use App\Patient;
+use Auth;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
+
+    use GlobalFunction;
+    
 
     public function get()
     {
@@ -17,33 +22,6 @@ class PatientController extends Controller
         }
     }
      
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $patient = Patient::orderBy('id', 'desc')->get();
-        // return view('backend.pages.hms.masterfile.patients.index', compact('patient'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $user_firstname = Patient::where('firstname', $request->firstname)->count();
@@ -104,10 +82,10 @@ class PatientController extends Controller
        
 
 
-        $request['patient_id'] = $this->series('PTNT', 'Patients');
+        $request['patient_id'] = $this->series('PTNT', 'Patient');
 
             if($request->profile_img !== null) {
-                $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patients/', date('Ymdhis'));
+                $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patient_management/patients/', date('Ymdhis'));
             }
             else {
                 $request['profile_img'] = "default.png";
@@ -128,55 +106,63 @@ class PatientController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        $patient = Patients::create($request->all());
+        $patient = Patient::create($request->all());
 
         $last_record = array("id" => $patient->id, "patient_id" => $patient->patient_id);
 
         return response()->json(compact('validate', 'last_record'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Patient  $patient
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Patient $patient)
+    public function edit($id)
     {
-        //
+        $patient = Patient::where('id', $id)->orderBy('id')->firstOrFail();
+        return response()->json(compact('patient'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Patient  $patient
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Patient $patient)
+    public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'firstname' => 'required|unique:patients,firstname,'.$request->id,
+            'middlename' => 'required',
+            'lastname' => 'required|unique:patients,lastname,'.$request->id,
+            'birthdate' => 'required',
+            'sex' => 'required',
+            'citizenship' => 'required',
+            'email' => 'required|email|unique:patients,email,'.$request->id,
+            'birthplace' => 'required',
+            'marital_status' => 'required',
+            'body_marks' => 'required',
+            'nationality' => 'required',
+            'religion' => 'required',
+            'blood_type' => 'required',
+            'contact_number_1' => 'required',
+            'street_no' => 'required',
+            'barangay' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'country' => 'required',
+            'zip_code' => 'required',
+        ]);
+
+        if($request->profile_img !== null && $request->profile_img !== '') {
+            $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patient_management/patients/', date('Ymdhis'));
+        }
+        else {
+            $request['profile_img'] = Patient::where('id', $id)->first()->profile_img;
+        }
+
+        Patient::findOrFail($id)->update($request->except('created_by'));
+        return response()->json(compact('validate'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Patient  $patient
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Patient $patient)
+    public function destroy(Request $request)
     {
-        //
-    }
+        $record = $request->data;
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Patient  $patient
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Patient $patient)
-    {
-        //
+        foreach($record as $item) {
+            Patient::find($item)->delete();
+        }
+        
+        return 'Record Deleted';
     }
 }

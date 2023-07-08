@@ -32,7 +32,7 @@
                     'placeholder' => '<NEW>',
                     'id' => "patient_id",
                     'title' => "PATIENT ID",
-                    'url' => "/hms/patients/get",
+                    'url' => "/actions/patient/get",
                     'data' => array(
                         array('data' => "DT_RowIndex", 'title' => "#"),
                         array('data' => "patient_id", 'title' => "Patient ID"),
@@ -41,7 +41,7 @@
                         array('data' => "email", 'title' => "Email"),
                     ),
                     'disable' => true,
-                    'lookup_module' => 'patients',
+                    'lookup_module' => 'patient',
                     'modal_type'=> 'all',
                     'lookup_type' => 'main'
                 ])
@@ -199,8 +199,7 @@
         <div class="col-4">
             <div class="form-group city">
                 <label>CITY <span class="required">*</span></label>
-                <select name="city" id="city" class="form-control"></select>
-                <!-- <input type="text" class="form-control" name="city" id="city"/> -->
+                <input type="text" class="form-control" name="city" id="city"/>
             </div>
         </div>
         <div class="col-4">

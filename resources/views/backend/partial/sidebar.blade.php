@@ -41,8 +41,10 @@
                                             <ul id="{{$item->code}}" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                                                 <li class="list-title">{{$item->name}}</li>
                                                 @foreach ($item->app_modules as $module)
-                                                    @if($module->access->enable === 1)
-                                                        <li class="sidebar-item"><a class="sidebar-link" href="/hms/{{$app->code}}/{{$item->code}}/{{$module->code}}">{{$module->name}}</a></li>
+                                                    @if($module->access !== null)
+                                                        @if($module->access->enable === 1)
+                                                            <li class="sidebar-item"><a class="sidebar-link" href="/hms/{{$app->code}}/{{$item->code}}/{{$module->code}}">{{$module->name}}</a></li>
+                                                        @endif
                                                     @endif
                                                 @endforeach
                                             </ul>

@@ -11,7 +11,7 @@ class PatientController extends Controller
     public function get()
     {
         if(request()->ajax()) {
-            return datatables()->of(Patients::get())
+            return datatables()->of(Patient::get())
             ->addIndexColumn()
             ->make(true);
         }
@@ -24,7 +24,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient = Patients::orderBy('id', 'desc')->get();
+        $patient = Patient::orderBy('id', 'desc')->get();
         // return view('backend.pages.hms.masterfile.patients.index', compact('patient'));
     }
 
@@ -46,9 +46,9 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $user_firstname = Patients::where('firstname', $request->firstname)->count();
-        $user_middlename = Patients::where('middlename', $request->middlename)->count();
-        $user_lastname = Patients::where('lastname', $request->lastname)->count();
+        $user_firstname = Patient::where('firstname', $request->firstname)->count();
+        $user_middlename = Patient::where('middlename', $request->middlename)->count();
+        $user_lastname = Patient::where('lastname', $request->lastname)->count();
 
         if($user_firstname >= 1 && $user_middlename >= 1 && $user_lastname >= 1) {
 

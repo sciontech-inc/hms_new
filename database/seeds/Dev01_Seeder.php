@@ -1,6 +1,5 @@
 <?php
 
-use Auth;
 use App\App;
 use App\Access;
 use App\AppModule;
@@ -17,54 +16,75 @@ class Dev01_Seeder extends Seeder
     public function run()
     {
 
-        $app = App::firstOrCreate([ 
-                'name' => 'PATIENT MANAGEMENT',
-                'code' => 'patient_management',
-                'sort_no' => '1',
-                'app_type_id' => '2',
-                'status' => '1',
-                'module' => '1',
-                'icon' => 'hospital-user',
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ]);
+        $app_data = array([
 
-        $app_module = AppModule::firstOrCreate(
-            [
-                'name' => 'PATIENT',
-                'code' => 'patient',
-                'app_id' => '4',
-                'sort_no' => '1',
-                'status' => '1',
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ]);
+            'name' => 'PATIENT MANAGEMENT',
+            'code' => 'patient_management',
+            'sort_no' => '1',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'hospital-user',
+            'created_by' => '1',
+            'updated_by' => '1',
 
-        Access::firstOrCreate(
-            [
-                'role_id' => Auth::user()->access->role_id,
-                'permission_for' => 'apps',
-                'permission_for_id' => $app->id,
-                'enable' => '1',
-                'add' => '1',
-                'edit' => '1',
-                'delete' => '1',
-                'print' => '1',
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ],
+        ]);
+        
+        $app_module_data = array([
 
-            [
-                'role_id' => Auth::user()->access->role_id,
-                'permission_for' => 'app_module',
-                'permission_for_id' => $app_module->id,
-                'enable' => '1',
-                'add' => '1',
-                'edit' => '1',
-                'delete' => '1',
-                'print' => '1',
-                'created_by' => Auth::user()->id,
-                'updated_by' => Auth::user()->id,
-            ]);
+            'name' => 'PATIENT',
+            'code' => 'patient',
+            'app_id' => '4',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'PATIENT ADMISSION',
+            'code' => 'patient_admission',
+            'app_id' => '4',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'PATIENT EMERGENCY',
+            'code' => 'patient_emergency',
+            'app_id' => '4',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'PATIENT DISCHARGE',
+            'code' => 'patient_discharge',
+            'app_id' => '4',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+    );
+      
+
+        foreach($app_data as $app) {
+
+            App::firstOrCreate($app);
+        }
+
+        foreach($app_module_data as $app_module) {
+            
+            AppModule::firstOrCreate($app_module);
+        }
     }
 }

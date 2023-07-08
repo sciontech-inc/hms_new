@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Role;
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+
     public function get() {
         if(request()->ajax()) {
             return datatables()->of(Role::get())
@@ -28,6 +35,8 @@ class RoleController extends Controller
         $request['updated_by'] = Auth::user()->id;
 
         Role::create($request->all());
+        
+        $this->setup->set_log('Role Added', '"'.$request->name.'" was added at Role Records.', $request->ip());
 
         return response()->json(compact('validate'));
     }
@@ -35,6 +44,9 @@ class RoleController extends Controller
     public function edit($id)
     {
         $app = Role::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $this->setup->set_log('Role Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
+
         return response()->json(compact('app'));
     }
 
@@ -42,6 +54,9 @@ class RoleController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         Role::find($id)->update($request->all());
+
+        $this->setup->set_log('Role Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" update the record with the ID: "'.$id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -51,6 +66,8 @@ class RoleController extends Controller
 
         foreach($record as $item) {
             Role::find($item)->delete();
+            
+            $this->setup->set_log('Role Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" delete the record with the ID: "'.$item.'"', request()->ip());
         }
         
         return 'Record Deleted';

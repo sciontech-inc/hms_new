@@ -15,6 +15,7 @@ class App extends Model
         'sort_no',
         'app_type_id',
         'status',
+        'icon',
         'module',
         'work_station_id',
         'created_by',

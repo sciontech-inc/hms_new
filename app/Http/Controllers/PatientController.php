@@ -85,7 +85,7 @@ class PatientController extends Controller
         $request['patient_id'] = $this->series('PTNT', 'Patient');
 
             if($request->profile_img !== null) {
-                $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patient_management/patients/', date('Ymdhis'));
+                $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patient_management/patient/', date('Ymdhis'));
             }
             else {
                 $request['profile_img'] = "default.png";
@@ -145,7 +145,7 @@ class PatientController extends Controller
         ]);
 
         if($request->profile_img !== null && $request->profile_img !== '') {
-            $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patient_management/patients/', date('Ymdhis'));
+            $request['profile_img'] = $this->uploadFile($request->profile_img, 'images/hms/patient_management/patient/', date('Ymdhis'));
         }
         else {
             $request['profile_img'] = Patient::where('id', $id)->first()->profile_img;

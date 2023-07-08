@@ -12,6 +12,7 @@ $(function() {
     page_title = "";
     actions = 'save';
     module_type = 'transaction';
+    storage_url = '/hms/patient_management/patient' ;
     
     scion.centralized_button(true, false, true, true);
     scion.action.tab(tab_active);
@@ -45,47 +46,47 @@ function success(record) {
         case 'update':
 
             switch(module_content) {
-                case 'patient-insurance':
+                case 'patient_insurance':
                     $('#patient_insurance_table').DataTable().draw();
                     scion.create.sc_modal('patient_insurance_form').hide('all', modalHideFunction);
                     break;
-                case 'family-information':
+                case 'family_information':
                     $('#family_information_table').DataTable().draw();
                     scion.create.sc_modal('family_information_form').hide('all', modalHideFunction);
                     break;
-                case 'medical-cases':
+                case 'medical_cases':
                     $('#medical_cases_table').DataTable().draw();
                     scion.create.sc_modal('medical_cases_form').hide('all', modalHideFunction);
                     break;
-                case 'medicine-taken':
+                case 'medicine_taken':
                     $('#medicine_taken_table').DataTable().draw();
                     scion.create.sc_modal('medicine_taken_form').hide('all', modalHideFunction);
                     break;
-                case 'procedures-undertaken':
+                case 'procedures_undertaken':
                     $('#procedures_undertaken_table').DataTable().draw();
                     scion.create.sc_modal('procedures_undertaken_form').hide('all', modalHideFunction);
                     break;
-                case 'patient-allergies':
+                case 'patient_allergies':
                     $('#patient_allergies_table').DataTable().draw();
                     scion.create.sc_modal('patient_allergies_form').hide('all', modalHideFunction);
                     break;
-                case 'progress-consultation':
+                case 'progress_consultation':
                     $('#progress_consultation_table').DataTable().draw();
                     scion.create.sc_modal('progress_consultation_form').hide('all', modalHideFunction);
                     break;
-                case 'vital-measurement':
+                case 'vital_measurement':
                     $('#vital_measurement_table').DataTable().draw();
                     scion.create.sc_modal('vital_measurement_form').hide('all', modalHideFunction);
                     break;
-                case 'family-medical-history':
+                case 'family_medical_history':
                     $('#family_medical_history_table').DataTable().draw();
                     scion.create.sc_modal('family_medical_history_form').hide('all', modalHideFunction);
                     break;
-                case 'social-history':
+                case 'social_history':
                     $('#social_history_table').DataTable().draw();
                     scion.create.sc_modal('social_history_form').hide('all', modalHideFunction);
                     break;
-                case 'other-information':
+                case 'other_information':
                     $('#other_information_table').DataTable().draw();
                     scion.create.sc_modal('other_information_form').hide('all', modalHideFunction);
                     break;
@@ -107,67 +108,67 @@ function delete_success() {
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'patient-insurance':
+        case 'patient_insurance':
             $('#patient_insurance_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'family-information':
+        case 'family_information':
             $('#family_information_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'medical-cases':
+        case 'medical_cases':
             $('#medical_cases_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'medicine-taken':
+        case 'medicine_taken':
             $('#medicine_taken_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'procedures-undertaken':
+        case 'procedures_undertaken':
             $('#procedures_undertaken_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'patient-allergies':
+        case 'patient_allergies':
             $('#patient_allergies_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'progress-consultation':
+        case 'progress_consultation':
             $('#progress_consultation_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'vital-measurement':
+        case 'vital_measurement':
             $('#vital_measurement_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'family-medical-history':
+        case 'family_medical_history':
             $('#family_medical_history_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'social-history':
+        case 'social_history':
             $('#social_history_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
             break;
-        case 'other-information':
+        case 'other_information':
             $('#other_information_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
@@ -227,7 +228,7 @@ function generateData() {
 
 
             break;
-        case 'patient-insurance':
+        case 'patient_insurance':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -241,7 +242,7 @@ function generateData() {
             actions = 'update';
 
             break;
-        case 'family-information':
+        case 'family_information':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -259,7 +260,7 @@ function generateData() {
             actions = 'update';
 
             break;
-        case 'medical-cases':
+        case 'medical_cases':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -277,7 +278,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'medicine-taken':
+        case 'medicine_taken':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -294,7 +295,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'procedures-undertaken':
+        case 'procedures_undertaken':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -314,7 +315,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'patient-allergies':
+        case 'patient_allergies':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -338,7 +339,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'progress-consultation':
+        case 'progress_consultation':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -351,7 +352,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'vital-measurement':
+        case 'vital_measurement':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -370,7 +371,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'family-medical-history':
+        case 'family_medical_history':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -391,7 +392,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'social-history':
+        case 'social_history':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -404,7 +405,7 @@ function generateData() {
             actions = 'update';
 
                 break;
-        case 'other-information':
+        case 'other_information':
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
@@ -431,7 +432,7 @@ function generateDeleteItems() {
 // EXTRA FUNCTION
 function general_func() {
     module_content = 'patient';
-    module_url = '/actions/' + modal_content;
+    module_url = '/actions/' + module_content;
     module_type = 'transaction';
 
     if(record_id !== '') {
@@ -451,11 +452,12 @@ function general_func() {
 function patient_insurance_func() {
 
     modal_content = 'patient_insurance';
-    module_content = 'patient-insurance';
-    module_url = '/hms/patient-insurance';
+    module_content = 'patient_insurance';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
 
+    additional_id = record_id;
     scion.centralized_button(false, true, true, true);
 
 
@@ -470,7 +472,7 @@ function patient_insurance_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "provider", title: "PROVIDER" },
@@ -486,11 +488,12 @@ function patient_insurance_func() {
 function family_information_func() {
 
     modal_content = 'family_information';
-    module_content = 'family-information';
-    module_url = '/hms/family-information';
+    module_content = 'family_information';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
 
+    additional_id = record_id;
     scion.centralized_button(false, true, true, true);
 
     if ($.fn.DataTable.isDataTable('#family_information_table')) {
@@ -504,7 +507,7 @@ function family_information_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "family_fullname", title: "FULL NAME" },
@@ -518,11 +521,12 @@ function family_information_func() {
 function medical_cases_func() {
 
     modal_content = 'medical_cases';
-    module_content = 'medical-cases';
-    module_url = '/hms/medical-cases';
+    module_content = 'medical_cases';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
 
+    additional_id = record_id;
     scion.centralized_button(false, true, true, true);
 
     if ($.fn.DataTable.isDataTable('#medical_cases_table')) {
@@ -536,7 +540,7 @@ function medical_cases_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "date_recorded", title: "DATE RECORDED" },
@@ -552,8 +556,8 @@ function medical_cases_func() {
 function medicine_taken_func() {
 
     modal_content = 'medicine_taken';
-    module_content = 'medicine-taken';
-    module_url = '/hms/medicine-taken';
+    module_content = 'medicine_taken';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -572,7 +576,7 @@ function medicine_taken_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "medicine_name", title: "MEDICINE NAME" },
@@ -588,8 +592,8 @@ function medicine_taken_func() {
 function procedures_undertaken_func() {
 
     modal_content = 'procedures_undertaken';
-    module_content = 'procedures-undertaken';
-    module_url = '/hms/procedures-undertaken';
+    module_content = 'procedures_undertaken';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -608,7 +612,7 @@ function procedures_undertaken_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "procedure_date", title: "PROCEDURE DATE" },
@@ -624,8 +628,8 @@ function procedures_undertaken_func() {
 function patient_allergies_func() {
 
     modal_content = 'patient_allergies';
-    module_content = 'patient-allergies';
-    module_url = '/hms/patient-allergies';
+    module_content = 'patient_allergies';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -644,16 +648,16 @@ function patient_allergies_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
-            { data: "allergy_allergen", title: "PROCEDURE DATE" },
-            { data: "allergy_reaction", title: "PROCEDURE NAME" },
-            { data: "allergy_severity", title: "PROCEDURE REASON" },
-            { data: "allergy_date_of_onset", title: "PROCEDURE RESULTS" },
-            { data: "allergy_treatment", title: "PROCEDURE COMPLICATIONS" },
-            { data: "allergy_duration", title: "PROCEDURE COMPLICATIONS" },
-            { data: "allergy_anaphylaxis", title: "PROCEDURE COMPLICATIONS" },
+            { data: "allergy_allergen", title: "ALLERGEN" },
+            { data: "allergy_reaction", title: "REACTION" },
+            { data: "allergy_severity", title: "SEVERITY" },
+            { data: "allergy_date_of_onset", title: "DATE OF ONSET" },
+            // { data: "allergy_treatment", title: "TREATMENT" },
+            // { data: "allergy_duration", title: "DURATION" },
+            // { data: "allergy_anaphylaxis", title: "ANAPHYLAXIS" },
 
         ], 'Bfrtip', []
     );
@@ -662,8 +666,8 @@ function patient_allergies_func() {
 function progress_consultation_func() {
 
     modal_content = 'progress_consultation';
-    module_content = 'progress-consultation';
-    module_url = '/hms/progress-consultation';
+    module_content = 'progress_consultation';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -682,7 +686,7 @@ function progress_consultation_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "progress_date", title: "PROGRESS DATE" },
@@ -696,8 +700,8 @@ function progress_consultation_func() {
 function vital_measurement_func() {
 
     modal_content = 'vital_measurement';
-    module_content = 'vital-measurement';
-    module_url = '/hms/vital-measurement';
+    module_content = 'vital_measurement';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -717,17 +721,13 @@ function vital_measurement_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "vital_date", title: "PROGRESS DATE" },
             { data: "vital_time", title: "VITAL TIME" },
-            { data: "blood_pressure", title: "PROGRESS TITLE" },
-            { data: "heart_rate", title: "PROGRESS NOTES" },
-            { data: "temperature", title: "PROGRESS NOTES" },
-            { data: "respiratory_rate", title: "PROGRESS NOTES" },
-            { data: "oxygen_saturation", title: "PROGRESS NOTES" },
-            { data: "pulse_rate", title: "PROGRESS NOTES" },
+            { data: "vital_remarks", title: "REMARKS" },
+    
 
         ], 'Bfrtip', []
     );
@@ -736,8 +736,8 @@ function vital_measurement_func() {
 function family_medical_history_func() {
 
     modal_content = 'family_medical_history';
-    module_content = 'family-medical-history';
-    module_url = '/hms/family-medical-history';
+    module_content = 'family_medical_history';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -756,7 +756,7 @@ function family_medical_history_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "fm_relationship", title: "RELATIONSHIP" },
@@ -764,9 +764,9 @@ function family_medical_history_func() {
             { data: "fm_age_at_diagnosis", title: "AGE AT DIAGNOSIS" },
             { data: "fm_age_at_death", title: "AGE AT DEATH" },
             { data: "fm_cause_of_death", title: "CAUSE OF DEATH" },
-            { data: "fm_other_relevant_medical_history", title: "OTHER RELEVANT MEDICAL HISTORY" },
-            { data: "fm_family_history_of_specific_conditions", title: "FAMILY HISTORY OF SPECIFIC CONDITIONS" },
-            { data: "fm_ethnicity", title: "ETHNICITY" },
+            // { data: "fm_other_relevant_medical_history", title: "OTHER RELEVANT MEDICAL HISTORY" },
+            // { data: "fm_family_history_of_specific_conditions", title: "FAMILY HISTORY OF SPECIFIC CONDITIONS" },
+            // { data: "fm_ethnicity", title: "ETHNICITY" },
 
         ], 'Bfrtip', []
     );
@@ -775,8 +775,8 @@ function family_medical_history_func() {
 function social_history_func() {
 
     modal_content = 'social_history';
-    module_content = 'social-history';
-    module_url = '/hms/social-history';
+    module_content = 'social_history';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
@@ -795,7 +795,7 @@ function social_history_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "sh_record", title: "RECORD" },
@@ -809,11 +809,12 @@ function social_history_func() {
 function other_information_func() {
 
     modal_content = 'other_information';
-    module_content = 'other-information';
-    module_url = '/hms/other-information';
+    module_content = 'other_information';
+    module_url = '/actions/' + module_content;
     actions = 'update';
     module_type = 'custom';
     
+    additional_id = record_id;
 
     scion.centralized_button(false, true, true, true);
 
@@ -828,7 +829,7 @@ function other_information_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/hms/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "oi_description", title: "RECORD" },

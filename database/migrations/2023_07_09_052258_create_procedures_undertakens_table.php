@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePatientInsurancesTable extends Migration
+class CreateProceduresUndertakensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,19 @@ class CreatePatientInsurancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('patient_insurances', function (Blueprint $table) {
+        Schema::create('procedures_undertakens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('patient_id');
-            $table->string('provider');
-            $table->string('type');
-            $table->string('policy_no');
-            $table->string('group_policy_no');
-            $table->string('insurance_notes');
+            $table->string('procedure_date');
+            $table->string('procedure_name');
+            $table->string('procedure_description');
+            $table->string('procedure_reason');
+            $table->string('procedure_results');
+            $table->string('pre_procedure_preparation');
+            $table->string('post_procedure_preparation');
+            $table->string('procedure_complications');
+            $table->string('procedure_sedation_used');
+            $table->string('procedure_remarks')->nullable();
             $table->integer('workstation_id')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
@@ -37,6 +42,6 @@ class CreatePatientInsurancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('patient_insurances');
+        Schema::dropIfExists('procedures_undertakens');
     }
 }

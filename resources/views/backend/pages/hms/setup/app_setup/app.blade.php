@@ -79,7 +79,7 @@
 
 @section('scripts')
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="/js/backend/pages/project/setup/app_setup/app.js"></script>
+<script src="/js/backend/pages/hms/setup/app_setup/app.js"></script>
 @endsection
 
 @section('styles')

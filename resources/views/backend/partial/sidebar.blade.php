@@ -41,7 +41,7 @@
                                             <li class="list-title">{{$item->name}}</li>
                                             @foreach ($item->app_modules as $module)
                                                 @if($module->access->enable === 1)
-                                                    <li class="sidebar-item"><a class="sidebar-link" href="/project/{{$app->code}}/{{$item->code}}/{{$module->code}}">{{$module->name}}</a></li>
+                                                    <li class="sidebar-item"><a class="sidebar-link" href="/hms/{{$app->code}}/{{$item->code}}/{{$module->code}}">{{$module->name}}</a></li>
                                                 @endif
                                             @endforeach
                                         </ul>
@@ -49,7 +49,7 @@
                                 @endif
                             @else
                                 @if($item->access->enable === 1)
-                                <a href="/project/{{$app->code}}/{{$item->code}}" data-toggle="" class="sidebar-link collapsed">
+                                <a href="/hms/{{$app->code}}/{{$item->code}}" data-toggle="" class="sidebar-link collapsed">
                                     <span class="item">
                                         <i class="align-middle mr-2 fas fa-fw fa-{{$item->icon}}"></i> <span class="align-middle">{{$item->name}}</span>
                                     </span>
@@ -64,10 +64,3 @@
     </div>
 </nav>
 
-{{-- <script>
-function clickSide() {
-    $.get('/project/maintenance/app/sample').done(function(response) {
-        console.log(response);
-    });
-}
-</script> --}}

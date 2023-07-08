@@ -19,11 +19,11 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index($app_type, $app, $module) {
-        return view('backend.pages.project.'.$app_type.'.'.$app.'.'.$module);
+        return view('backend.pages.hms.'.$app_type.'.'.$app.'.'.$module);
     }
 
     public function direct_app($app_type, $app) {
-        return view('backend.pages.project.'.$app_type.'.'.$app);
+        return view('backend.pages.hms.'.$app_type.'.'.$app);
     }
 
     public function set_log($action, $details, $ip) {

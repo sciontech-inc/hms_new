@@ -146,7 +146,7 @@
 
 @section('scripts')
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="/js/backend/pages/project/setup/user_setup/access.js"></script>
+<script src="/js/backend/pages/hms/setup/user_setup/access.js"></script>
 @endsection
 
 @section('styles')

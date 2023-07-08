@@ -14,12 +14,12 @@ use App\Events\FormSubmitted;
 */
 Route::group(['middleware' => ['auth']], function() {
 
-    Route::get('/project', function () {
+    Route::get('/hms', function () {
         return view('backend.pages.dashboard');
     });
 
     // Dynamic Routes
-    Route::group(['prefix' => 'project'], function() {
+    Route::group(['prefix' => 'hms'], function() {
         Route::get         ('/{app_type}/{app}/{module}',       'Controller@index'                                              )->name('app');
         Route::get         ('/{app_type}/{app}',                'Controller@direct_app'                                         )->name('direct_app');
     });

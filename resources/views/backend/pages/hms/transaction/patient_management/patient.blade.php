@@ -1,3 +1,8 @@
+@php
+
+    $type = '2-view';
+
+@endphp 
 
 @extends('backend.master.index')
 

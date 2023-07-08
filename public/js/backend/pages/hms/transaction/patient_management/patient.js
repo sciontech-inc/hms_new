@@ -102,8 +102,17 @@ function delete_success() {
 
     switch(module_content) {
         case 'patient':
-            var form_id = $('.form-record')[0].id;
+
+            var record_length = $('.form-record').length - 1;
+
+            var form_id = $('.form-record')[record_length].id;
             $('#'+form_id)[0].reset();
+            if($('.image-previewer').length !== 0) {
+                $('.image-previewer').attr('src', '/images' + storage_url + '/default.png');
+            }
+            if($('#barcode').length !== 0) {
+                $('#barcode').attr('src', '/images/default.png');
+            }
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 

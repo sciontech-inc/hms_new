@@ -6,10 +6,17 @@ use App\Traits\GlobalFunction;
 use App\Patient;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PatientController extends Controller
 {
 
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+    
     use GlobalFunction;
     
 
@@ -116,6 +123,9 @@ class PatientController extends Controller
     public function edit($id)
     {
         $patient = Patient::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $this->setup->set_log('Patient Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the patient ID: "'.$id.'"', request()->ip());
+
         return response()->json(compact('patient'));
     }
 
@@ -152,6 +162,9 @@ class PatientController extends Controller
         }
 
         Patient::findOrFail($id)->update($request->except('created_by'));
+
+        $this->setup->set_log('Patient Information Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" update patient record with the ID: "'.$id.'"', request()->ip());
+
         return response()->json(compact('validate'));
     }
 
@@ -162,6 +175,8 @@ class PatientController extends Controller
         foreach($record as $item) {
             Patient::find($item)->delete();
         }
+
+        $this->setup->set_log('Patient Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" delete the patient record with the ID: "'.$item.'"', request()->ip());
         
         return 'Record Deleted';
     }

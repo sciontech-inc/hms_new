@@ -31,20 +31,22 @@
                         @foreach ($app->apps as $item)
                             @if($item->module === 1)
                                 @if(count($item->app_modules) !== 0)
-                                    @if($item->access->enable === 1)
-                                        <a href="#{{$item->code}}" data-toggle="collapse" class="sidebar-link collapsed">
-                                            <span class="item">
-                                                <i class="align-middle mr-2 fas fa-fw fa-{{$item->icon}}"></i> <span class="align-middle">{{$item->name}}</span>
-                                            </span>
-                                        </a>
-                                        <ul id="{{$item->code}}" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                                            <li class="list-title">{{$item->name}}</li>
-                                            @foreach ($item->app_modules as $module)
-                                                @if($module->access->enable === 1)
-                                                    <li class="sidebar-item"><a class="sidebar-link" href="/hms/{{$app->code}}/{{$item->code}}/{{$module->code}}">{{$module->name}}</a></li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
+                                    @if($item->access !== null)
+                                        @if($item->access->enable === 1)
+                                            <a href="#{{$item->code}}" data-toggle="collapse" class="sidebar-link collapsed">
+                                                <span class="item">
+                                                    <i class="align-middle mr-2 fas fa-fw fa-{{$item->icon}}"></i> <span class="align-middle">{{$item->name}}</span>
+                                                </span>
+                                            </a>
+                                            <ul id="{{$item->code}}" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                                <li class="list-title">{{$item->name}}</li>
+                                                @foreach ($item->app_modules as $module)
+                                                    @if($module->access->enable === 1)
+                                                        <li class="sidebar-item"><a class="sidebar-link" href="/hms/{{$app->code}}/{{$item->code}}/{{$module->code}}">{{$module->name}}</a></li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        @endif
                                     @endif
                                 @endif
                             @else

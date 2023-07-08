@@ -2,41 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\PatientInsurance;
+use App\PatientOtherInformation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 
-class PatientInsuranceController extends Controller
+class PatientOtherInformationController extends Controller
 {
     public function store(Request $request)
     {
 
         $validate = $request->validate([
-            'provider' => 'required',
-            'type' => 'required',
-            'policy_no' => 'required',
+
+            'oi_description' => 'required',
+            'oi_remarks' => 'required',
+
         ]);
 
         $request['workstation_id'] = Auth::user()->workstation_id;
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        PatientInsurance::create($request->all());
+        PatientOtherInformation::create($request->all());
 
         return response()->json(compact('validate'));
     }
 
     public function edit($id)
     {
-        $patient_insurance = PatientInsurance::where('id', $id)->orderBy('id')->firstOrFail();
-        return response()->json(compact('patient_insurance'));
+        $other_information = PatientOtherInformation::where('id', $id)->orderBy('id')->firstOrFail();
+        return response()->json(compact('other_information'));
     }
 
     public function update(Request $request, $id)
     {
         $request['updated_by'] = Auth::user()->id;
-        PatientInsurance::find($id)->update($request->all());
+        PatientOtherInformation::find($id)->update($request->all());
         return "Record Saved";
     }
 
@@ -44,29 +45,29 @@ class PatientInsuranceController extends Controller
         $output = '';
 
         $validate = $request->validate([
-            'provider' => 'required',
-            'type' => 'required',
-            'policy_no' => 'required',
+            'oi_description' => 'required',
+            'oi_remarks' => 'required',
+
         ]);
 
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        $insurance = PatientInsurance::where('patient_id', $request->patient_id)->where('policy_no', $request->policy_no)->count();
+        $insurance = PatientOtherInformation::where('patient_id', $request->patient_id)->where('oi_description', $request->oi_description)->count();
         if($insurance === 0) {
             $output = 'saved';
-            PatientInsurance::create($request->all());
+            PatientOtherInformation::create($request->all());
         }
         else {
             $output = "updated";
-            PatientInsurance::where('patient_id', $request->patient_id)->update($request->except('_token', 'created_by'));
+            PatientOtherInformation::where('patient_id', $request->patient_id)->update($request->except('_token', 'created_by'));
         }
         return response()->json(compact('validate'));
     }
 
     public function get($id) {
         if(request()->ajax()) {
-            return datatables()->of(PatientInsurance::where('patient_id', $id)->get())
+            return datatables()->of(PatientOtherInformation::where('patient_id', $id)->get())
             ->addIndexColumn()
             ->make(true);
         }
@@ -77,7 +78,7 @@ class PatientInsuranceController extends Controller
         $record = $request->data;
 
         foreach($record as $item) {
-            PatientInsurance::find($item)->delete();
+            PatientOtherInformation::find($item)->delete();
         }
 
         return 'Record Deleted';

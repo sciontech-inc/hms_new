@@ -96,6 +96,94 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'BuildingController@destroy'                                    )->name('delete');
         });
 
+        Route::group(['prefix' => 'patient_insurance'], function() {
+            Route::get          ('/get/{id}',                       'PatientInsuranceController@get'                                )->name('get');
+            Route::post         ('/save',                           'PatientInsuranceController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientInsuranceController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientInsuranceController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'PatientInsuranceController@destroy'                            )->name('delete');
+        });
+
+        Route::group(['prefix' => 'family_information'], function() {
+            Route::get          ('/get/{id}',                       'FamilyInformationController@get'                               )->name('get');
+            Route::post         ('/save',                           'FamilyInformationController@store'                             )->name('save');
+            Route::get          ('/edit/{id}',                      'FamilyInformationController@edit'                              )->name('edit');
+            Route::post         ('/update/{id}',                    'FamilyInformationController@update'                            )->name('update');
+            Route::post         ('/destroy',                        'FamilyInformationController@destroy'                           )->name('delete');
+        });
+
+        Route::group(['prefix' => 'medical_cases'], function() {
+            Route::get          ('/get/{id}',                       'MedicalCaseController@get'                                     )->name('get');
+            Route::post         ('/save',                           'MedicalCaseController@store'                                   )->name('save');
+            Route::get          ('/edit/{id}',                      'MedicalCaseController@edit'                                    )->name('edit');
+            Route::post         ('/update/{id}',                    'MedicalCaseController@update'                                  )->name('update');
+            Route::post         ('/destroy',                        'MedicalCaseController@destroy'                                 )->name('delete');
+        });
+
+        Route::group(['prefix' => 'medicine_taken'], function() {
+            Route::get          ('/get/{id}',                       'MedicineTakenController@get'                                   )->name('get');
+            Route::post         ('/save',                           'MedicineTakenController@store'                                 )->name('save');
+            Route::get          ('/edit/{id}',                      'MedicineTakenController@edit'                                  )->name('edit');
+            Route::post         ('/update/{id}',                    'MedicineTakenController@update'                                )->name('update');
+            Route::post         ('/destroy',                        'MedicineTakenController@destroy'                               )->name('delete');
+        });
+
+        Route::group(['prefix' => 'patient_allergies'], function() {
+            Route::get          ('/get/{id}',                       'PatientAllergiesController@get'                                )->name('get');
+            Route::post         ('/save',                           'PatientAllergiesController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientAllergiesController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientAllergiesController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'PatientAllergiesController@destroy'                            )->name('delete');
+        });
+
+        Route::group(['prefix' => 'procedures_undertaken'], function() {
+            Route::get          ('/get/{id}',                       'ProceduresUndertakenController@get'                            )->name('get');
+            Route::post         ('/save',                           'ProceduresUndertakenController@store'                          )->name('save');
+            Route::get          ('/edit/{id}',                      'ProceduresUndertakenController@edit'                           )->name('edit');
+            Route::post         ('/update/{id}',                    'ProceduresUndertakenController@update'                         )->name('update');
+            Route::post         ('/destroy',                        'ProceduresUndertakenController@destroy'                        )->name('delete');
+        });
+
+        Route::group(['prefix' => 'progress_consultation'], function() {
+            Route::get          ('/get/{id}',                       'ProgressConsultationController@get'                            )->name('get');
+            Route::post         ('/save',                           'ProgressConsultationController@store'                          )->name('save');
+            Route::get          ('/edit/{id}',                      'ProgressConsultationController@edit'                           )->name('edit');
+            Route::post         ('/update/{id}',                    'ProgressConsultationController@update'                         )->name('update');
+            Route::post         ('/destroy',                        'ProgressConsultationController@destroy'                        )->name('delete');
+        });
+
+        Route::group(['prefix' => 'vital_measurement'], function() {
+            Route::get          ('/get/{id}',                       'VitalMeasurementController@get'                                )->name('get');
+            Route::post         ('/save',                           'VitalMeasurementController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'VitalMeasurementController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'VitalMeasurementController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'VitalMeasurementController@destroy'                            )->name('delete');
+        });
+
+        Route::group(['prefix' => 'family_medical_history'], function() {
+            Route::get          ('/get/{id}',                       'FamilyMedicalHistoryController@get'                            )->name('get');
+            Route::post         ('/save',                           'FamilyMedicalHistoryController@store'                          )->name('save');
+            Route::get          ('/edit/{id}',                      'FamilyMedicalHistoryController@edit'                           )->name('edit');
+            Route::post         ('/update/{id}',                    'FamilyMedicalHistoryController@update'                         )->name('update');
+            Route::post         ('/destroy',                        'FamilyMedicalHistoryController@destroy'                        )->name('delete');
+        });
+
+        Route::group(['prefix' => 'social_history'], function() {
+            Route::get          ('/get/{id}',                       'SocialHistoryController@get'                                   )->name('get');
+            Route::post         ('/save',                           'SocialHistoryController@store'                                 )->name('save');
+            Route::get          ('/edit/{id}',                      'SocialHistoryController@edit'                                  )->name('edit');
+            Route::post         ('/update/{id}',                    'SocialHistoryController@update'                                )->name('update');
+            Route::post         ('/destroy',                        'SocialHistoryController@destroy'                               )->name('delete');
+        });
+        
+        Route::group(['prefix' => 'other_information'], function() {
+            Route::get          ('/get/{id}',                       'PatientOtherInformationController@get'                         )->name('get');
+            Route::post         ('/save',                           'PatientOtherInformationController@store'                       )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientOtherInformationController@edit'                        )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientOtherInformationController@update'                      )->name('update');
+            Route::post         ('/destroy',                        'PatientOtherInformationController@destroy'                     )->name('delete');
+        });
+
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');
         });

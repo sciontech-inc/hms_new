@@ -7,7 +7,7 @@
                 <div class="employee-picture">
                     <label>PATIENT PICTURE</label>
                     <div id="" onclick="$('#profile_img').click()">
-                        <img src="/images/hms/patient_management/patients/default.png" alt="" width="200px" id="viewer" class="image-previewer" data-cropzee="profile_img">
+                        <img src="/images/hms/patient_management/patient/default.png" alt="" width="200px" id="viewer" class="image-previewer" data-cropzee="profile_img">
                     </div>
                     <input id="profile_img" type="file" name="profile_img" class="form-control" onchange="scion.fileView(event)" style="display:none;">
                     <button class="btn btn-primary" type="button" onclick="$('#profile_img').click()" style="width:100%;">Select Photo</button>

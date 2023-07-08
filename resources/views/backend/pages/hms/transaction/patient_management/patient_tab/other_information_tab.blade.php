@@ -19,7 +19,7 @@
             <span class="sc-close" onclick="scion.create.sc_modal('other_information_form').hide('all', modalHideFunction)"><i class="fas fa-times"></i></span>
         </div>
         <div class="sc-modal-body">
-            <form method="post" id="otherinformationForm" class="form-record">
+            <form method="post" id="patientotherinformationForm" class="form-record">
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group oi_description">

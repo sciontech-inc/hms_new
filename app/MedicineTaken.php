@@ -5,21 +5,26 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PatientInsurance extends Model
+
+class MedicineTaken extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
 
         'patient_id',
-        'provider',
-        'type',
-        'policy_no',
-        'group_policy_no',
-        'insurance_notes',
+        'medicine_name',
+        'medicine_doses',
+        'routes_of_administration',
+        'medicine_type',
+        'medicine_duration',
+        'medicine_reason',
+        'medicine_compliance',
+        'medicine_remarks',
         'workstation_id',
         'created_by',
         'updated_by',
         'deleted_by'
+        
     ];
 }

@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\AppModule;
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Controllers\Controller;
 
 class AppModuleController extends Controller
 {
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+    
     public function get() {
         if(request()->ajax()) {
             return datatables()->of(AppModule::with('app')->get())
@@ -30,6 +37,8 @@ class AppModuleController extends Controller
         $request['updated_by'] = Auth::user()->id;
 
         AppModule::create($request->all());
+        
+        $this->setup->set_log('App Module Added', '"'.$request->name.'" was added at App Module Records.', $request->ip());
 
         return response()->json(compact('validate'));
     }
@@ -37,6 +46,9 @@ class AppModuleController extends Controller
     public function edit($id)
     {
         $appModule = AppModule::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $this->setup->set_log('App Module Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
+        
         return response()->json(compact('appModule'));
     }
 
@@ -44,6 +56,9 @@ class AppModuleController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         AppModule::find($id)->update($request->all());
+
+        $this->setup->set_log('App Module Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" update the record with the ID: "'.$id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -53,6 +68,8 @@ class AppModuleController extends Controller
 
         foreach($record as $item) {
             AppModule::find($item)->delete();
+
+            $this->setup->set_log('App Module Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" delete the record with the ID: "'.$item.'"', request()->ip());
         }
         
         return 'Record Deleted';

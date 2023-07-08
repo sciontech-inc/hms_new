@@ -17,8 +17,7 @@ class Dev01_Seeder extends Seeder
     public function run()
     {
 
-        $app = App::create([ 
-            [
+        $app = App::firstOrCreate([ 
                 'name' => 'PATIENT MANAGEMENT',
                 'code' => 'patient_management',
                 'sort_no' => '1',
@@ -28,11 +27,9 @@ class Dev01_Seeder extends Seeder
                 'icon' => 'hospital-user',
                 'created_by' => Auth::user()->id,
                 'updated_by' => Auth::user()->id,
-            ],
-   
-        ]);
+            ]);
 
-        $app_module = AppModule::create([ 
+        $app_module = AppModule::firstOrCreate(
             [
                 'name' => 'PATIENT',
                 'code' => 'patient',
@@ -41,11 +38,9 @@ class Dev01_Seeder extends Seeder
                 'status' => '1',
                 'created_by' => Auth::user()->id,
                 'updated_by' => Auth::user()->id,
-            ],
-       
-        ]);
+            ]);
 
-        Access::create([ 
+        Access::firstOrCreate(
             [
                 'role_id' => Auth::user()->access->role_id,
                 'permission_for' => 'apps',
@@ -70,8 +65,6 @@ class Dev01_Seeder extends Seeder
                 'print' => '1',
                 'created_by' => Auth::user()->id,
                 'updated_by' => Auth::user()->id,
-            ],
-       
-        ]);
+            ]);
     }
 }

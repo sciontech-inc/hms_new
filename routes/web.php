@@ -70,10 +70,27 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'RoleController@destroy'                                        )->name('delete');
             Route::get          ('/list/{id}',                      'RoleController@get_list'                                       )->name('list');
         });
+
+        Route::group(['prefix' => 'role'], function() {
+            Route::get          ('/get',                            'RoleController@get'                                            )->name('get');
+            Route::post         ('/save',                           'RoleController@store'                                          )->name('save');
+            Route::get          ('/edit/{id}',                      'RoleController@edit'                                           )->name('edit');
+            Route::post         ('/update/{id}',                    'RoleController@update'                                         )->name('update');
+            Route::post         ('/destroy',                        'RoleController@destroy'                                        )->name('delete');
+            Route::get          ('/list/{id}',                      'RoleController@get_list'                                       )->name('list');
+        });
         
+        Route::group(['prefix' => 'patient'], function() {
+            Route::get          ('/get',                            'PatientController@get'                                         )->name('get');
+            Route::post         ('/save',                           'PatientController@store'                                       )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientController@edit'                                        )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientController@update'                                      )->name('update');
+            Route::post         ('/destroy',                        'PatientController@destroy'                                     )->name('delete');
+            Route::get          ('/list/{id}',                      'PatientController@get_list'                                    )->name('list');
+        });
 
         Route::group(['prefix' => 'activity_log'], function() {
-            Route::get          ('/get',                     'Controller@log_get'                                            )->name('get');
+            Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');
         });
         
         Route::group(['prefix' => 'access'], function() {

@@ -87,6 +87,14 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'PatientController@update'                                      )->name('update');
             Route::post         ('/destroy',                        'PatientController@destroy'                                     )->name('delete');
         });
+        
+        Route::group(['prefix' => 'building'], function() {
+            Route::get          ('/get',                            'BuildingController@get'                                        )->name('get');
+            Route::post         ('/save',                           'BuildingController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'BuildingController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'BuildingController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'BuildingController@destroy'                                    )->name('delete');
+        });
 
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');

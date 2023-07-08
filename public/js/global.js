@@ -520,7 +520,6 @@ $('body').delegate('form input[type="text"]:not(.lowercase), form textarea', 'ke
 
 $(function() {
     $.post('/actions/access/get_permission', { _token: _token, project_type: project_type, project_code: modal_content }).done(function(response) {
-        console.log(response);
         if(response.access.add === 0) {
             $('#nw').remove();
         }

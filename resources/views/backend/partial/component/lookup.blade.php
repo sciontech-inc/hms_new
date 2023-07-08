@@ -1,6 +1,6 @@
 
 <div class="form-group">
-    <label>{{$label}} <span class="required">*</span></label>
+    <label>{{$label}} <span class="required">*</span>:</label>
     <div class="input-group mb-3 {{$id}}" style="background:#eee;">
         <input type="text" class="form-control" placeholder="{{$placeholder}}" style="outline:none !important; cursor: pointer;" aria-label="{{$label}}" aria-describedby="basic-addon1" id="{{$id}}" name="{{$id}}" {{$disable===true?'readonly':''}} onclick="scion.create.sc_modal('lookup_{{$id}}', '{{$label}}', getLookup).show()">
         <div class="input-group-prepend">

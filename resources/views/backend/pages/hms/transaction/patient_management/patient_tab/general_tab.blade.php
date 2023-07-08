@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-6">
-        <div class="form-group">
+            <div class="form-group">
                 @include('backend.partial.component.lookup', [
                     'label' => "PATIENT ID",
                     'placeholder' => '<NEW>',

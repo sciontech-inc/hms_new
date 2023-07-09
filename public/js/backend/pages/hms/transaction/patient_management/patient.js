@@ -37,7 +37,7 @@ function success(record) {
 
             actions = 'update';
 
-            scion.centralized_button(false, false, true, true);
+            scion.centralized_button(false, false, false, true);
 
             $('.tab-list-menu-item ').removeAttr('disabled');
 
@@ -449,14 +449,13 @@ function general_func() {
     }
 
     if(actions == 'update') {
-        scion.centralized_button(false, false, true, true);
+        scion.centralized_button(false, false, false, true);
     }
     else {
         scion.centralized_button(true, false, true, true);
 
     }
 }
-
 
 function patient_insurance_func() {
 
@@ -782,9 +781,6 @@ function family_medical_history_func() {
             { data: "fm_age_at_diagnosis", title: "AGE AT DIAGNOSIS" },
             { data: "fm_age_at_death", title: "AGE AT DEATH" },
             { data: "fm_cause_of_death", title: "CAUSE OF DEATH" },
-            // { data: "fm_other_relevant_medical_history", title: "OTHER RELEVANT MEDICAL HISTORY" },
-            // { data: "fm_family_history_of_specific_conditions", title: "FAMILY HISTORY OF SPECIFIC CONDITIONS" },
-            // { data: "fm_ethnicity", title: "ETHNICITY" },
 
         ], 'Bfrtip', []
     );

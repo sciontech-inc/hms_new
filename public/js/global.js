@@ -9,6 +9,7 @@ var module_type = null;
 var project_type = null;
 var actions = null;
 var _token = $('meta[name="csrf-token"]').attr('content');
+var additional_id = null;
 
 var form_data = {};
 var tab_active = null;
@@ -38,7 +39,10 @@ var scion = {
                 
                 scion.centralized_button(true, false, true, true);
                 actions = 'save';
-                $('.form-record')[0].reset();
+                $('.form-record')[record_length].reset();
+
+                $('.tab-list-menu-item ').attr("disabled", 'disabled');
+
                 if($('.image-previewer').length !== 0) {
                     $('.image-previewer').attr('src', '/images' + storage_url + '/default.png');
                 }

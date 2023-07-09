@@ -1,6 +1,7 @@
 
 var delete_data = [];
 var record_id = null;
+var update_id = null;
 var modal_content = null;
 var module_content = null;
 var module_url = null;
@@ -12,7 +13,6 @@ var _token = $('meta[name="csrf-token"]').attr('content');
 var form_data = {};
 var tab_active = null;
 var lookup_type = '';
-var storage_url = null;
 
 var selected_data = {};
 var selected_dataProxy = null;
@@ -30,18 +30,11 @@ var scion = {
                 scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
             }
             else if(module_type === "transaction") {
-
-                record_length = $('.form-record').length - 1;
-
-
                 scion.centralized_button(true, false, true, true);
                 actions = 'save';
-                $('.form-record')[record_length].reset();
+                $('.form-record')[0].reset();
                 if($('.image-previewer').length !== 0) {
-                    $('.image-previewer').attr('src', '/images' + storage_url + '/default.png');
-                }
-                if($('#barcode').length !== 0) {
-                    $('#barcode').attr('src', '/images/default.png');
+                    $('.image-previewer').attr('src', '/images' + module_url + '/default.png');
                 }
             }
             if(module_type === "transaction_2") {
@@ -60,7 +53,7 @@ var scion = {
         },
         save(generateData, success, error) {
             $('.error-message').remove();
-            if(record_id === null) {
+            if(actions === 'save') {
                 $.post(module_url+'/'+actions, generateData())
                 .done(function(response) {
                     if(typeof(success) != "undefined"){
@@ -89,7 +82,7 @@ var scion = {
                 });
             }
             else {
-                $.post(module_url+'/'+actions+"/"+record_id, generateData())
+                $.post(module_url+'/'+actions+"/"+update_id, generateData())
                 .done(function(response) {
                     if(typeof(success) != "undefined"){
                         success();
@@ -130,8 +123,8 @@ var scion = {
                 method: 'get',
                 data: {},
                 success: function(data) {
-                    $('#'+form_id)[0].reset();
                     record_id = id;
+                    update_id = id;
 
                     if(lookup_type !== "sub" ) {
                         $.each(data, function() {
@@ -142,7 +135,7 @@ var scion = {
                                         $('#'+k).prop('checked', v === 1?true:false);
                                     }
                                     else if($('#'+k)[0].type === 'file') {
-                                        $('.image-previewer').attr('src', '/images'+storage_url+'/'+v+'');
+                                        $('.image-previewer').attr('src', '/images'+module_url+'/'+v+'');
                                     }
                                     else if($('#'+k)[0].type === 'fieldset') {
                                         var val = v;
@@ -156,14 +149,6 @@ var scion = {
                                     }
                                     else {
                                         $('#'+k).val(v);
-
-                                        // Custom code
-                                        if(k === 'patient_id') {
-                                            $('#barcode').attr('src', 'https://api.qrserver.com/v1/create-qr-code/?data=' + v + '&amp;size=50x50');
-                                        }
-
-                                        // additional_id = id;
-
                                     }
                                 }
                                 else {
@@ -174,7 +159,7 @@ var scion = {
                                                     $('#'+k).prop('checked', v === 1?true:false);
                                                 }
                                                 else if($('#'+k)[0].type === 'file') {
-                                                    $('.image-previewer').attr('src', '/images'+storage_url+'/'+v+'');
+                                                    $('.image-previewer').attr('src', '/images'+module_url+'/'+v+'');
                                                 }
                                                 else if($('#'+k)[0].type === 'select-one') {
                                                     $('#'+k).val(v).change();
@@ -190,6 +175,7 @@ var scion = {
                         });
                     }
                     else {
+                        $('#'+form_id)[0].reset();
                         selected_data = data;
                         selected_dataProxy = new Proxy(selected_data, {
                             get: (o, property) => {
@@ -209,6 +195,7 @@ var scion = {
                         }
                     }
                     else if(module_type === "transaction") {
+                        $('#' + tab_active).click();
                     }
                 }
             });

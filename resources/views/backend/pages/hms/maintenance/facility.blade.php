@@ -15,9 +15,9 @@
         'id'=>'facility',
         'data'=>array(
             array('id'=>'building', 'title'=>'BUILDING', 'icon'=>' fas fa-hospital', 'active'=>true, 'disabled'=>false, 'function'=>true),
-            array('id'=>'floors', 'title'=>'FLOORS', 'icon'=>' fas fa-th-large', 'active'=>false, 'disabled'=>true, 'function'=>true),
-            array('id'=>'rooms', 'title'=>'ROOMS', 'icon'=>' fas fa-cube', 'active'=>false, 'disabled'=>true, 'function'=>true),
-            array('id'=>'beds', 'title'=>'BEDS', 'icon'=>' fas fa-bed', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'floor', 'title'=>'FLOOR', 'icon'=>' fas fa-th-large', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'room', 'title'=>'ROOM', 'icon'=>' fas fa-cube', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'bed', 'title'=>'BED', 'icon'=>' fas fa-bed', 'active'=>false, 'disabled'=>true, 'function'=>true),
         )
     ])
 @endsection
@@ -27,7 +27,7 @@
     <div class="col-12" style="height:100%;">
         <div class="tab" style="height:100%;">
             <div class="tab-content">
-                <form class="form-record" method="post" id="patientsForm">
+                <form class="form-record" method="post" id="buildingForm">
                     <div class="row"> 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -58,6 +58,7 @@
                         </div>
                     </div>
                     @include('backend.pages.hms.maintenance.facility_tab.building_tab')
+                    @include('backend.pages.hms.maintenance.facility_tab.floor_tab')
                 </form>
             </div>
         </div>
@@ -73,10 +74,6 @@
             <span class="sc-close" onclick="scion.create.sc_modal('app_type_form').hide('all', modalHideFunction)"><i class="fas fa-times"></i></span>
         </div>
         <div class="sc-modal-body">
-            <form id="app_typeForm" method="post" class="form-record">
-                <div class="row">
-                </div>
-            </form>
         </div>
     </div>
 </div>

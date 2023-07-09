@@ -52,7 +52,7 @@ class BuildingController extends Controller
     {
         $building = Building::where('id', $id)->orderBy('id')->firstOrFail();
 
-        $this->setup->set_log('Buidling Viewed', '"'.$appType->user->firstname.' '.($appType->user->middlename!==null&&$appType->user->middlename!==''?$appType->user->middlename.' ':'').$appType->user->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
+        $this->setup->set_log('Buidling Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
         return response()->json(compact('building'));
     }
 
@@ -61,7 +61,7 @@ class BuildingController extends Controller
         $request['updated_by'] = Auth::user()->id;
         Building::find($id)->update($request->all());
 
-        $this->setup->set_log('App Type Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" update the record with the ID: "'.$id.'"', request()->ip());
+        $this->setup->set_log('Building Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" update the record with the ID: "'.$id.'"', request()->ip());
         
         return "Record Saved";
     }
@@ -73,7 +73,7 @@ class BuildingController extends Controller
         foreach($record as $item) {
             Building::find($item)->delete();
 
-            $this->setup->set_log('App Type Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" delete the record with the ID: "'.$item.'"', request()->ip());
+            $this->setup->set_log('Building Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" delete the record with the ID: "'.$item.'"', request()->ip());
         }
         
         return 'Record Deleted';

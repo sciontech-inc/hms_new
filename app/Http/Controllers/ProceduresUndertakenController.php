@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use App\ProceduresUndertaken;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,12 @@ use Auth;
 
 class ProceduresUndertakenController extends Controller
 {
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+
     public function store(Request $request)
     {
 
@@ -29,7 +36,12 @@ class ProceduresUndertakenController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        ProceduresUndertaken::create($request->all());
+        
+        $procedures_undertaken = ProceduresUndertaken::create($request->all());
+
+        $patient = Patient::find($procedures_undertaken->patient_id);
+
+        $this->setup->set_log('Procedures Undertaken Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the procedures undertaken record ID "'.$procedures_undertaken->id.'" of patient "'.$patient->patient_id.'"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -37,6 +49,10 @@ class ProceduresUndertakenController extends Controller
     public function edit($id)
     {
         $procedures_undertaken = ProceduresUndertaken::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $patient = Patient::find($procedures_undertaken->patient_id);
+        $this->setup->set_log('Procedures Undertaken Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the procedures undertaken record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return response()->json(compact('procedures_undertaken'));
     }
 
@@ -44,6 +60,10 @@ class ProceduresUndertakenController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         ProceduresUndertaken::find($id)->update($request->all());
+
+        $patient = Patient::find($request->patient_id);
+        $this->setup->set_log('Procedures Undertaken Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the procedures undertaken record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -92,6 +112,9 @@ class ProceduresUndertakenController extends Controller
 
         foreach($record as $item) {
             ProceduresUndertaken::find($item)->delete();
+
+            $this->setup->set_log('Procedures Undertaken Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the procedures undertaken record ID "'.$item.'" of patient."', request()->ip());
+
         }
 
         return 'Record Deleted';

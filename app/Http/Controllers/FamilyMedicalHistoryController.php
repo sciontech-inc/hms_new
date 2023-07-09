@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use App\FamilyMedicalHistory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,13 @@ use Auth;
 
 class FamilyMedicalHistoryController extends Controller
 {
+
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+    
     public function store(Request $request)
     {
 
@@ -29,7 +37,11 @@ class FamilyMedicalHistoryController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        FamilyMedicalHistory::create($request->all());
+        $family_medical_history = FamilyMedicalHistory::create($request->all());
+
+        $patient = Patient::find($family_medical_history->patient_id);
+
+        $this->setup->set_log('Family Medical History Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the family medical history ID "'.$family_medical_history->id.'" of patient "'.$patient->patient_id.'"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -37,6 +49,10 @@ class FamilyMedicalHistoryController extends Controller
     public function edit($id)
     {
         $family_medical_history = FamilyMedicalHistory::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $patient = Patient::find($family_medical_history->patient_id);
+        $this->setup->set_log('Family Medical History Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the family medical history ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return response()->json(compact('family_medical_history'));
     }
 
@@ -44,6 +60,10 @@ class FamilyMedicalHistoryController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         FamilyMedicalHistory::find($id)->update($request->all());
+
+        $patient = Patient::find($request->patient_id);
+        $this->setup->set_log('Family Medical History Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the family medical history ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -93,6 +113,9 @@ class FamilyMedicalHistoryController extends Controller
 
         foreach($record as $item) {
             FamilyMedicalHistory::find($item)->delete();
+
+            $this->setup->set_log('Family Medical History Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the family medical history ID "'.$item.'" of patient."', request()->ip());
+
         }
 
         return 'Record Deleted';

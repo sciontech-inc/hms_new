@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use App\PatientOtherInformation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,12 @@ use Auth;
 
 class PatientOtherInformationController extends Controller
 {
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+
     public function store(Request $request)
     {
 
@@ -23,7 +30,11 @@ class PatientOtherInformationController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        PatientOtherInformation::create($request->all());
+        $other_information = PatientOtherInformation::create($request->all());
+
+        $patient = Patient::find($other_information->patient_id);
+
+        $this->setup->set_log('Patient Other Information Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the patient other information record ID "'.$other_information->id.'" of patient "'.$patient->patient_id.'"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -31,6 +42,10 @@ class PatientOtherInformationController extends Controller
     public function edit($id)
     {
         $other_information = PatientOtherInformation::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $patient = Patient::find($other_information->patient_id);
+        $this->setup->set_log('Patient Other Information Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the patient other information record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return response()->json(compact('other_information'));
     }
 
@@ -38,6 +53,10 @@ class PatientOtherInformationController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         PatientOtherInformation::find($id)->update($request->all());
+
+        $patient = Patient::find($request->patient_id);
+        $this->setup->set_log('Patient Other Information Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the patient other information record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -79,6 +98,9 @@ class PatientOtherInformationController extends Controller
 
         foreach($record as $item) {
             PatientOtherInformation::find($item)->delete();
+
+            $this->setup->set_log('Patient Other Information Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the patient other information record ID "'.$item.'" of patient."', request()->ip());
+
         }
 
         return 'Record Deleted';

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use App\PatientInsurance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,12 @@ use Auth;
 
 class PatientInsuranceController extends Controller
 {
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+    
     public function store(Request $request)
     {
 
@@ -22,7 +29,11 @@ class PatientInsuranceController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        PatientInsurance::create($request->all());
+        $patient_insurance = PatientInsurance::create($request->all());
+
+        $patient = Patient::find($patient_insurance->patient_id);
+
+        $this->setup->set_log('Patient Insurance Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the insurance record ID "'.$patient_insurance->id.'" of patient "'.$patient->patient_id.'"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -30,6 +41,10 @@ class PatientInsuranceController extends Controller
     public function edit($id)
     {
         $patient_insurance = PatientInsurance::where('id', $id)->orderBy('id')->firstOrFail();
+        $patient = Patient::find($patient_insurance->patient_id);
+
+        $this->setup->set_log('Patient Insurance Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the insurance record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return response()->json(compact('patient_insurance'));
     }
 
@@ -37,6 +52,10 @@ class PatientInsuranceController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         PatientInsurance::find($id)->update($request->all());
+
+        $patient = Patient::find($request->patient_id);
+        $this->setup->set_log('Patient Insurance Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the insurance record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -78,7 +97,12 @@ class PatientInsuranceController extends Controller
 
         foreach($record as $item) {
             PatientInsurance::find($item)->delete();
+
+            $this->setup->set_log('Patient Insurance Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the insurance record ID "'.$item.'" of patient."', request()->ip());
         }
+
+     
+        
 
         return 'Record Deleted';
     }

@@ -46,11 +46,24 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'FACILITY',
             'code' => 'facility',
-            'sort_no' => '1',
+            'sort_no' => '3',
             'app_type_id' => '1',
             'status' => '1',
             'module' => '0',
             'icon' => 'hospital',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'PHARMACY MANAGEMENT',
+            'code' => 'pharmacy_management',
+            'sort_no' => '4',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'file-prescription',
             'created_by' => '1',
             'updated_by' => '1',
 
@@ -91,7 +104,17 @@ class Dev01_Seeder extends Seeder
             'updated_by' => '1',
 
         ],
-      
+        [
+
+            'name' => 'PHARMACY INVENTORY',
+            'code' => 'pharmacy_inventory',
+            'app_id' => '6',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
        
     );
       

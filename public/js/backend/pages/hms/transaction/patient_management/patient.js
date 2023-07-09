@@ -37,7 +37,7 @@ function success(record) {
 
             actions = 'update';
 
-            scion.centralized_button(false, false, true, true);
+            scion.centralized_button(false, false, false, true);
 
             $('.tab-list-menu-item ').removeAttr('disabled');
 
@@ -449,14 +449,13 @@ function general_func() {
     }
 
     if(actions == 'update') {
-        scion.centralized_button(false, false, true, true);
+        scion.centralized_button(false, false, false, true);
     }
     else {
         scion.centralized_button(true, false, true, true);
 
     }
 }
-
 
 function patient_insurance_func() {
 
@@ -481,7 +480,7 @@ function patient_insurance_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="patient_insurance_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -517,7 +516,7 @@ function family_information_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="family_information_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -551,7 +550,7 @@ function medical_cases_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="medical_case_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -588,7 +587,7 @@ function medicine_taken_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="medicine_taken_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -625,7 +624,7 @@ function procedures_undertaken_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="procedures_undertaken_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -662,7 +661,7 @@ function patient_allergies_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="patient_allergies_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -701,7 +700,7 @@ function progress_consultation_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="progress_consultation_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -737,7 +736,7 @@ function vital_measurement_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="vital_measurement_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -773,7 +772,7 @@ function family_medical_history_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="family_medical_history_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -782,9 +781,6 @@ function family_medical_history_func() {
             { data: "fm_age_at_diagnosis", title: "AGE AT DIAGNOSIS" },
             { data: "fm_age_at_death", title: "AGE AT DEATH" },
             { data: "fm_cause_of_death", title: "CAUSE OF DEATH" },
-            // { data: "fm_other_relevant_medical_history", title: "OTHER RELEVANT MEDICAL HISTORY" },
-            // { data: "fm_family_history_of_specific_conditions", title: "FAMILY HISTORY OF SPECIFIC CONDITIONS" },
-            // { data: "fm_ethnicity", title: "ETHNICITY" },
 
         ], 'Bfrtip', []
     );
@@ -813,7 +809,7 @@ function social_history_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="social_history_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -848,7 +844,7 @@ function other_information_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="other_information_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "id", title: "ID" },
@@ -857,6 +853,226 @@ function other_information_func() {
  
         ], 'Bfrtip', []
     );
+}
+
+// Edit Custom
+function patient_insurance_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+
+        $('#provider').val(response.patient_insurance.provider);
+        $('#type').val(response.patient_insurance.type);
+        $('#policy_no').val(response.patient_insurance.policy_no);
+        $('#group_policy_no').val(response.patient_insurance.group_policy_no);
+        $('#insurance_notes').val(response.patient_insurance.insurance_notes);
+
+        update_id = response.patient_insurance.id;
+    });
+}
+
+// Edit Custom
+function family_information_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#family_fullname').val(response.family_information.family_fullname);
+        $('#family_birthdate').val(response.family_information.family_birthdate);
+        $('#family_relationship').val(response.family_information.family_relationship);
+        $('#family_sex').val(response.family_information.family_sex);
+        $('#family_citizenship').val(response.family_information.family_citizenship);
+        $('#family_address').val(response.family_information.family_address);
+        $('#family_contact_no').val(response.family_information.family_contact_no);
+        $('#family_email').val(response.family_information.family_email);
+        $('#family_remarks').val(response.family_information.family_remarks);
+
+        update_id = response.family_information.id;
+    });
+}
+
+// Edit Custom
+function medical_case_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#date_recorded').val(response.medical_case.date_recorded);
+        $('#chief_complaint').val(response.medical_case.chief_complaint);
+        $('#diagnostic_tests').val(response.medical_case.diagnostic_tests);
+        $('#diagnosis').val(response.medical_case.diagnosis);
+        $('#prognosis').val(response.medical_case.prognosis);
+        $('#physician_notes').val(response.medical_case.physician_notes);
+        $('#nursing_notes').val(response.medical_case.nursing_notes);
+        $('#discharge_summary').val(response.medical_case.discharge_summary);
+        $('#medical_case_remarks').val(response.medical_case.medical_case_remarks);
+
+        update_id = response.medical_case.id;
+    });
+}
+
+// Edit Custom
+function medicine_taken_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#medicine_name').val(response.medicine_taken.medicine_name);
+        $('#medicine_doses').val(response.medicine_taken.medicine_doses);
+        $('#routes_of_administration').val(response.medicine_taken.routes_of_administration);
+        $('#medicine_type').val(response.medicine_taken.medicine_type);
+        $('#medicine_duration').val(response.medicine_taken.medicine_duration);
+        $('#medicine_reason').val(response.medicine_taken.medicine_reason);
+        $('#medicine_compliance').val(response.medicine_taken.medicine_compliance);
+        $('#medicine_remarks').val(response.medicine_taken.medicine_remarks);
+
+        update_id = response.medicine_taken.id;
+    });
+}
+
+// Edit Custom
+function procedures_undertaken_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#procedure_date').val(response.procedures_undertaken.procedure_date);
+        $('#procedure_name').val(response.procedures_undertaken.procedure_name);
+        $('#procedure_description').val(response.procedures_undertaken.procedure_description);
+        $('#procedure_reason').val(response.procedures_undertaken.procedure_reason);
+        $('#procedure_results').val(response.procedures_undertaken.procedure_results);
+        $('#pre_procedure_preparation').val(response.procedures_undertaken.pre_procedure_preparation);
+        $('#post_procedure_preparation').val(response.procedures_undertaken.post_procedure_preparation);
+        $('#procedure_complications').val(response.procedures_undertaken.procedure_complications);
+        $('#procedure_sedation_used').val(response.procedures_undertaken.procedure_sedation_used);
+        $('#procedure_remarks').val(response.procedures_undertaken.procedure_remarks);
+
+
+        update_id = response.procedures_undertaken.id;
+    });
+}
+
+// Edit Custom
+function patient_allergies_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#allergy_allergen').val(response.patient_allergies.allergy_allergen);
+        $('#allergy_reaction').val(response.patient_allergies.allergy_reaction);
+        $('#allergy_severity').val(response.patient_allergies.allergy_severity);
+        $('#allergy_date_of_onset').val(response.patient_allergies.allergy_date_of_onset);
+        $('#allergy_treatment').val(response.patient_allergies.allergy_treatment);
+        $('#allergy_duration').val(response.patient_allergies.allergy_duration);
+        $('#source_of_information').val(response.patient_allergies.source_of_information);
+        $('#known_cross_reactives').val(response.patient_allergies.known_cross_reactives);
+        $('#current_management_plan').val(response.patient_allergies.current_management_plan);
+        $('#medications_to_avoid').val(response.patient_allergies.medications_to_avoid);
+        $('#severity_of_reaction').val(response.patient_allergies.severity_of_reaction);
+        $('#allergy_anaphylaxis').val(response.patient_allergies.allergy_anaphylaxis);
+        $('#allergy_testing').val(response.patient_allergies.allergy_testing);
+        $('#other_relevant_medical_history').val(response.patient_allergies.other_relevant_medical_history);
+
+
+        update_id = response.patient_allergies.id;
+    });
+}
+
+// Edit Custom
+function progress_consultation_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#progress_date').val(response.progress_consultation.progress_date);
+        $('#progress_title').val(response.progress_consultation.progress_title);
+        $('#progress_notes').val(response.progress_consultation.progress_notes);
+      
+
+        update_id = response.progress_consultation.id;
+    });
+}
+
+// Edit Custom
+function vital_measurement_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#vital_date').val(response.vital_measurement.vital_date);
+        $('#vital_time').val(response.vital_measurement.vital_time);
+        $('#blood_pressure').val(response.vital_measurement.blood_pressure);
+        $('#heart_rate').val(response.vital_measurement.heart_rate);
+        $('#temperature').val(response.vital_measurement.temperature);
+        $('#respiratory_rate').val(response.vital_measurement.respiratory_rate);
+        $('#oxygen_saturation').val(response.vital_measurement.oxygen_saturation);
+        $('#pulse_rate').val(response.vital_measurement.pulse_rate);
+        $('#vital_remarks').val(response.vital_measurement.vital_remarks);
+
+        update_id = response.vital_measurement.id;
+    });
+}
+
+
+// Edit Custom
+function family_medical_history_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#fm_relationship').val(response.family_medical_history.fm_relationship);
+        $('#fm_medical_condition').val(response.family_medical_history.fm_medical_condition);
+        $('#fm_age_at_diagnosis').val(response.family_medical_history.fm_age_at_diagnosis);
+        $('#fm_age_at_death').val(response.family_medical_history.fm_age_at_death);
+        $('#fm_other_relevant_medical_history').val(response.family_medical_history.fm_other_relevant_medical_history);
+        $('#fm_family_history_of_specific_conditions').val(response.family_medical_history.fm_family_history_of_specific_conditions);
+        $('#fm_ethnicity').val(response.family_medical_history.fm_ethnicity);
+        $('#fm_lifestyle_factors').val(response.family_medical_history.fm_lifestyle_factors);
+        $('#fm_other_family_members_affected').val(response.family_medical_history.fm_other_family_members_affected);
+        $('#fm_remarks').val(response.family_medical_history.fm_remarks);
+
+        update_id = response.family_medical_history.id;
+    });
+}
+
+
+
+// Edit Custom
+function social_history_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#sh_record').val(response.social_history.sh_record);
+        $('#sh_category').val(response.social_history.sh_category);
+        $('#sh_details').val(response.social_history.sh_details);
+
+        update_id = response.social_history.id;
+    });
+}
+
+// Edit Custom
+function other_information_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#oi_description').val(response.other_information.oi_description);
+        $('#oi_remarks').val(response.other_information.oi_remarks);
+
+        update_id = response.other_information.id;
+    });
 }
 
 function modalShowFunction() {

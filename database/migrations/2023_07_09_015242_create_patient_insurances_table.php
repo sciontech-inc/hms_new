@@ -20,7 +20,7 @@ class CreatePatientInsurancesTable extends Migration
             $table->string('type');
             $table->string('policy_no');
             $table->string('group_policy_no');
-            $table->string('insurance_notes');
+            $table->string('insurance_notes')->nullable();
             $table->integer('workstation_id')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');

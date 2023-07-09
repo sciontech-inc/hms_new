@@ -13,8 +13,7 @@
             @include('backend.partial.flash-message')
             <div class="col-12">
                 <div class="card-body">
-                    <table id="app_type_table" class="table table-striped" style="width:100%">
-                    </table>
+                    <table id="app_type_table" class="table table-striped" style="width:100%"></table>
                 </div>
             </div>
         </div>

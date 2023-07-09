@@ -87,6 +87,22 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'PatientController@update'                                      )->name('update');
             Route::post         ('/destroy',                        'PatientController@destroy'                                     )->name('delete');
         });
+        
+        Route::group(['prefix' => 'building'], function() {
+            Route::get          ('/get',                            'BuildingController@get'                                        )->name('get');
+            Route::post         ('/save',                           'BuildingController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'BuildingController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'BuildingController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'BuildingController@destroy'                                    )->name('delete');
+        });
+        
+        Route::group(['prefix' => 'floor'], function() {
+            Route::get          ('/get/{id}',                       'FloorController@get'                                           )->name('get');
+            Route::post         ('/save',                           'FloorController@store'                                         )->name('save');
+            Route::get          ('/edit/{id}',                      'FloorController@edit'                                          )->name('edit');
+            Route::post         ('/update/{id}',                    'FloorController@update'                                        )->name('update');
+            Route::post         ('/destroy',                        'FloorController@destroy'                                       )->name('delete');
+        });
 
         Route::group(['prefix' => 'patient_insurance'], function() {
             Route::get          ('/get/{id}',                       'PatientInsuranceController@get'                                )->name('get');

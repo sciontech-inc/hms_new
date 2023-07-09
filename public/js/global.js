@@ -26,8 +26,11 @@ var scion = {
             record_id = null;
             
             if(module_type === "custom") {
+                
                 $('.form-record')[0].reset();
                 scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
+
+                record_id = additional_id;
             }
             else if(module_type === "transaction") {
 
@@ -37,7 +40,7 @@ var scion = {
                 actions = 'save';
                 $('.form-record')[0].reset();
                 if($('.image-previewer').length !== 0) {
-                    $('.image-previewer').attr('src', '/images' + module_url + '/default.png');
+                    $('.image-previewer').attr('src', '/images' + storage_url + '/default.png');
                 }
             }
             if(module_type === "transaction_2") {
@@ -138,7 +141,7 @@ var scion = {
                                         $('#'+k).prop('checked', v === 1?true:false);
                                     }
                                     else if($('#'+k)[0].type === 'file') {
-                                        $('.image-previewer').attr('src', '/images'+module_url+'/'+v+'');
+                                        $('.image-previewer').attr('src', '/images'+storage_url+'/'+v+'');
                                     }
                                     else if($('#'+k)[0].type === 'fieldset') {
                                         var val = v;
@@ -152,6 +155,12 @@ var scion = {
                                     }
                                     else {
                                         $('#'+k).val(v);
+
+                                           // Custom code
+                                           if(k === 'patient_id') {
+                                            $('#barcode').attr('src', 'https://api.qrserver.com/v1/create-qr-code/?data=' + v + '&amp;size=50x50');
+                                        }
+
                                     }
                                 }
                                 else {
@@ -162,13 +171,14 @@ var scion = {
                                                     $('#'+k).prop('checked', v === 1?true:false);
                                                 }
                                                 else if($('#'+k)[0].type === 'file') {
-                                                    $('.image-previewer').attr('src', '/images'+module_url+'/'+v+'');
+                                                    $('.image-previewer').attr('src', '/images'+storage_url+'/'+v+'');
                                                 }
                                                 else if($('#'+k)[0].type === 'select-one') {
                                                     $('#'+k).val(v).change();
                                                 }
                                                 else {
                                                     $('#'+k).val(v);
+
                                                 }
                                             }
                                         });

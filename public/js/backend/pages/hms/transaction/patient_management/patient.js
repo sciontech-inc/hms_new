@@ -484,6 +484,7 @@ function patient_insurance_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "provider", title: "PROVIDER" },
             { data: "type", title: "TYPE" },
             { data: "policy_no", title: "POLICY NO" },
@@ -519,6 +520,7 @@ function family_information_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "family_fullname", title: "FULL NAME" },
             { data: "family_birthdate", title: "BIRTHDATE" },
             { data: "family_relationship", title: "RELATIONSHIP" },
@@ -552,6 +554,7 @@ function medical_cases_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "date_recorded", title: "DATE RECORDED" },
             { data: "chief_complaint", title: "CHIEF COMPLAINT" },
             { data: "diagnosis", title: "DIAGNOSIS" },
@@ -588,6 +591,7 @@ function medicine_taken_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "medicine_name", title: "MEDICINE NAME" },
             { data: "medicine_doses", title: "MEDICINE DOSES" },
             { data: "medicine_type", title: "MEDICINE TYPE" },
@@ -624,6 +628,7 @@ function procedures_undertaken_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "procedure_date", title: "PROCEDURE DATE" },
             { data: "procedure_name", title: "PROCEDURE NAME" },
             { data: "procedure_reason", title: "PROCEDURE REASON" },
@@ -660,6 +665,7 @@ function patient_allergies_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "allergy_allergen", title: "ALLERGEN" },
             { data: "allergy_reaction", title: "REACTION" },
             { data: "allergy_severity", title: "SEVERITY" },
@@ -698,6 +704,7 @@ function progress_consultation_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "progress_date", title: "PROGRESS DATE" },
             { data: "progress_title", title: "PROGRESS TITLE" },
             { data: "progress_notes", title: "PROGRESS NOTES" },
@@ -733,6 +740,7 @@ function vital_measurement_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "vital_date", title: "PROGRESS DATE" },
             { data: "vital_time", title: "VITAL TIME" },
             { data: "vital_remarks", title: "REMARKS" },
@@ -768,6 +776,7 @@ function family_medical_history_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "fm_relationship", title: "RELATIONSHIP" },
             { data: "fm_medical_condition", title: "MEDICAL CONDITION" },
             { data: "fm_age_at_diagnosis", title: "AGE AT DIAGNOSIS" },
@@ -807,6 +816,7 @@ function social_history_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "sh_record", title: "RECORD" },
             { data: "sh_category", title: "CATEGORY" },
             { data: "sh_details", title: "DETAILS" },
@@ -841,6 +851,7 @@ function other_information_func() {
                 html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
+            { data: "id", title: "ID" },
             { data: "oi_description", title: "RECORD" },
             { data: "oi_remarks", title: "CATEGORY" },
  

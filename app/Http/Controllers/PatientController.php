@@ -115,6 +115,8 @@ class PatientController extends Controller
 
         $patient = Patient::create($request->all());
 
+        $this->setup->set_log('Patient Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the patient record ID "'.$patient->patient_id.'"', request()->ip());
+
         $last_record = array("id" => $patient->id, "patient_id" => $patient->patient_id);
 
         return response()->json(compact('validate', 'last_record'));

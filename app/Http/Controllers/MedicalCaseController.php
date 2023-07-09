@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use App\MedicalCase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,13 @@ use Auth;
 
 class MedicalCaseController extends Controller
 {
+    
+    protected $func;
+
+    public function __construct() {
+        $this->setup = new Controller();
+    }
+    
     public function store(Request $request)
     {
 
@@ -25,7 +33,11 @@ class MedicalCaseController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        MedicalCase::create($request->all());
+        $medical_case = MedicalCase::create($request->all());
+
+        $patient = Patient::find($medical_case->patient_id);
+
+        $this->setup->set_log('Medical Case Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the medical case ID "'.$medical_case->id.'" of patient "'.$patient->patient_id.'"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -33,6 +45,10 @@ class MedicalCaseController extends Controller
     public function edit($id)
     {
         $medical_case = MedicalCase::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $patient = Patient::find($medical_case->patient_id);
+        $this->setup->set_log('Medical Case Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the medical case ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return response()->json(compact('medical_case'));
     }
 
@@ -40,6 +56,10 @@ class MedicalCaseController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         MedicalCase::find($id)->update($request->all());
+
+        $patient = Patient::find($request->patient_id);
+        $this->setup->set_log('Medical Case Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the medical case ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -85,6 +105,9 @@ class MedicalCaseController extends Controller
 
         foreach($record as $item) {
             MedicalCase::find($item)->delete();
+
+            $this->setup->set_log('Medical Case Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the medical case ID "'.$item.'" of patient."', request()->ip());
+
         }
 
         return 'Record Deleted';

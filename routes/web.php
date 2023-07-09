@@ -102,6 +102,15 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'FloorController@edit'                                          )->name('edit');
             Route::post         ('/update/{id}',                    'FloorController@update'                                        )->name('update');
             Route::post         ('/destroy',                        'FloorController@destroy'                                       )->name('delete');
+            Route::get          ('/list/{id}',                      'FloorController@get_list'                                      )->name('list');
+        });
+
+        Route::group(['prefix' => 'room'], function() {
+            Route::get          ('/get/{id}',                       'RoomController@get'                                            )->name('get');
+            Route::post         ('/save',                           'RoomController@store'                                          )->name('save');
+            Route::get          ('/edit/{id}',                      'RoomController@edit'                                           )->name('edit');
+            Route::post         ('/update/{id}',                    'RoomController@update'                                         )->name('update');
+            Route::post         ('/destroy',                        'RoomController@destroy'                                        )->name('delete');
         });
 
         Route::group(['prefix' => 'patient_insurance'], function() {

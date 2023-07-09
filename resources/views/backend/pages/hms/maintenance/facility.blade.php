@@ -15,9 +15,9 @@
         'id'=>'facility',
         'data'=>array(
             array('id'=>'building', 'title'=>'BUILDING', 'icon'=>' fas fa-hospital', 'active'=>true, 'disabled'=>false, 'function'=>true),
-            array('id'=>'floor', 'title'=>'FLOOR', 'icon'=>' fas fa-th-large', 'active'=>false, 'disabled'=>true, 'function'=>true),
-            array('id'=>'room', 'title'=>'ROOM', 'icon'=>' fas fa-cube', 'active'=>false, 'disabled'=>true, 'function'=>true),
-            array('id'=>'bed', 'title'=>'BED', 'icon'=>' fas fa-bed', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'floor', 'title'=>'FLOOR', 'icon'=>' fas fa-th-large', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'room', 'title'=>'ROOM', 'icon'=>' fas fa-cube', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'bed', 'title'=>'BED', 'icon'=>' fas fa-bed', 'active'=>false, 'disabled'=>false, 'function'=>true),
         )
     ])
 @endsection
@@ -26,8 +26,8 @@
 <div class="row" style="height:100%;">
     <div class="col-12" style="height:100%;">
         <div class="tab" style="height:100%;">
-            <div class="tab-content">
-                <form class="form-record" method="post" id="buildingForm">
+            <div class="tab-content" style="height:100%;max-height:none !important;">
+                <form class="form-record" method="post" id="buildingForm" style="height:100%;">
                     <div class="row"> 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -59,6 +59,8 @@
                     </div>
                     @include('backend.pages.hms.maintenance.facility_tab.building_tab')
                     @include('backend.pages.hms.maintenance.facility_tab.floor_tab')
+                    @include('backend.pages.hms.maintenance.facility_tab.room_tab')
+                    @include('backend.pages.hms.maintenance.facility_tab.bed_tab')
                 </form>
             </div>
         </div>
@@ -85,4 +87,8 @@
 @section('scripts')
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="/js/backend/pages/hms/maintenance/facility.js"></script>
+@endsection
+
+@section('styles')
+<link href="{{asset('/css/custom/maintenance/facility/facility.css')}}" rel="stylesheet">
 @endsection

@@ -1,0 +1,84 @@
+button.floor-item {
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid #272727 !important;
+    background: #272727;
+    color: #fff;
+}
+
+button.floor-item.active {
+    background: #fff;
+    border: 3px solid #272727 !important;
+    color: #272727;
+    font-weight: bold;
+}
+
+ul.room-list {
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+}
+
+button.room-item {
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    background: blue;
+    color: #fff;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+button.room-item {
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    background: white;
+    color: #272727;
+    border: 0px;
+    border-bottom: 2px solid #cccc;
+    font-weight: bold;
+}
+
+button.room-item.active {
+    background: #6eafdb;
+    color: #fff;
+}
+
+.bed-list {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 6px 0px #ccc;
+}
+
+.bed-number {
+    padding: 10px;
+    font-size: 19px;
+    background: blue;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.bed-data.patient-details ul {
+    list-style: none;
+    padding: 10px 15px;
+    font-size: 12px;
+}
+
+.bed-list.occupied {
+    background: #ff9b9b !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.bed-list {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 6px 0px #ccc;
+    margin-bottom: 20px;
+}

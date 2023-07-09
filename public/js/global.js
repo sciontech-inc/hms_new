@@ -32,8 +32,7 @@ var scion = {
             else if(module_type === "transaction") {
 
                 record_length = $('.form-record').length - 1;
-
-
+                
                 scion.centralized_button(true, false, true, true);
                 actions = 'save';
                 $('.form-record')[record_length].reset();

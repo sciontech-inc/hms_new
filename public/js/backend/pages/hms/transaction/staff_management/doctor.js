@@ -90,11 +90,10 @@ function generateData() {
 
     switch(module_content) {
         
-        case 'patient':
+        case 'doctor':
 
             form_data = {
                 _token: _token,
-                // patient_id: $('#patient_id').val(),
                 firstname: $('#firstname').val(),
                 middlename: $('#middlename').val(),
                 lastname: $('#lastname').val(),
@@ -105,8 +104,8 @@ function generateData() {
                 email: $('#email').val(),
                 birthplace: $('#birthplace').val(),
                 marital_status: $('#marital_status').val(),
-                medical_license_no: $('#body_marks').val(),
-                medical_license_expiry_date: $('#nationality').val(),
+                medical_license_no: $('#medical_license_no').val(),
+                medical_license_expiry_date: $('#medical_license_expiry_date').val(),
                 contact_number_1: $('#contact_number_1').val(),
                 contact_number_2: $('#contact_number_2').val(),
                 street_no: $('#street_no').val(),
@@ -134,7 +133,7 @@ function generateData() {
 
 function generateDeleteItems() {
     switch(module_content) {
-        case 'patient':
+        case 'doctor':
             delete_data = [record_id];
             break;
     }

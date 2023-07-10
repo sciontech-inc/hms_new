@@ -66,7 +66,7 @@
 
 @section('scripts')
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="/js/backend/pages/hms/transaction/patient_management/patient.js"></script>
+<script src="/js/backend/pages/hms/transaction/staff_management/doctor.js"></script>
 <script src="https://f001.backblazeb2.com/file/buonzz-assets/jquery.ph-locations-v1.0.0.js"></script>
 <script>
   

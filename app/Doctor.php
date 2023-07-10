@@ -10,7 +10,7 @@ class Doctor extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'patient_id',
+        'doctor_id',
         'profile_img',
         'qr_code',
         'status',

@@ -46,6 +46,10 @@ var scion = {
                 if($('.image-previewer').length !== 0) {
                     $('.image-previewer').attr('src', '/images' + storage_url + '/default.png');
                 }
+
+                if($('#barcode').length !== 0) {
+                    $('#barcode').attr('src', '/images/default.png');
+                }
             }
             if(module_type === "transaction_2") {
                 $('.form-record')[0].reset();

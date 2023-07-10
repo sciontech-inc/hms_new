@@ -35,7 +35,7 @@
                     'url' => "/actions/doctor/get",
                     'data' => array(
                         array('data' => "DT_RowIndex", 'title' => "#"),
-                        array('data' => "doctor_id", 'title' => "Patient ID"),
+                        array('data' => "doctor_id", 'title' => "Doctor ID"),
                         array('data' => "firstname", 'title' => "First Name"),
                         array('data' => "lastname", 'title' => "Last Name"),
                         array('data' => "email", 'title' => "Email"),
@@ -134,7 +134,7 @@
         <div class="col-6">
             <div class="form-group medical_license_expiry_date">
                 <label>MEDICAL LICENSE EXPIRY DATE</label>
-                <input type="text" class="form-control" name="medical_license_expiry_date" id="medical_license_expiry_date"/>
+                <input type="date" class="form-control" name="medical_license_expiry_date" id="medical_license_expiry_date"/>
             </div>
         </div>
         <hr>

@@ -80,14 +80,6 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/list/{id}',                      'RoleController@get_list'                                       )->name('list');
         });
         
-        Route::group(['prefix' => 'patient'], function() {
-            Route::get          ('/get',                            'PatientController@get'                                         )->name('get');
-            Route::post         ('/save',                           'PatientController@store'                                       )->name('save');
-            Route::get          ('/edit/{id}',                      'PatientController@edit'                                        )->name('edit');
-            Route::post         ('/update/{id}',                    'PatientController@update'                                      )->name('update');
-            Route::post         ('/destroy',                        'PatientController@destroy'                                     )->name('delete');
-        });
-        
         Route::group(['prefix' => 'building'], function() {
             Route::get          ('/get',                            'BuildingController@get'                                        )->name('get');
             Route::post         ('/save',                           'BuildingController@store'                                      )->name('save');
@@ -102,6 +94,16 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'FloorController@edit'                                          )->name('edit');
             Route::post         ('/update/{id}',                    'FloorController@update'                                        )->name('update');
             Route::post         ('/destroy',                        'FloorController@destroy'                                       )->name('delete');
+        });
+
+        //Patient Management
+
+        Route::group(['prefix' => 'patient'], function() {
+            Route::get          ('/get',                            'PatientController@get'                                         )->name('get');
+            Route::post         ('/save',                           'PatientController@store'                                       )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientController@edit'                                        )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientController@update'                                      )->name('update');
+            Route::post         ('/destroy',                        'PatientController@destroy'                                     )->name('delete');
         });
 
         Route::group(['prefix' => 'patient_insurance'], function() {
@@ -191,6 +193,20 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'PatientOtherInformationController@update'                      )->name('update');
             Route::post         ('/destroy',                        'PatientOtherInformationController@destroy'                     )->name('delete');
         });
+
+        //End Patient Management
+
+        //Doctor Management
+
+        Route::group(['prefix' => 'doctor'], function() {
+            Route::get          ('/get',                            'DoctorController@get'                                         )->name('get');
+            Route::post         ('/save',                           'DoctorController@store'                                       )->name('save');
+            Route::get          ('/edit/{id}',                      'DoctorController@edit'                                        )->name('edit');
+            Route::post         ('/update/{id}',                    'DoctorController@update'                                      )->name('update');
+            Route::post         ('/destroy',                        'DoctorController@destroy'                                     )->name('delete');
+        });
+
+        //End Doctor Management
 
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');

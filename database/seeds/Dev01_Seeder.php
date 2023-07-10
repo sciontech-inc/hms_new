@@ -67,6 +67,32 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+
+            'name' => 'SUPPLIES MANAGEMENT',
+            'code' => 'supplies_management',
+            'sort_no' => '5',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'boxes',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'STAFF MANAGEMENT',
+            'code' => 'staff_management',
+            'sort_no' => '6',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'id-card-alt',
+            'created_by' => '1',
+            'updated_by' => '1',
+
         ]
     
     );
@@ -109,6 +135,28 @@ class Dev01_Seeder extends Seeder
             'name' => 'PHARMACY INVENTORY',
             'code' => 'pharmacy_inventory',
             'app_id' => '6',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'SUPPLIES INVENTORY',
+            'code' => 'supplies_inventory',
+            'app_id' => '7',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'DOCTOR',
+            'code' => 'doctor',
+            'app_id' => '8',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',

@@ -92,29 +92,29 @@
             <div class="row" style="height:calc(100% - 180px);padding: 0 18px;">
                 @if(isset($type))
                     @if($type === "full-view")
-                    <div class="col-xl-12" style="height:100%; overflow-y: auto;">
+                    <div class="col-12" style="height:100%; overflow-y: auto;">
                         @yield('content')
                     </div>
                     @else
-                    <div class="col-xl-3" style="height:100%; overflow-y: auto;">
+                    <div class="col-3" style="height:100%; overflow-y: auto;">
                         @yield('left-content')
                     </div>
-                    <div class="col-xl-9" style="height:100%; overflow-y: auto;">
+                    <div class="col-9" style="height:100%; overflow-y: auto;">
                         @yield('content')
                     </div>
                     @endif
                 @else
-                    <div class="col-xl-2 left-content" style="height:100%;">
+                    <div class="col-2 left-content" style="height:100%;">
                         <div class="container-fluid" style="height:100%; overflow-y: auto; overflow-x: hidden;">
                             @yield('left-content')
                         </div>
                     </div>
-                    <main class="col-xl-8 content" style="height:100%;">
+                    <main class="col-8 content" style="height:100%;">
                         <div class="container-fluid" style="height:100%; overflow-y: auto; overflow-x: hidden;">
                             @yield('content')
                         </div>
                     </main>
-                    <div class="col-xl-2 right-content" style="height:100%; overflow-x: hidden;">
+                    <div class="col-2 right-content" style="height:100%; overflow-x: hidden;">
                         <div class="container-fluid" style="height:100%">
                             @yield('right-content')
                         </div>

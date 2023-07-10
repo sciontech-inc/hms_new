@@ -32,6 +32,7 @@ class FloorController extends Controller
 
             if($floor_count === 0) {
                 $validate = $request->validate([
+                    'building_id' => 'required',
                     'floor_no' => 'required',
                     'floor_name' => 'required'
                 ]);
@@ -90,10 +91,10 @@ class FloorController extends Controller
         $data = null;
 
         if($id === "all") {
-            $data = Floor::where('status', 1)->get();
+            $data = Floor::get();
         }
         else {
-            $data = Floor::where('id', $id)->where('status', 1)->get();
+            $data = Floor::where('building_id', $id)->get();
         }
         
         return response()->json(compact('data'));

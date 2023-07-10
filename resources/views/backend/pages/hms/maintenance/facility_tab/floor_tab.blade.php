@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="col-4">
-            <div class="form-group capacity">
+            <div class="form-group">
                 <label>CAPACITY:</label>
                 <input type="number" class="form-control" name="capacity" id="capacity"/>
             </div>

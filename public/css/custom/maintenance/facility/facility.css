@@ -1,11 +1,11 @@
 .room_form, .bed_form {
-    height: calc(100% - 190px);
+    height: calc(100% - calc(100% - 300PX));
     overflow: auto;
     overflow-x: hidden;
 }
 
 .room_table, .bed_table {
-    height: calc(100% - 460px);
+    height: calc(100% - 355px);
     overflow: auto !important;
     overflow-x: hidden !important;
 }

@@ -111,6 +111,16 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'RoomController@edit'                                           )->name('edit');
             Route::post         ('/update/{id}',                    'RoomController@update'                                         )->name('update');
             Route::post         ('/destroy',                        'RoomController@destroy'                                        )->name('delete');
+            Route::get          ('/list/{id}',                      'RoomController@get_list'                                       )->name('list');
+        });
+        
+        Route::group(['prefix' => 'bed'], function() {
+            Route::get          ('/get/{id}',                       'BedController@get'                                             )->name('get');
+            Route::post         ('/save',                           'BedController@store'                                           )->name('save');
+            Route::get          ('/edit/{id}',                      'BedController@edit'                                            )->name('edit');
+            Route::post         ('/update/{id}',                    'BedController@update'                                          )->name('update');
+            Route::post         ('/destroy',                        'BedController@destroy'                                         )->name('delete');
+            Route::get          ('/list/{id}',                      'BedController@get_list'                                        )->name('list');
         });
 
         Route::group(['prefix' => 'patient_insurance'], function() {

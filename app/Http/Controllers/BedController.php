@@ -52,7 +52,7 @@ class BedController extends Controller
             }
             else {
                 $validate = $request->validate([
-                    'bed_no' => 'unique:bed'
+                    'bed_no' => 'unique:beds'
                 ]);
             }
         }
@@ -62,10 +62,10 @@ class BedController extends Controller
     
     public function edit($id)
     {
-        $room = Bed::where('id', $id)->orderBy('id')->firstOrFail();
+        $bed = Bed::where('id', $id)->orderBy('id')->firstOrFail();
 
         $this->setup->set_log('Bed Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
-        return response()->json(compact('room'));
+        return response()->json(compact('bed'));
     }
 
     public function update(Request $request, $id)

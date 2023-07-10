@@ -55,7 +55,6 @@ class ProgressConsultationController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         ProgressConsultation::find($id)->update($request->all());
-
         
         $patient = Patient::find($request->patient_id);
         $this->setup->set_log('Progress Notes & Consultation Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the progress notes & consultation record ID "'.$id.'" of patient "'.$patient->patient_id.'"', request()->ip());

@@ -70,7 +70,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: PATIENT-00001</li>
-                                                <li>PATIENT NUMBER: JUAN DELA CRUZ</li>
+                                                <li>PATIENT NAME: JUAN DELA CRUZ</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
                                             </ul>
                                         </div>
@@ -87,7 +87,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NUMBER: --</li>
+                                                <li>PATIENT NAME: --</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
                                             </ul>
                                         </div>
@@ -104,7 +104,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NUMBER: --</li>
+                                                <li>PATIENT NAME: --</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
                                             </ul>
                                         </div>
@@ -121,7 +121,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: PATIENT-00004</li>
-                                                <li>PATIENT NUMBER: JOSHUA OPINION</li>
+                                                <li>PATIENT NAME: JOSHUA OPINION</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
                                             </ul>
                                         </div>
@@ -138,7 +138,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NUMBER: --</li>
+                                                <li>PATIENT NAME: --</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
                                             </ul>
                                         </div>
@@ -155,7 +155,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NUMBER: --</li>
+                                                <li>PATIENT NAME: --</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
                                             </ul>
                                         </div>
@@ -172,7 +172,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: PATIENT-00002</li>
-                                                <li>PATIENT NUMBER: ARVIN OLIVAS</li>
+                                                <li>PATIENT NAME: ARVIN OLIVAS</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
                                             </ul>
                                         </div>
@@ -189,7 +189,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: PATIENT-00003</li>
-                                                <li>PATIENT NUMBER: JUDE MUEGO</li>
+                                                <li>PATIENT NAME: JUDE MUEGO</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
                                             </ul>
                                         </div>
@@ -206,7 +206,7 @@
                                         <div class="bed-data patient-details">
                                             <ul>
                                                 <li>PATIENT NUMBER: PATIENT-00003</li>
-                                                <li>PATIENT NUMBER: JETRO MACALIPAY</li>
+                                                <li>PATIENT NAME: JETRO MACALIPAY</li>
                                                 <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
                                             </ul>
                                         </div>

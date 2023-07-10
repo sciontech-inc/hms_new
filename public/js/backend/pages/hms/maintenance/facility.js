@@ -161,6 +161,26 @@ function generateData() {
             };
 
             break;
+        case 'bed':
+            form_data = {
+                _token: _token,
+                action: actions,
+                building_id: record_id,
+                floor_id: $('#bed_floor_id').val(),
+                room_id: $('#room_id').val(),
+                department_id: $('#department_id').val(),
+                bed_type: $('#bed_type').val(),
+                bed_no: $('#bed_no').val(),
+                price: $('#price').val(),
+                status: $('#status').val(),
+                bed_features: $('#bed_features').val(),
+                bed_size: $('#bed_size').val(),
+                bed_condition: $('#bed_condition').val(),
+                bed_notes: $('#bed_notes').val(),
+                bed_availability: $('#bed_availability').val()
+            };
+
+            break;
     }
 
     return form_data;
@@ -291,6 +311,17 @@ function bed_func() {
     $('#name').prop('disabled', true);
 
     scion.centralized_button(false, false, true, true);
+    
+    $.get('/actions/floor/list/' + record_id, function(response) {
+        $("#bed_floor_id").html('');
+        $("#bed_floor_id").append('<option></option>');
+        $.each(response.data, function(i,v) {
+            var o = new Option(v.floor_name, v.id);
+            
+            $(o).html(v.floor_name);
+            $("#bed_floor_id").append(o);
+        });
+    });
 
     if ($.fn.DataTable.isDataTable('#' + module_content + '_table')) {
         $('#' + module_content + '_table').DataTable().clear().destroy();
@@ -311,6 +342,18 @@ function bed_func() {
     );
 }
 
+function floorSelect() {
+    $.get('/actions/room/list/' + $('#bed_floor_id').val(), function(response) {
+        $("#room_id").html('');
+        $("#room_id").append('<option></option>');
+        $.each(response.data, function(i,v) {
+            var o = new Option(v.room_name, v.id);
+            
+            $(o).html(v.room_name);
+            $("#room_id").append(o);
+        });
+    });
+}
 
 // Edit Custom
 function floor_edit(url, id) {

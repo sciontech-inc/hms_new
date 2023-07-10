@@ -52,7 +52,7 @@ class BuildingController extends Controller
     {
         $building = Building::where('id', $id)->orderBy('id')->firstOrFail();
 
-        $this->setup->set_log('Buidling Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
+        $this->setup->set_log('Building Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the record ID: "'.$id.'"', request()->ip());
         return response()->json(compact('building'));
     }
 

@@ -52,7 +52,7 @@ class RoomController extends Controller
             }
             else {
                 $validate = $request->validate([
-                    'room_no' => 'unique:floors'
+                    'room_no' => 'unique:room'
                 ]);
             }
         }
@@ -95,10 +95,10 @@ class RoomController extends Controller
         $data = null;
 
         if($id === "all") {
-            $data = Room::where('status', 1)->get();
+            $data = Room::get();
         }
         else {
-            $data = Room::where('id', $id)->where('status', 1)->get();
+            $data = Room::where('id', $id)->get();
         }
         
         return response()->json(compact('data'));

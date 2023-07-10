@@ -5,7 +5,7 @@
         <div class="col-3">
             <div class="form-group floor_id">
                 <label>FLOOR NO. <span class="required">*</span>:</label>
-                <select name="floor_id" id="floor_id" class="form-control">
+                <select name="floor_id" id="bed_floor_id" class="form-control" onchange="floorSelect()">
                     <option value=""></option>
                 </select>
             </div>
@@ -13,16 +13,17 @@
         <div class="col-3">
             <div class="form-group room_id">
                 <label>ROOM NO. <span class="required">*</span>:</label>
-                <select name="floor_id" id="floor_id" class="form-control">
+                <select name="room_id" id="room_id" class="form-control">
                     <option value=""></option>
                 </select>
             </div>
         </div>
         <div class="col-3">
-            <div class="form-group room_id">
+            <div class="form-group department_id">
                 <label>DEPARTMENT <span class="required">*</span>:</label>
-                <select name="floor_id" id="floor_id" class="form-control">
+                <select name="department_id" id="department_id" class="form-control">
                     <option value=""></option>
+                    <option value="1">SAMPLE</option>
                 </select>
             </div>
         </div>
@@ -41,7 +42,19 @@
                 </select>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-4">
+            <div class="form-group bed_no">
+                <label>BED NO. <span class="required">*</span>:</label>
+                <input type="text" class="form-control" id="bed_no" name="bed_no"/>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group price">
+                <label>PRICE <span class="required">*</span>:</label>
+                <input type="number" class="form-control" id="price" name="price"/>
+            </div>
+        </div>
+        <div class="col-4">
             <div class="form-group status">
                 <label>STATUS <span class="required">*</span>:</label>
                 <select name="status" id="status" class="form-control">
@@ -73,9 +86,21 @@
             </div>
         </div>
         <div class="col-6">
-            <div class="form-group bed_size">
+            <div class="form-group bed_condition">
                 <label>BED CONDITION:</label>
-                <textarea name="bed_size" id="bed_size" class="form-control"></textarea>
+                <textarea name="bed_condition" id="bed_condition" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group bed_notes">
+                <label>BED NOTES:</label>
+                <textarea name="bed_notes" id="bed_notes" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group bed_availability">
+                <label>BED AVAILABILITY:</label>
+                <textarea name="bed_availability" id="bed_availability" class="form-control"></textarea>
             </div>
         </div>
     </div>

@@ -24,6 +24,13 @@
         </div>
 
         <ul class="sidebar-nav" style="overflow-x: hidden;">
+            <li class="sidebar-item">
+                <a href="/" data-toggle="" class="sidebar-link collapsed">
+                    <span class="item">
+                        <i class="align-middle mr-2 fas fa-fw fa-chart-pie"></i> <span class="align-middle">DASHBOARD</span>
+                    </span>
+                </a>
+            </li>
             @foreach ($apps as $app)
                 @if(count($app->apps) !== 0)
                     <li class="sidebar-header">{{$app->name}}</li>

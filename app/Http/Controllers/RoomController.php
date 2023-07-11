@@ -98,9 +98,14 @@ class RoomController extends Controller
             $data = Room::get();
         }
         else {
-            $data = Room::where('id', $id)->get();
+            $data = Room::where('floor_id', $id)->get();
         }
         
+        return response()->json(compact('data'));
+    }
+    
+    public function get_info($id) {
+        $data = Room::where('id', $id)->firstOrFail();
         return response()->json(compact('data'));
     }
 }

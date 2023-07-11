@@ -98,9 +98,14 @@ class BedController extends Controller
             $data = Bed::get();
         }
         else {
-            $data = Bed::where('id', $id)->get();
+            $data = Bed::where('room_id', $id)->get();
         }
         
+        return response()->json(compact('data'));
+    }
+
+    public function get_info($id) {
+        $data = Bed::where('id', $id)->firstOrFail();
         return response()->json(compact('data'));
     }
 }

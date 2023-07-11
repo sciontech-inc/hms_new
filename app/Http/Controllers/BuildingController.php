@@ -83,12 +83,17 @@ class BuildingController extends Controller
         $data = null;
 
         if($id === "all") {
-            $data = Building::where('status', 1)->get();
+            $data = Building::get();
         }
         else {
-            $data = Building::where('id', $id)->where('status', 1)->get();
+            $data = Building::where('id', $id)->get();
         }
         
+        return response()->json(compact('data'));
+    }
+
+    public function get_info($id) {
+        $data = Building::where('id', $id)->firstOrFail();
         return response()->json(compact('data'));
     }
 }

@@ -91,12 +91,17 @@ class FloorController extends Controller
         $data = null;
 
         if($id === "all") {
-            $data = Floor::get();
+            $data = Floor::orderBy('floor_no','asc')->get();
         }
         else {
-            $data = Floor::where('building_id', $id)->get();
+            $data = Floor::where('building_id', $id)->orderBy('floor_no','asc')->get();
         }
         
+        return response()->json(compact('data'));
+    }
+
+    public function get_info($id) {
+        $data = Floor::where('id', $id)->firstOrFail();
         return response()->json(compact('data'));
     }
 }

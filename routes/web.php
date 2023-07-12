@@ -238,6 +238,29 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'DoctorController@destroy'                                     )->name('delete');
         });
 
+        Route::group(['prefix' => 'doctor_qualification'], function() {
+            Route::get          ('/get/{id}',                       'DoctorQualificationController@get'                            )->name('get');
+            Route::post         ('/save',                           'DoctorQualificationController@store'                          )->name('save');
+            Route::get          ('/edit/{id}',                      'DoctorQualificationController@edit'                           )->name('edit');
+            Route::post         ('/update/{id}',                    'DoctorQualificationController@update'                         )->name('update');
+            Route::post         ('/destroy',                        'DoctorQualificationController@destroy'                        )->name('delete');
+        });
+
+        Route::group(['prefix' => 'doctor_work'], function() {
+            Route::get          ('/get/{id}',                       'DoctorWorkController@get'                                     )->name('get');
+            Route::post         ('/save',                           'DoctorWorkController@store'                                   )->name('save');
+            Route::get          ('/edit/{id}',                      'DoctorWorkController@edit'                                    )->name('edit');
+            Route::post         ('/update/{id}',                    'DoctorWorkController@update'                                  )->name('update');
+            Route::post         ('/destroy',                        'DoctorWorkController@destroy'                                 )->name('delete');
+        });
+
+        Route::group(['prefix' => 'doctor_expertise'], function() {
+            Route::get          ('/get/{id}',                       'DoctorExpertiseController@get'                                )->name('get');
+            Route::post         ('/save',                           'DoctorExpertiseController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'DoctorExpertiseController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'DoctorExpertiseController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'DoctorExpertiseController@destroy'                            )->name('delete');
+        });
         //End Doctor Management
 
 

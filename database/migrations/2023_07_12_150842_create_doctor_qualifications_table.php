@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQualificationSpecializationsTable extends Migration
+class CreateDoctorQualificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateQualificationSpecializationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('qualification_specializations', function (Blueprint $table) {
+        Schema::create('doctor_qualifications', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('doctor_id');
             $table->string('degree');
-            $table->string('description');
-            $table->string('school/institute');
+            $table->string('description')->nullable();
+            $table->string('institute');
             $table->string('year');
-            $table->integer('workstation_id')->nullable();
+            $table->string('notes')->nullable();
+            $table->integer('workstation_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->integer('deleted_by')->nullable();
@@ -36,6 +37,6 @@ class CreateQualificationSpecializationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qualification_specializations');
+        Schema::dropIfExists('doctor_qualifications');
     }
 }

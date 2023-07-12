@@ -36,7 +36,9 @@
         'id'=>'doctors',
         'data'=>array(
             array('id'=>'general', 'title'=>'GENERAL', 'icon'=>' fas fa-file-alt', 'active'=>true, 'disabled'=>false, 'function'=>true),
-         
+            array('id'=>'doctor_qualification', 'title'=>'QUALIFICATION & EDUCATION', 'icon'=>' fas fa-university', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'doctor_work', 'title'=>'WORK EXPERIENCE', 'icon'=>' fas fa-business-time', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'doctor_expertise', 'title'=>'EXPERTISE & SPECIALIZATION', 'icon'=>' fas fa-award', 'active'=>false, 'disabled'=>true, 'function'=>true),
         )
     ])
 @endsection
@@ -49,6 +51,10 @@
             <div class="tab-content">
                 <form class="form-record" method="post" id="doctorsForm">
                     @include('backend.pages.hms.transaction.staff_management.doctor_tab.general_tab')
+                    @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_qualification_tab')
+                    @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_work_tab')
+                    @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_expertise_tab')
+
                 </form>
             </div>
         </div>

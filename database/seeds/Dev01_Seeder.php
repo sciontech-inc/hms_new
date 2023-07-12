@@ -124,8 +124,8 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'PATIENT REGISTER',
-            'code' => 'patient_register',
+            'name' => 'RECEPTION',
+            'code' => 'reception',
             'app_id' => '4',
             'sort_no' => '2',
             'status' => '1',

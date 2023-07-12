@@ -227,6 +227,17 @@ Route::group(['middleware' => ['auth']], function() {
 
         //End Doctor Management
 
+
+        Route::group(['prefix' => 'department'], function() {
+            Route::get          ('/get',                            'DepartmentController@get'                                     )->name('get');
+            Route::post         ('/save',                           'DepartmentController@store'                                   )->name('save');
+            Route::get          ('/edit/{id}',                      'DepartmentController@edit'                                    )->name('edit');
+            Route::post         ('/update/{id}',                    'DepartmentController@update'                                  )->name('update');
+            Route::post         ('/destroy',                        'DepartmentController@destroy'                                 )->name('delete');
+        });
+
+
+
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');
         });

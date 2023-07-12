@@ -18,6 +18,7 @@ class Dev01_Seeder extends Seeder
 
         $app_data = array([
 
+            //id = 4
             'name' => 'PATIENT MANAGEMENT',
             'code' => 'patient_management',
             'sort_no' => '1',
@@ -30,7 +31,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-
+            //id = 5
             'name' => 'NURSE STATION',
             'code' => 'nurse_station',
             'sort_no' => '2',
@@ -43,7 +44,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-
+            //id = 6
             'name' => 'FACILITY',
             'code' => 'facility',
             'sort_no' => '3',
@@ -56,7 +57,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-
+            //id = 7
             'name' => 'PHARMACY MANAGEMENT',
             'code' => 'pharmacy_management',
             'sort_no' => '4',
@@ -69,7 +70,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-
+            //id = 8
             'name' => 'SUPPLIES MANAGEMENT',
             'code' => 'supplies_management',
             'sort_no' => '5',
@@ -82,7 +83,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-
+            //id = 9
             'name' => 'STAFF MANAGEMENT',
             'code' => 'staff_management',
             'sort_no' => '6',
@@ -90,6 +91,19 @@ class Dev01_Seeder extends Seeder
             'status' => '1',
             'module' => '1',
             'icon' => 'id-card-alt',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+            //id = 10
+            'name' => 'STAFF MANAGEMENT',
+            'code' => 'staff_management_maintenance',
+            'sort_no' => '2',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'users-cog',
             'created_by' => '1',
             'updated_by' => '1',
 
@@ -134,7 +148,7 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'PHARMACY INVENTORY',
             'code' => 'pharmacy_inventory',
-            'app_id' => '6',
+            'app_id' => '7',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',
@@ -145,7 +159,7 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'SUPPLIES INVENTORY',
             'code' => 'supplies_inventory',
-            'app_id' => '7',
+            'app_id' => '8',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',
@@ -156,7 +170,18 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'DOCTOR',
             'code' => 'doctor',
-            'app_id' => '8',
+            'app_id' => '9',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'DEPARTMENT',
+            'code' => 'department',
+            'app_id' => '10',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',

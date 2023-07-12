@@ -22,10 +22,8 @@ function success() {
         case 'save':
             switch(module_content){
                 case 'building':
-                    
                     record_id = record.id;
                     $('#id').val(record.id);
-                    console.log(record);
 
                     actions = 'update';
 
@@ -37,12 +35,17 @@ function success() {
                     
                 case 'floor':
                     floor_reset();
-
                     $('#' + module_content + '_table').DataTable().draw();
                     
                     break;
                 case 'room':
                     room_reset();
+                    $('#' + module_content + '_table').DataTable().draw();
+
+                    break;
+
+                case 'bed':
+                    bed_reset();
                     $('#' + module_content + '_table').DataTable().draw();
 
                     break;
@@ -65,6 +68,16 @@ function success() {
                     update_id = record_id;
 
                     room_reset();
+
+                    $('#' + module_content + '_table').DataTable().draw();
+                    
+                    break;
+
+                case 'bed':
+                    actions = 'save';
+                    update_id = record_id;
+
+                    bed_reset();
 
                     $('#' + module_content + '_table').DataTable().draw();
                     
@@ -96,6 +109,13 @@ function delete_success() {
             break;
             
         case 'room':
+            $('#' + module_content + '_table').DataTable().draw();
+            actions = 'save';
+            scion.centralized_button(false, false, true, true);
+
+            break;
+            
+        case 'bed':
             $('#' + module_content + '_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(false, false, true, true);
@@ -310,6 +330,8 @@ function bed_func() {
     actions = 'save';
     $('#name').prop('disabled', true);
 
+    bed_reset();
+
     scion.centralized_button(false, false, true, true);
     
     $.get('/actions/floor/list/' + record_id, function(response) {
@@ -334,7 +356,7 @@ function bed_func() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a href="#" class="align-middle edit" onclick="room_edit('+"'"+module_url+"/edit/', "+ row.id + ' )"><i class="fas fa-pen"></i></a>';
+                html += '<a href="#" class="align-middle edit" onclick="bed_edit('+"'"+module_url+"/edit/', "+ row.id + ' )"><i class="fas fa-pen"></i></a>';
                 return html;
             }},
             { data: "bed_no", title: "BED NO." }
@@ -342,7 +364,7 @@ function bed_func() {
     );
 }
 
-function floorSelect() {
+function floorSelect(_func) {
     $.get('/actions/room/list/' + $('#bed_floor_id').val(), function(response) {
         $("#room_id").html('');
         $("#room_id").append('<option></option>');
@@ -351,6 +373,10 @@ function floorSelect() {
             
             $(o).html(v.room_name);
             $("#room_id").append(o);
+
+            if(_func !== null){
+                _func();
+            }
         });
     });
 }
@@ -389,15 +415,39 @@ function room_edit(url, id) {
     });
 }
 
+function bed_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+
+        $('#bed_floor_id').val(response.bed.floor_id);
+        floorSelect(function() {
+            $('#room_id').val(response.bed.room_id);
+            $('#department_id').val(response.bed.department_id);
+            $('#bed_type').val(response.bed.bed_type);
+            $('#bed_no').val(response.bed.bed_no);
+            $('#price').val(response.bed.price);
+            $('#status').val(response.bed.status);
+            $('#bed_features').val(response.bed.bed_features);
+            $('#bed_size').val(response.bed.bed_size);
+            $('#bed_condition').val(response.bed.bed_condition);
+            $('#bed_notes').val(response.bed.bed_notes);
+        });
+
+        update_id = response.bed.id;
+    });
+}
+
 // Reset Custom
 function floor_reset() {
     $('#floor_no').val('');
     $('#floor_name').val('');
     $('#capacity').val('');
-
-    room_reset();
 }
 
 function room_reset() {
     $('.room_form input, .room_form select, .room_form textarea').val('')
+}
+
+function bed_reset() {
+    $('.bed_form input, .bed_form select, .bed_form textarea').val('')
 }

@@ -14,6 +14,10 @@ use App\Events\FormSubmitted;
 */
 Route::group(['middleware' => ['auth']], function() {
 
+    Route::get('/', function () {
+        return view('backend.pages.dashboard');
+    });
+
     Route::get('/hms', function () {
         return view('backend.pages.dashboard');
     });
@@ -86,6 +90,8 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'BuildingController@edit'                                       )->name('edit');
             Route::post         ('/update/{id}',                    'BuildingController@update'                                     )->name('update');
             Route::post         ('/destroy',                        'BuildingController@destroy'                                    )->name('delete');
+            Route::get          ('/list/{id}',                      'BuildingController@get_list'                                   )->name('list');
+            Route::get          ('/info/{id}',                      'BuildingController@get_info'                                   )->name('info');
         });
         
         Route::group(['prefix' => 'floor'], function() {
@@ -95,6 +101,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'FloorController@update'                                        )->name('update');
             Route::post         ('/destroy',                        'FloorController@destroy'                                       )->name('delete');
             Route::get          ('/list/{id}',                      'FloorController@get_list'                                      )->name('list');
+            Route::get          ('/info/{id}',                      'FloorController@get_info'                                      )->name('info');
         });
 
         Route::group(['prefix' => 'room'], function() {
@@ -104,6 +111,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'RoomController@update'                                         )->name('update');
             Route::post         ('/destroy',                        'RoomController@destroy'                                        )->name('delete');
             Route::get          ('/list/{id}',                      'RoomController@get_list'                                       )->name('list');
+            Route::get          ('/info/{id}',                      'RoomController@get_info'                                       )->name('info');
         });
         
         Route::group(['prefix' => 'bed'], function() {
@@ -113,6 +121,11 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'BedController@update'                                          )->name('update');
             Route::post         ('/destroy',                        'BedController@destroy'                                         )->name('delete');
             Route::get          ('/list/{id}',                      'BedController@get_list'                                        )->name('list');
+            Route::get          ('/info/{id}',                      'BedController@get_info'                                        )->name('info');
+        });
+        
+        Route::group(['prefix' => 'patient_register'], function() {
+            Route::post         ('/save',                           'PatientRegisterController@store'                               )->name('save');
         });
 
         //Patient Management

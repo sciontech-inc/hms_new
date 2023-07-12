@@ -5,7 +5,7 @@
         <div class="col-3">
             <div class="form-group floor_id">
                 <label>FLOOR NO. <span class="required">*</span>:</label>
-                <select name="floor_id" id="bed_floor_id" class="form-control" onchange="floorSelect()">
+                <select name="floor_id" id="bed_floor_id" class="form-control" onchange="floorSelect(null)">
                     <option value=""></option>
                 </select>
             </div>

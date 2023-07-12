@@ -11,212 +11,65 @@
 
 @section('content')
 <div class="row" style="height: 100%;">
-    <div class="col-md-12" style="height: 100%;">
-        <div class="floor-list" style="height: 100%;">
-            <h3>FLOOR LIST</h3>
-            <div class="row">
-                <div class="col-2">
-                    <button class="floor-item active">1ST FLOOR</button>
-                </div>
-                <div class="col-2">
-                    <button class="floor-item">2ND FLOOR</button>
-                </div>
-                <div class="col-2">
-                    <button class="floor-item">3RD FLOOR</button>
-                </div>
-                <div class="col-2">
-                    <button class="floor-item">4TH FLOOR</button>
-                </div>
-                <div class="col-2">
-                    <button class="floor-item">5TH FLOOR</button>
-                </div>
-                <div class="col-2">
-                    <button class="floor-item">6TH FLOOR</button>
-                </div>
+    <div class="col-md-9" style="height: 100%;">
+        <div style="height: 100%;">
+            <h5>FLOOR LIST</h5>
+            <div class="row floor-list">
             </div>
             <br>
             <div class="row" style="height: calc(100% - 123px);">
                 <div class="col-3" style="height: 100%;">
-                    <h3>ROOM LIST</h3>
-                    <ul class="room-list">
-                        <li>
-                            <button class="room-item active">ROOM 101</button>
-                        </li>
-                        <li>
-                            <button class="room-item">ROOM 102</button>
-                        </li>
-                        <li>
-                            <button class="room-item">ROOM 103</button>
-                        </li>
-                        <li>
-                            <button class="room-item">ROOM 104</button>
-                        </li>
-                        <li>
-                            <button class="room-item">ROOM 105</button>
-                        </li>
-                        <li>
-                            <button class="room-item">ROOM 106</button>
-                        </li>
-                    </ul>
+                    <h5>ROOM LIST</h5>
+                    <ul class="room-list"></ul>
                 </div>
                 <div class="col-9" style="overflow: auto; overflow-x:hidden !important; height: 100%;">
-                    <h3>BED LIST</h3>
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="bed-list occupied">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 1</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: PATIENT-00001</li>
-                                                <li>PATIENT NAME: JUAN DELA CRUZ</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4">
-                            <div class="bed-list vacant">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 2</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NAME: --</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="bed-list vacant">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 3</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NAME: --</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4">
-                            <div class="bed-list occupied">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 4</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: PATIENT-00004</li>
-                                                <li>PATIENT NAME: JOSHUA OPINION</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4">
-                            <div class="bed-list vacant">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 5</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NAME: --</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4">
-                            <div class="bed-list vacant">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 6</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: --</li>
-                                                <li>PATIENT NAME: --</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">VACANT</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4">
-                            <div class="bed-list occupied">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 7</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: PATIENT-00002</li>
-                                                <li>PATIENT NAME: ARVIN OLIVAS</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4">
-                            <div class="bed-list occupied">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 8</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: PATIENT-00003</li>
-                                                <li>PATIENT NAME: JUDE MUEGO</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="bed-list occupied">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="bed-data bed-number">BED NUMBER: 9</div>
-                                        <div class="bed-data patient-details">
-                                            <ul>
-                                                <li>PATIENT NUMBER: PATIENT-00003</li>
-                                                <li>PATIENT NAME: JETRO MACALIPAY</li>
-                                                <li>ROOM STATUS: <span class="room-status occupied">OCCUPIED</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h5>BED LIST</h5>
+                    <div class="row bed-list"></div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-md-3" style="height: 100%;">
+        <form class="form-record" method="post" id="addmissionForm">
+            <div id="admission_form" class="row">
+                <div class="col-12">
+                    <h5>ADMISSION FORM</h5>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        @include('backend.partial.component.lookup', [
+                            'label' => "PATIENT ID",
+                            'placeholder' => '<NEW>',
+                            'id' => "patient_id",
+                            'title' => "PATIENT ID",
+                            'url' => "/actions/patient/get",
+                            'data' => array(
+                                array('data' => "DT_RowIndex", 'title' => "#"),
+                                array('data' => "patient_id", 'title' => "Patient ID"),
+                                array('data' => "firstname", 'title' => "First Name"),
+                                array('data' => "lastname", 'title' => "Last Name"),
+                                array('data' => "email", 'title' => "Email"),
+                            ),
+                            'disable' => true,
+                            'lookup_module' => 'patient',
+                            'modal_type'=> 'all',
+                            'lookup_type' => 'main'
+                        ])
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label>BED NO.:</label>
+                    <div class="admission admission-bed-no">--</div>
+                    <label>PRICE.:</label>
+                    <div class="admission admission-price">--</div>
+                </div>
+                <div class="col-12">
+                    <div class="admission-request-button text-right"></div>
+                </div>
+            </div>
+        </form>
+
+        <div class="help-information" style="max-height: 100%;">
         </div>
     </div>
 </div>

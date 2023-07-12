@@ -23,7 +23,7 @@ class CreateBedsTable extends Migration
             $table->integer('department_id');
             $table->string('bed_type');
             $table->string('status');
-            $table->integer('patient_id')->nullable();
+            $table->string('patient_id')->nullable();
             $table->text('bed_features')->nullable();
             $table->text('bed_size')->nullable();
             $table->text('bed_condition')->nullable();

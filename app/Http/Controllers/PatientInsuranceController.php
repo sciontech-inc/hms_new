@@ -101,9 +101,6 @@ class PatientInsuranceController extends Controller
             $this->setup->set_log('Patient Insurance Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the insurance record ID "'.$item.'" of patient."', request()->ip());
         }
 
-     
-        
-
         return 'Record Deleted';
     }
 }

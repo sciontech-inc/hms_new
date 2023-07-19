@@ -263,6 +263,82 @@ Route::group(['middleware' => ['auth']], function() {
         });
         //End Doctor Management
 
+        //Employee 201 File
+
+        Route::group(['prefix' => 'employee'], function() {
+            Route::get          ('/get',                            'EmployeeController@get'                                       )->name('get');
+            Route::post         ('/save',                           'EmployeeController@store'                                     )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeController@edit'                                      )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeController@update'                                    )->name('update');
+            Route::post         ('/destroy',                        'EmployeeController@destroy'                                   )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_education'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeEducationController@get'                              )->name('get');
+            Route::post         ('/save',                           'EmployeeEducationController@store'                            )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeEducationController@edit'                             )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeEducationController@update'                           )->name('update');
+            Route::post         ('/destroy',                        'EmployeeEducationController@destroy'                          )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_work'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeWorkController@get'                                   )->name('get');
+            Route::post         ('/save',                           'EmployeeWorkController@store'                                 )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeWorkController@edit'                                  )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeWorkController@update'                                )->name('update');
+            Route::post         ('/destroy',                        'EmployeeWorkController@destroy'                               )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_performance'], function() {
+            Route::get          ('/get/{id}',                       'EmployeePerformanceController@get'                             )->name('get');
+            Route::post         ('/save',                           'EmployeePerformanceController@store'                           )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeePerformanceController@edit'                            )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeePerformanceController@update'                          )->name('update');
+            Route::post         ('/destroy',                        'EmployeePerformanceController@destroy'                         )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_movement'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeMovementController@get'                                )->name('get');
+            Route::post         ('/save',                           'EmployeeMovementController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeMovementController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeMovementController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'EmployeeMovementController@destroy'                            )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_health'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeHealthController@get'                                  )->name('get');
+            Route::post         ('/save',                           'EmployeeHealthController@store'                                )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeHealthController@edit'                                 )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeHealthController@update'                               )->name('update');
+            Route::post         ('/destroy',                        'EmployeeHealthController@destroy'                              )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_training'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeTrainingController@get'                                )->name('get');
+            Route::post         ('/save',                           'EmployeeTrainingController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeTrainingController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeTrainingController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'EmployeeTrainingController@destroy'                            )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_certification'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeCertificationController@get'                           )->name('get');
+            Route::post         ('/save',                           'EmployeeCertificationController@store'                         )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeCertificationController@edit'                          )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeCertificationController@update'                        )->name('update');
+            Route::post         ('/destroy',                        'EmployeeCertificationController@destroy'                       )->name('delete');
+        });
+
+        Route::group(['prefix' => 'employee_dependent'], function() {
+            Route::get          ('/get/{id}',                       'EmployeeDependentController@get'                               )->name('get');
+            Route::post         ('/save',                           'EmployeeDependentController@store'                             )->name('save');
+            Route::get          ('/edit/{id}',                      'EmployeeDependentController@edit'                              )->name('edit');
+            Route::post         ('/update/{id}',                    'EmployeeDependentController@update'                            )->name('update');
+            Route::post         ('/destroy',                        'EmployeeDependentController@destroy'                           )->name('delete');
+        });
+
+        //End 201 File
+
 
         Route::group(['prefix' => 'department'], function() {
             Route::get          ('/get',                            'DepartmentController@get'                                     )->name('get');

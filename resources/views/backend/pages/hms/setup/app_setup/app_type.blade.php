@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group col-12 code">
                         <label for="">CODE:</label>
-                        <input type="text" class="form-control" id="code" name="code" required/>
+                        <input type="text" class="form-control lowercase" id="code" name="code" required/>
                     </div>
                     <div class="form-group col-12 sort_no">
                         <label for="">SORT NO.:</label>

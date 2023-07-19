@@ -15,6 +15,19 @@ class Dev01_Seeder extends Seeder
      */
     public function run()
     {
+        $app_type = array([
+
+            //id = 4
+            'name' => 'HRIS',
+            'code' => 'hris',
+            'status' => '1',
+            'sort_no' => '0',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+    
+    );
 
         $app_data = array([
 
@@ -107,9 +120,37 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+            //id = 11
+            'name' => 'SUPPLIES INVENTORY',
+            'code' => 'supplies_inventory_maintenance',
+            'sort_no' => '3',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'dolly-flatbed',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ]
+        ,
+        [
+            //id = 12
+            'name' => '201 File',
+            'code' => '201_file',
+            'sort_no' => '0',
+            'app_type_id' => '4',
+            'status' => '1',
+            'module' => '0',
+            'icon' => 'folder-open',
+            'created_by' => '1',
+            'updated_by' => '1',
+
         ]
     
     );
+
         
         $app_module_data = array([
 
@@ -124,8 +165,8 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'RECEPTION',
-            'code' => 'reception',
+            'name' => 'PATIENT ADMISSION',
+            'code' => 'patient_admission',
             'app_id' => '4',
             'sort_no' => '2',
             'status' => '1',
@@ -188,6 +229,17 @@ class Dev01_Seeder extends Seeder
             'updated_by' => '1',
 
         ],
+        [
+
+            'name' => 'SUPPLIER',
+            'code' => 'supplier',
+            'app_id' => '11',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
        
     );
       
@@ -200,6 +252,11 @@ class Dev01_Seeder extends Seeder
         foreach($app_module_data as $app_module) {
             
             AppModule::firstOrCreate($app_module);
+        }
+
+        foreach($app_type_data as $app_type) {
+            
+            AppType::firstOrCreate($app_type);
         }
     }
 }

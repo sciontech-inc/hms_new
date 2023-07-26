@@ -341,11 +341,19 @@ Route::group(['middleware' => ['auth']], function() {
 
 
         Route::group(['prefix' => 'department'], function() {
-            Route::get          ('/get',                            'DepartmentController@get'                                     )->name('get');
-            Route::post         ('/save',                           'DepartmentController@store'                                   )->name('save');
-            Route::get          ('/edit/{id}',                      'DepartmentController@edit'                                    )->name('edit');
-            Route::post         ('/update/{id}',                    'DepartmentController@update'                                  )->name('update');
-            Route::post         ('/destroy',                        'DepartmentController@destroy'                                 )->name('delete');
+            Route::get          ('/get',                            'DepartmentController@get'                                      )->name('get');
+            Route::post         ('/save',                           'DepartmentController@store'                                    )->name('save');
+            Route::get          ('/edit/{id}',                      'DepartmentController@edit'                                     )->name('edit');
+            Route::post         ('/update/{id}',                    'DepartmentController@update'                                   )->name('update');
+            Route::post         ('/destroy',                        'DepartmentController@destroy'                                  )->name('delete');
+        });
+
+        Route::group(['prefix' => 'manufacturer'], function() {
+            Route::get          ('/get',                            'ManufacturerController@get'                                    )->name('get');
+            Route::post         ('/save',                           'ManufacturerController@store'                                  )->name('save');
+            Route::get          ('/edit/{id}',                      'ManufacturerController@edit'                                   )->name('edit');
+            Route::post         ('/update/{id}',                    'ManufacturerController@update'                                 )->name('update');
+            Route::post         ('/destroy',                        'ManufacturerController@destroy'                                )->name('delete');
         });
 
 

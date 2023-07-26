@@ -3,7 +3,7 @@
 @section('title', 'DEPARTMENT')
 
 @section('breadcrumbs')
-    <span>MAINTENANCE</span> / <span class="highlight">RADIOLOGY RESULT</span>
+    <span>MAINTENANCE</span> / <span class="highlight">DEPARTMENTS</span>
 @endsection
 
 @section('content')

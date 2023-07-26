@@ -15,6 +15,7 @@
     <link href="{{asset('/plugins/toastr/toastr.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/custom.css')}}" rel="stylesheet">
     <link href="{{asset('/css/custom_mobile.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/bootstrap-tagsinput.css')}}" rel="stylesheet">
     {{-- <script src="{{{ URL::asset('backend/js/settings.js') }}}"></script> --}}
     <script src="{{asset('/plugins/datatable/jquery.dataTables.min.js')}}" ></script>
     <script src="{{asset('/plugins/datatable/dataTables.button.min.js')}}" ></script>
@@ -22,6 +23,7 @@
     <script src="{{asset('/plugins/datatable/pdfmake.min.js')}}" ></script>
     <script src="{{asset('/plugins/datatable/vfs_fonts.js')}}" ></script>
     <script src="https://furcan.github.io/IconPicker/dist/iconpicker-1.5.0.js"></script>
+    <script src="{{asset('/plugins/bootstrap-tagsinput.min.js')}}" ></script>
     @yield('scripts')
     @yield('styles')
     @yield('styles-2')

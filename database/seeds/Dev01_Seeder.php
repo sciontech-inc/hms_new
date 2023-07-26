@@ -240,6 +240,17 @@ class Dev01_Seeder extends Seeder
             'updated_by' => '1',
 
         ],
+        [
+
+            'name' => 'MANUFACTURER',
+            'code' => 'manufacturer',
+            'app_id' => '11',
+            'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ]
        
     );
       

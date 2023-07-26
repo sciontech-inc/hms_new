@@ -133,8 +133,7 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
-        ]
-        ,
+        ],
         [
             //id = 12
             'name' => '201 File',
@@ -144,6 +143,19 @@ class Dev01_Seeder extends Seeder
             'status' => '1',
             'module' => '0',
             'icon' => 'folder-open',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+            //id = 13
+            'name' => 'PATIENT MANAGEMENT',
+            'code' => 'patient_management_maintenance',
+            'sort_no' => '0',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'user-plus',
             'created_by' => '1',
             'updated_by' => '1',
 
@@ -246,6 +258,28 @@ class Dev01_Seeder extends Seeder
             'code' => 'manufacturer',
             'app_id' => '11',
             'sort_no' => '1',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'SERVICE TYPE',
+            'code' => 'service_type',
+            'app_id' => '13',
+            'sort_no' => '2',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'MANUFACTURER',
+            'code' => 'manufacturer',
+            'app_id' => '13',
+            'sort_no' => '0',
             'status' => '1',
             'created_by' => '1',
             'updated_by' => '1',

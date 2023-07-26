@@ -356,8 +356,30 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'ManufacturerController@destroy'                                )->name('delete');
         });
 
+        Route::group(['prefix' => 'supplier'], function() {
+            Route::get          ('/get',                            'SupplierController@get'                                        )->name('get');
+            Route::post         ('/save',                           'SupplierController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'SupplierController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'SupplierController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'SupplierController@destroy'                                    )->name('delete');
+        });
 
+        Route::group(['prefix' => 'service_type'], function() {
+            Route::get          ('/get',                            'ServiceTypeController@get'                                     )->name('get');
+            Route::post         ('/save',                           'ServiceTypeController@store'                                   )->name('save');
+            Route::get          ('/edit/{id}',                      'ServiceTypeController@edit'                                    )->name('edit');
+            Route::post         ('/update/{id}',                    'ServiceTypeController@update'                                  )->name('update');
+            Route::post         ('/destroy',                        'ServiceTypeController@destroy'                                 )->name('delete');
+        });
 
+        Route::group(['prefix' => 'allergies'], function() {
+            Route::get          ('/get',                            'AllergiesController@get'                                       )->name('get');
+            Route::post         ('/save',                           'AllergiesController@store'                                     )->name('save');
+            Route::get          ('/edit/{id}',                      'AllergiesController@edit'                                      )->name('edit');
+            Route::post         ('/update/{id}',                    'AllergiesController@update'                                    )->name('update');
+            Route::post         ('/destroy',                        'AllergiesController@destroy'                                   )->name('delete');
+        });
+        
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');
         });

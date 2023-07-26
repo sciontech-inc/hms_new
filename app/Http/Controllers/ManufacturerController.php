@@ -46,7 +46,9 @@ class ManufacturerController extends Controller
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;
 
-        Manufacturer::create($request->all());
+        $manufacturer = Manufacturer::create($request->all());
+
+        $this->setup->set_log('Manufacturer Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the manufacturer record with the ID "'.$manufacturer->id. '"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -54,6 +56,9 @@ class ManufacturerController extends Controller
     public function edit($id)
     {
         $manufacturer = Manufacturer::where('id', $id)->orderBy('id')->firstOrFail();
+
+        $this->setup->set_log('Manufacturer Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the manufacturer record ID "'.$id. '"', request()->ip());
+
         return response()->json(compact('manufacturer'));
     }
 
@@ -61,6 +66,9 @@ class ManufacturerController extends Controller
     {
         $request['updated_by'] = Auth::user()->id;
         Manufacturer::find($id)->update($request->all());
+
+        $this->setup->set_log('Manufacturer Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the manufacturer record ID "'.$id. '"', request()->ip());
+
         return "Record Saved";
     }
 
@@ -70,6 +78,9 @@ class ManufacturerController extends Controller
 
         foreach($record as $item) {
             Manufacturer::find($item)->delete();
+
+            $this->setup->set_log('Manufacturer Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the manufacturer record ID "'.$item. '"', request()->ip());
+
         }
         
         return 'Record Deleted';

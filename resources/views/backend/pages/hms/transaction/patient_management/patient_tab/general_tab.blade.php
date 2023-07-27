@@ -51,8 +51,14 @@
             <div class="form-group status">
                 <label>STATUS <span class="required">*</span></label>
                 <select name="status" id="status" class="form-control">
-                    <option value="1">Active</option>
-                    <option value="0">In-active</option>
+                    <option value="1">ACTIVE</option>
+                    <option value="2">DISCHARGED</option>
+                    <option value="3">FOR MGH CLEARANCE</option>
+                    <option value="4">CLEARED</option>
+                    <option value="5">MGH</option>
+                    <option value="6">UNTAGGED AS MGH</option>
+                    <option value="7">CANCELLED</option>
+                    <option value="8">DIED</option>
                 </select>
             </div>
         </div>

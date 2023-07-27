@@ -1,8 +1,4 @@
-@php
 
-    $type = '2-view';
-
-@endphp 
 
 @extends('backend.master.index')
 
@@ -21,6 +17,15 @@
     img#barcode {
         width: 160px;
         height: auto;
+    }
+    span.badge.gray {
+        background-color: gray;
+    }
+    span.badge.black {
+        background-color: black;
+    }
+    .badge {
+        padding: 5px;
     }
 
 </style>
@@ -82,35 +87,65 @@
 @section('right-content')
 <div class="row">
     <div class="col-md-12">
-        <!-- <div class="card">
+        <div class="card">
             <div class="card-header">
-                <h5 class="card-title"><span>Juan Dela Cruz</span></h5>
-                <h5 class="card-title"><span style="color: gray; font-size: 10px;">REGISTERED NURSE</span></h5>
+                <h5 class="card-title"><span style="color: gray; font-size: 10px;">SUMMARIES OF ADMISSION</span></h5>
             </div>
             <div class="col-12">
                 <div class="card-body" style="padding: 0px !important;">
-                    <div style="padding: 1em;"></div>
-                    <img src="/images/hris/employee-information/employee-photo.png"  style="width: 100%;" alt="">
-                    <div style="padding: 1em;"></div>
-                    <table>
-                        <tr>
-                            <td>EMPLOYEE TYPE:</td>
-                            <td>REGULAR</td>
-                        </tr>
-                        <tr>
-                            <td>DATE HIRED:</td>
-                            <td>01/01/2022</td>
-                        </tr>
-                        <tr>
-                            <td>MONTHLY SALARY:</td>
-                            <td>PHP 20,000.00</td>
-                        </tr>
+                <table id="datatables-dashboard-projects" class="table my-0" style="font-size: 11px;">
+                        <thead>
+                            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge badge-success"> </span></td>
+                                <td class="d-none d-md-table-cell">ACTIVE</td>
+                                <td class="d-none d-md-table-cell">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge gray"> </span></td>
+                                <td class="d-none d-md-table-cell">DISCHARGED</td>
+                                <td class="d-none d-md-table-cell">0</td>
 
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-warning"> </span></td>
+                                <td class="d-none d-md-table-cell">FOR MGH CLEARANCE</td>
+                                <td class="d-none d-md-table-cell">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-primary"> </span></td>
+                                <td class="d-none d-md-table-cell">CLEARED</td>
+                                <td class="d-none d-md-table-cell">0</td>
+
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-info"> </span></td>
+                                <td class="d-none d-md-table-cell">MGH</td>
+                                <td class="d-none d-md-table-cell">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-secondary"> </span></td>
+                                <td class="d-none d-md-table-cell">UNTAGGED AS MGH</td>
+                                <td class="d-none d-md-table-cell">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-danger"> </span></td>
+                                <td class="d-none d-md-table-cell">CANCELLED</td>
+                                <td class="d-none d-md-table-cell">0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge black"> </span></td>
+                                <td class="d-none d-md-table-cell">DIED</td>
+                                <td class="d-none d-md-table-cell">0</td>
+                            </tr>
+                           
+                        </tbody>
                     </table>
-                    <div style="padding: 1em;"></div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 @endsection

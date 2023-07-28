@@ -13,7 +13,9 @@
             <button type="button" onclick="scion.print()" class="print" id="prnt" disabled>
                 <i class="fas fa-print"></i> Print
             </button>
-            <span id="additional_buttons"></span>
+            <span id="additional_buttons">
+                @yield('additional_button')
+            </span>
         </div>
     </div>
 </div>

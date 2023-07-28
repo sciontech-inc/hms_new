@@ -38,10 +38,18 @@
 
             if(lookup_type !== 'sub') {
                 scion.centralized_button(false, false, false, true);
+                if(lookup_type === 'modal_lookup') {
+                    record_id = null;
+                    $('.tab-list-menu-item ').prop('disabled', true);
+                }
+                else {
+                    $('.tab-list-menu-item ').removeAttr('disabled');
+                }
             }
-            else {}
+            else {
+                $('.tab-list-menu-item ').removeAttr('disabled');
+            }
             
-            $('.tab-list-menu-item ').removeAttr('disabled');
 
         });
     });

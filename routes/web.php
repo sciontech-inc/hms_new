@@ -124,6 +124,16 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/info/{id}',                      'BedController@get_info'                                        )->name('info');
         });
         
+        Route::group(['prefix' => 'patient_admission'], function() {
+            Route::get          ('/get',                            'PatientAdmissionController@get'                                )->name('get');
+            Route::post         ('/save',                           'PatientAdmissionController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientAdmissionController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientAdmissionController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'PatientAdmissionController@destroy'                            )->name('delete');
+            Route::get          ('/list/{id}',                      'PatientAdmissionController@get_list'                           )->name('list');
+            Route::get          ('/info/{id}',                      'PatientAdmissionController@get_info'                           )->name('info');
+        });
+        
         Route::group(['prefix' => 'patient_register'], function() {
             Route::post         ('/save',                           'PatientRegisterController@store'                               )->name('save');
         });

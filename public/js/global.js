@@ -31,6 +31,7 @@ var scion = {
                 $('.form-record')[0].reset();
                 scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
 
+                $('.tab-list-menu-item ').prop('disabled', true);
                 record_id = additional_id;
             }
             else if(module_type === "transaction") {
@@ -127,7 +128,13 @@ var scion = {
         edit(url, id) {
             
             var form_id = $('.form-record')[0].id;
-            actions = 'update';
+
+            if(lookup_type === "modal_lookup") {
+                actions = 'save';
+            }
+            else {
+                actions = 'update';
+            }
 
             $.ajax({
                 headers: {
@@ -165,7 +172,7 @@ var scion = {
                                         $('#'+k).val(v);
 
                                            // Custom code
-                                           if(k === 'patient_id') {
+                                        if(k === 'patient_id') {
                                             $('#barcode').attr('src', 'https://api.qrserver.com/v1/create-qr-code/?data=' + v + '&amp;size=50x50');
                                         }
 
@@ -212,7 +219,12 @@ var scion = {
                     
                     if(module_type === "custom") {
                         if(lookup_type !== "sub") {
-                            scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+                            if(lookup_type === "modal_lookup") {
+                                scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
+                            }
+                            else {
+                                scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+                            }
                         }
                     }
                     else if(module_type === "transaction") {

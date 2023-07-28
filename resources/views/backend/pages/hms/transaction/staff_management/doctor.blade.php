@@ -39,6 +39,7 @@
             array('id'=>'doctor_qualification', 'title'=>'QUALIFICATION & EDUCATION', 'icon'=>' fas fa-university', 'active'=>false, 'disabled'=>true, 'function'=>true),
             array('id'=>'doctor_work', 'title'=>'WORK EXPERIENCE', 'icon'=>' fas fa-business-time', 'active'=>false, 'disabled'=>true, 'function'=>true),
             array('id'=>'doctor_expertise', 'title'=>'EXPERTISE & SPECIALIZATION', 'icon'=>' fas fa-award', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'doctor_research', 'title'=>'RESARCH CONTRIBUTION', 'icon'=>' fas fa-microscope', 'active'=>false, 'disabled'=>true, 'function'=>true),
         )
     ])
 @endsection
@@ -54,6 +55,7 @@
                     @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_qualification_tab')
                     @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_work_tab')
                     @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_expertise_tab')
+                    @include('backend.pages.hms.transaction.staff_management.doctor_tab.doctor_research_tab')
 
                 </form>
             </div>

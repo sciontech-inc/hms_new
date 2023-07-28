@@ -64,6 +64,12 @@ function success(record) {
                     scion.create.sc_modal('doctor_expertise_form').hide('all', modalHideFunction);
 
                     break;
+                    
+                case 'doctor_research':
+                    $('#doctor_research_table').DataTable().draw();
+                    scion.create.sc_modal('doctor_research_form').hide('all', modalHideFunction);
+
+                    break;
             }
             
             break;
@@ -108,6 +114,13 @@ function delete_success() {
                  
         case 'doctor_expertise':
             $('#doctor_expertise_table').DataTable().draw();
+            actions = 'save';
+            scion.centralized_button(true, false, true, true);
+
+            break;
+
+        case 'doctor_research':
+            $('#doctor_research_table').DataTable().draw();
             actions = 'save';
             scion.centralized_button(true, false, true, true);
 
@@ -206,6 +219,33 @@ function generateData() {
                     years_of_experience: $('#years_of_experience').val(),
                     key_professional_achievements: $('#key_professional_achievements').val(),
                     notes: $('#notes').val(),
+                };
+    
+                actions = 'update';
+    
+                break;
+
+            case 'doctor_research':
+                form_data = {
+                    _token: _token,
+                    doctor_id: additional_id,
+                    research_title: $('#research_title').val(),
+                    research_date_of_publication: $('#research_date_of_publication').val(),
+                    research_contribution_type: $('#research_contribution_type').val(),
+                    research_conference_name: $('#research_conference_name').val(),
+                    research_doi_isbn: $('#research_doi_isbn').val(),
+                    research_abstract: $('#research_abstract').val(),
+                    research_area: $('#research_area').val(),
+                    research_impact_factor: $('#research_impact_factor').val(),
+                    research_citation_count: $('#research_citation_count').val(),
+                    research_collaborators: $('#research_collaborators').val(),
+                    research_institution: $('#research_institution').val(),
+                    research_text_link: $('#research_text_link').val(),
+                    research_impact_findings: $('#research_impact_findings').val(),
+                    research_presentation: $('#research_presentation').val(),
+                    research_follow_up_studies: $('#research_follow_up_studies').val(),
+                    research_remarks: $('#research_remarks').val(),
+
                 };
     
                 actions = 'update';
@@ -352,6 +392,43 @@ function doctor_expertise_func() {
     
 }
 
+function doctor_research_func() {
+
+    modal_content = 'doctor_research';
+    module_content = 'doctor_research';
+    module_url = '/actions/' + module_content;
+    actions = 'update';
+    module_type = 'custom';
+
+    additional_id = record_id;
+    scion.centralized_button(false, true, true, true);
+
+
+    if ($.fn.DataTable.isDataTable('#doctor_research_table')) {
+        $('#doctor_research_table').DataTable().destroy();
+    }
+
+    scion.create.table(
+        'doctor_research_table',
+        module_url + '/get/' + record_id,
+        [
+            { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
+                var html = "";
+                html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
+                html += '<a href="#" class="align-middle edit" onclick="doctor_research_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                return html;
+            }},
+            { data: "id", title: "ID" },
+            { data: "research_title", title: "TITLE" },
+            { data: "research_date_of_publication", title: "DATE OF PUBLICATION" },
+            { data: "research_contribution_type", title: "CONTRIBUTION TYPE" },
+            { data: "research_area", title: "RSEARCH AREA" },
+
+        ], 'Bfrtip', []
+    );
+    
+}
+
 // Edit Custom
 function doctor_qualification_edit(url, id) {
     $.get(url+id, function(response){
@@ -408,6 +485,34 @@ function doctor_expertise_edit(url, id) {
         $('#notes').val(response.doctor_expertise.notes);
 
         update_id = response.doctor_expertise.id;
+    });
+}
+
+// Edit Custom
+function doctor_research_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+
+        $('#research_title').val(response.doctor_research.research_title);
+        $('#research_date_of_publication').val(response.doctor_research.research_date_of_publication);
+        $('#research_contribution_type').val(response.doctor_research.research_contribution_type);
+        $('#research_conference_name').val(response.doctor_research.research_conference_name);
+        $('#research_doi_isbn').val(response.doctor_research.research_doi_isbn);
+        $('#research_abstract').val(response.doctor_research.research_abstract);
+        $('#research_area').val(response.doctor_research.research_area);
+        $('#research_impact_factor').val(response.doctor_research.research_impact_factor);
+        $('#research_citation_count').val(response.doctor_research.research_citation_count);
+        $('#research_collaborators').val(response.doctor_research.research_collaborators);
+        $('#research_institution').val(response.doctor_research.research_institution);
+        $('#research_text_link').val(response.doctor_research.research_text_link);
+        $('#research_impact_findings').val(response.doctor_research.research_impact_findings);
+        $('#research_presentation').val(response.doctor_research.research_presentation);
+        $('#research_follow_up_studies').val(response.doctor_research.research_follow_up_studies);
+        $('#research_remarks').val(response.doctor_research.research_remarks);
+
+        update_id = response.doctor_research.id;
     });
 }
 

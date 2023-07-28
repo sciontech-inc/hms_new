@@ -261,6 +261,14 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'DoctorExpertiseController@update'                             )->name('update');
             Route::post         ('/destroy',                        'DoctorExpertiseController@destroy'                            )->name('delete');
         });
+
+        Route::group(['prefix' => 'doctor_research'], function() {
+            Route::get          ('/get/{id}',                       'DoctorResearchController@get'                                 )->name('get');
+            Route::post         ('/save',                           'DoctorResearchController@store'                               )->name('save');
+            Route::get          ('/edit/{id}',                      'DoctorResearchController@edit'                                )->name('edit');
+            Route::post         ('/update/{id}',                    'DoctorResearchController@update'                              )->name('update');
+            Route::post         ('/destroy',                        'DoctorResearchController@destroy'                             )->name('delete');
+        });
         //End Doctor Management
 
         //Employee 201 File

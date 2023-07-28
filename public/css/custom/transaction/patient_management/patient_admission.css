@@ -1,0 +1,42 @@
+.form-group>label {
+    font-size: 10px;
+    color: #3f3f3f;
+}
+
+.col-12.patient_lookup .form-group {
+    display: flex !important;
+}
+
+.col-12.patient_lookup label {
+    max-width: 33.33333%;
+    flex: 0 0 33.33333%;
+}
+
+.input-group.mb-3.patient_id {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667% !important;
+    margin: 0px !important;
+}
+
+#general_tab .form-group {
+    margin-bottom: 0px;
+}
+
+.admission-form>.col-6>.row>.col-12,
+.admission-form>.col-12 {
+    margin-bottom: 7px;
+}
+
+table#patient_admission_table tbody tr td {
+    padding: 10px;
+    border-bottom: 1px solid #cccc!important;
+    font-weight: bold;
+}
+
+table#patient_admission_table tbody tr {
+    cursor: pointer;
+}
+
+table#patient_admission_table tbody tr:hover {
+    background: #cccc !important;
+}

@@ -714,7 +714,7 @@ table#lookup tbody>tr:hover {
     background: #fff;
     border: 1px #ccc solid;
     font-size: 15px;
-    height: auto !important;
+    /* height: auto !important; */
     border-radius: 5px !important;
 }
 
@@ -838,7 +838,7 @@ span.custom-modal-close {
     background: rgba(0,0,0,0.5);
     overflow: auto;
     display: none;
-    /* position: fixed; */
+    position: fixed;
     padding: 10px;
 }
 
@@ -868,6 +868,7 @@ span.custom-modal-close {
 
 .sc-modal-body {
     padding: 10px 15px;
+    margin-bottom: 50px;
 }
 
 h5.divider-label {
@@ -965,7 +966,7 @@ li.sidebar-header {
 }
 
 .sc-xl {
-    max-width: 1000px;
+    max-width: 1200px;
     width: 100%;
 }
 

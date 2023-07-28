@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Bed;
+use App\Room;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -100,8 +101,10 @@ class BedController extends Controller
         else {
             $data = Bed::where('room_id', $id)->get();
         }
+
+        $room_details = Room::where('id', $id)->firstOrFail();
         
-        return response()->json(compact('data'));
+        return response()->json(compact('data', 'room_details'));
     }
 
     public function get_info($id) {

@@ -57,4 +57,8 @@ class PatientAdmission extends Model
     public function patient() {
         return $this->belongsTo(Patient::class, 'patient_id', 'patient_id');
     }
+
+    public function rooms() {
+        return $this->belongsTo(RoomsBedsDietary::class, 'id', 'patient_admission_id');
+    }
 }

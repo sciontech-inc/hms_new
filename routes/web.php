@@ -134,6 +134,16 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/info/{id}',                      'PatientAdmissionController@get_info'                           )->name('info');
         });
         
+        Route::group(['prefix' => 'rooms_beds_dietary'], function() {
+            Route::get          ('/get',                            'RoomsBedsDietaryController@get'                                )->name('get');
+            Route::post         ('/save',                           'RoomsBedsDietaryController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'RoomsBedsDietaryController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'RoomsBedsDietaryController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'RoomsBedsDietaryController@destroy'                            )->name('delete');
+            Route::get          ('/list/{id}',                      'RoomsBedsDietaryController@get_list'                           )->name('list');
+            Route::get          ('/info/{id}',                      'RoomsBedsDietaryController@get_info'                           )->name('info');
+        });
+        
         Route::group(['prefix' => 'patient_register'], function() {
             Route::post         ('/save',                           'PatientRegisterController@store'                               )->name('save');
         });

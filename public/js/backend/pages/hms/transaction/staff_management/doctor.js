@@ -13,6 +13,7 @@ $(function() {
     actions = 'save';
     module_type = 'transaction';
     storage_url = '/hms/staff_management/doctor' ;
+
     
     scion.centralized_button(true, false, true, true);
     scion.action.tab(tab_active);

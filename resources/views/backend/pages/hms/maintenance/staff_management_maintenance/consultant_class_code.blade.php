@@ -1,9 +1,9 @@
 @extends('backend.master.index')
 
-@section('title', 'CONSULTANT SPECIALIZATION')
+@section('title', 'CONSULTANT CLASS CODE')
 
 @section('breadcrumbs')
-    <span>MAINTENANCE</span> / <span class="highlight">CONSULTANT SPECIALIZATION</span>
+    <span>MAINTENANCE</span> / <span class="highlight">CONSULTANT SERVICE CLASS</span>
 @endsection
 
 @section('content')
@@ -11,12 +11,12 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title">CONSULTANT SPECIALIZATION: MAINTENANCE SCREEN</h5>
+                <h5 class="card-title">CONSULTANT SERVICE CLASS: MAINTENANCE SCREEN</h5>
             </div>
             @include('backend.partial.flash-message')
             <div class="col-12">
                 <div class="card-body">
-                    <table id="consultant_specialization_table" class="table table-striped" style="width:100%"> </table>
+                    <table id="consultant_class_code_table" class="table table-striped" style="width:100%"> </table>
                 </div>
             </div>
         </div>
@@ -25,14 +25,14 @@
 
 @section('sc-modal')
 @parent
-<div class="sc-modal-content" id="consultant_specialization_form">
+<div class="sc-modal-content" id="consultant_class_code_form">
     <div class="sc-modal-dialog">
         <div class="sc-modal-header">
             <span class="sc-title-bar"></span>
-            <span class="sc-close" onclick="scion.create.sc_modal('consultant_specialization_form').hide('all', modalHideFunction)"><i class="fas fa-times"></i></span>
+            <span class="sc-close" onclick="scion.create.sc_modal('consultant_class_code_form').hide('all', modalHideFunction)"><i class="fas fa-times"></i></span>
         </div>
         <div class="sc-modal-body">
-            <form method="post" id="consultantspecializationForm" class="form-record">
+            <form method="post" id="consultantserviceclassForm" class="form-record">
                 <div class="row">
                     <div class="form-group col-md-12 code">
                         <label>CODE</label>
@@ -52,6 +52,6 @@
 
 @section('scripts')
     <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="/js/backend/pages/hms/maintenance/staff_management_maintenance/consultant_specialization.js"></script>
+    <script src="/js/backend/pages/hms/maintenance/staff_management_maintenance/consultant_class_code.js"></script>
 
 @endsection

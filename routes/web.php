@@ -448,6 +448,47 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'ConsultantSpecializationController@destroy'                    )->name('delete');
         });
 
+        Route::group(['prefix' => 'consultant_service_type'], function() {
+            Route::get          ('/get',                            'ConsultantServiceTypeController@get'                           )->name('get');
+            Route::post         ('/save',                           'ConsultantServiceTypeController@store'                         )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantServiceTypeController@edit'                          )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantServiceTypeController@update'                        )->name('update');
+            Route::post         ('/destroy',                        'ConsultantServiceTypeController@destroy'                       )->name('delete');
+        });
+
+        Route::group(['prefix' => 'consultant_class_code'], function() {
+            Route::get          ('/get',                            'ConsultantClassCodeController@get'                             )->name('get');
+            Route::post         ('/save',                           'ConsultantClassCodeController@store'                           )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantClassCodeController@edit'                            )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantClassCodeController@update'                          )->name('update');
+            Route::post         ('/destroy',                        'ConsultantClassCodeController@destroy'                         )->name('delete');
+        });
+
+        Route::group(['prefix' => 'consultant_department'], function() {
+            Route::get          ('/get',                            'ConsultantDepartmentController@get'                             )->name('get');
+            Route::post         ('/save',                           'ConsultantDepartmentController@store'                           )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantDepartmentController@edit'                            )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantDepartmentController@update'                          )->name('update');
+            Route::post         ('/destroy',                        'ConsultantDepartmentController@destroy'                         )->name('delete');
+        });
+
+        Route::group(['prefix' => 'ewt_tax_description'], function() {
+            Route::get          ('/get',                            'EWTTaxDescriptionController@get'                                )->name('get');
+            Route::post         ('/save',                           'EWTTaxDescriptionController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'EWTTaxDescriptionController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'EWTTaxDescriptionController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'EWTTaxDescriptionController@destroy'                            )->name('delete');
+        });
+
+        Route::group(['prefix' => 'consultant_tax_condition'], function() {
+            Route::get          ('/get',                            'ConsultantTaxConditionController@get'                             )->name('get');
+            Route::post         ('/save',                           'ConsultantTaxConditionController@store'                           )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantTaxConditionController@edit'                            )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantTaxConditionController@update'                          )->name('update');
+            Route::post         ('/destroy',                        'ConsultantTaxConditionController@destroy'                         )->name('delete');
+        });
+
+
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');
         });

@@ -32,7 +32,7 @@
             <span class="sc-close" onclick="scion.create.sc_modal('consultant_service_class_form').hide('all', modalHideFunction)"><i class="fas fa-times"></i></span>
         </div>
         <div class="sc-modal-body">
-            <form method="post" id="consultantcategoryForm" class="form-record">
+            <form method="post" id="consultantserviceclassForm" class="form-record">
                 <div class="row">
                     <div class="form-group col-md-12 code">
                         <label>CODE</label>

@@ -276,15 +276,124 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'MANUFACTURER',
-            'code' => 'manufacturer',
+            'name' => 'ALLERGIES',
+            'code' => 'allergies',
             'app_id' => '13',
             'sort_no' => '0',
             'status' => '1',
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+
+            'name' => 'PRC LICENSE TYPE',
+            'code' => 'prc_license_type',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'PHIC GROUP',
+            'code' => 'phic_group',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'CATEGORY',
+            'code' => 'consultant_category',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'SERVICE CLASS',
+            'code' => 'consultant_service_class',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'SPECIALIZATION',
+            'code' => 'consultant_specialization',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'SERVICE TYPE',
+            'code' => 'consultant_service_type',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'CLASS CODE',
+            'code' => 'consultant_class_code',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'DEPARTMENT',
+            'code' => 'consultant_department',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+        ],
+        [
+
+            'name' => 'EWT TAX DESCRIPTION',
+            'code' => 'ewt_tax_description',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+        ],
+        [
+
+            'name' => 'VAT CONDITION',
+            'code' => 'consultant_vat_condition',
+            'app_id' => '10',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
         ]
+        
+        
        
     );
       

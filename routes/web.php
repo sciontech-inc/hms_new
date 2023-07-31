@@ -397,7 +397,47 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/update/{id}',                    'AllergiesController@update'                                    )->name('update');
             Route::post         ('/destroy',                        'AllergiesController@destroy'                                   )->name('delete');
         });
+
+        Route::group(['prefix' => 'prc_license_type'], function() {
+            Route::get          ('/get',                            'PRCLicenseTypeController@get'                                  )->name('get');
+            Route::post         ('/save',                           'PRCLicenseTypeController@store'                                )->name('save');
+            Route::get          ('/edit/{id}',                      'PRCLicenseTypeController@edit'                                 )->name('edit');
+            Route::post         ('/update/{id}',                    'PRCLicenseTypeController@update'                               )->name('update');
+            Route::post         ('/destroy',                        'PRCLicenseTypeController@destroy'                              )->name('delete');
+        });
         
+        Route::group(['prefix' => 'phic_group'], function() {
+            Route::get          ('/get',                            'PHICGroupController@get'                                       )->name('get');
+            Route::post         ('/save',                           'PHICGroupController@store'                                     )->name('save');
+            Route::get          ('/edit/{id}',                      'PHICGroupController@edit'                                      )->name('edit');
+            Route::post         ('/update/{id}',                    'PHICGroupController@update'                                    )->name('update');
+            Route::post         ('/destroy',                        'PHICGroupController@destroy'                                   )->name('delete');
+        });
+
+        Route::group(['prefix' => 'consultant_category'], function() {
+            Route::get          ('/get',                            'ConsultantCategoryController@get'                              )->name('get');
+            Route::post         ('/save',                           'ConsultantCategoryController@store'                            )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantCategoryController@edit'                             )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantCategoryController@update'                           )->name('update');
+            Route::post         ('/destroy',                        'ConsultantCategoryController@destroy'                          )->name('delete');
+        });
+
+        Route::group(['prefix' => 'consultant_service_class'], function() {
+            Route::get          ('/get',                            'ConsultantServiceClassController@get'                          )->name('get');
+            Route::post         ('/save',                           'ConsultantServiceClassController@store'                        )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantServiceClassController@edit'                         )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantServiceClassController@update'                       )->name('update');
+            Route::post         ('/destroy',                        'ConsultantServiceClassController@destroy'                      )->name('delete');
+        });
+        
+        Route::group(['prefix' => 'consultant_specialization'], function() {
+            Route::get          ('/get',                            'ConsultantSpecializationController@get'                        )->name('get');
+            Route::post         ('/save',                           'ConsultantSpecializationController@store'                      )->name('save');
+            Route::get          ('/edit/{id}',                      'ConsultantSpecializationController@edit'                       )->name('edit');
+            Route::post         ('/update/{id}',                    'ConsultantSpecializationController@update'                     )->name('update');
+            Route::post         ('/destroy',                        'ConsultantSpecializationController@destroy'                    )->name('delete');
+        });
+
         Route::group(['prefix' => 'activity_log'], function() {
             Route::get          ('/get',                     'Controller@log_get'                                                   )->name('get');
         });

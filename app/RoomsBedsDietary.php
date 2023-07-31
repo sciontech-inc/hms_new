@@ -15,7 +15,7 @@ class RoomsBedsDietary extends Model
         'floor_id',
         'room_id',
         'bed_id',
-        'room_type',
+        'type',
         'start_datetime',
         'end_datetime',
         'status',

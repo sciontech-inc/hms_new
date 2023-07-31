@@ -5,7 +5,7 @@
                 <div class="form-group row">
                     <label class="col-4">BUILDING NO <span class="required">*</span>:</label>
                     <div class="col-8">
-                        <select name="building_id" id="building_id" class="form-control">
+                        <select name="building_id" id="building_id" class="form-control" onchange="buildingSelect()">
                             <option value=""></option>
                         </select>
                     </div>
@@ -15,7 +15,7 @@
                 <div class="form-group row">
                     <label class="col-4">FLOOR NO <span class="required">*</span>:</label>
                     <div class="col-8">
-                        <select name="floor_id" id="floor_id" class="form-control">
+                        <select name="floor_id" id="floor_id" class="form-control" onchange="floorSelect()">
                             <option value=""></option>
                         </select>
                     </div>
@@ -25,7 +25,7 @@
                 <div class="form-group row">
                     <label class="col-4">ROOM NO <span class="required">*</span>:</label>
                     <div class="col-8">
-                        <select name="room_id" id="room_id" class="form-control">
+                        <select name="room_id" id="room_id" class="form-control" onchange="roomSelect()">
                             <option value=""></option>
                         </select>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="form-group row">
                     <label class="col-4">ROOM TYPE <span class="required">*</span>:</label>
                     <div class="col-8">
-                        <input type="text" class="form-control" name="room_type" id="room_type"/>
+                        <input type="text" class="form-control" name="type" id="type" disabled/>
                     </div>
                 </div>
             </div>
@@ -69,9 +69,9 @@
                 <div class="form-group row">
                     <label class="col-4">STATUS <span class="required">*</span>:</label>
                     <div class="col-8">
-                        <select name="status" id="status" class="form-control">
+                        <select name="status" id="room_status" class="form-control">
                             <option value="1">ACTIVE</option>
-                            <option value="1">INACTIVE</option>
+                            <option value="0">INACTIVE</option>
                         </select>
                     </div>
                 </div>

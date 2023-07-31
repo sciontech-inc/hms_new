@@ -23,6 +23,7 @@ class CreateRoomsBedsDietariesTable extends Migration
             $table->string('type');
             $table->dateTime('start_datetime');
             $table->dateTime('end_datetime');
+            $table->integer('status');
             $table->integer('workstation_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');

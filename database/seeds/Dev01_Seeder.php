@@ -1,8 +1,10 @@
 <?php
 
 use App\App;
+use App\AppType;
 use App\Access;
 use App\AppModule;
+
 
 use Illuminate\Database\Seeder;
 
@@ -15,7 +17,7 @@ class Dev01_Seeder extends Seeder
      */
     public function run()
     {
-        $app_type = array([
+        $app_type_data = array([
 
             //id = 4
             'name' => 'HRIS',

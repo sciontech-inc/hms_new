@@ -399,6 +399,11 @@ class Dev01_Seeder extends Seeder
        
     );
       
+        foreach($app_type_data as $app_type) {
+                
+            AppType::firstOrCreate($app_type);
+        }
+
 
         foreach($app_data as $app) {
 
@@ -410,9 +415,5 @@ class Dev01_Seeder extends Seeder
             AppModule::firstOrCreate($app_module);
         }
 
-        foreach($app_type_data as $app_type) {
-            
-            AppType::firstOrCreate($app_type);
-        }
     }
 }

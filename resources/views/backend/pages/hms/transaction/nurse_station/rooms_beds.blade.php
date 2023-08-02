@@ -69,7 +69,7 @@
             </div>
         </form>
 
-        <div class="help-information" style="max-height: 100%;">
+        <div class="help-information">
         </div>
     </div>
 </div>

@@ -1,11 +1,11 @@
 $(function() {
 
-    project_type = 'app_module';
-    modal_content = 'consultant_service_class';
-    module_content = 'consultant_service_class';
+    project_type = 'apps';
+    modal_content = 'hmo_guarantor';
+    module_content = 'hmo_guarantor';
     module_url = '/actions/' + modal_content;
     module_type = 'custom';
-    page_title = "Consultant Service Class";
+    page_title = "HMOs/Guarantor";
     actions = 'save';
 
     scion.centralized_button(false, true, true, true);
@@ -22,8 +22,9 @@ $(function() {
             }},
             { data: "id", title: "ID" },
             { data: "code", title: "CODE" },
-            { data: "description", title: "DESCRIPTION" },
-          
+            { data: "guarantor_name", title: "GUARANTOR NAME" },
+            { data: "email", title: "EMAIL" },
+            { data: "contact_no", title: "CONTACT NUMBER" },
 
            
         ], 'Bfrtip', []
@@ -38,14 +39,14 @@ function success() {
         case 'update':
             break;
     }
-    $('#consultant_service_class_table').DataTable().draw();
-    scion.create.sc_modal('consultant_service_class_form').hide('all', modalHideFunction)
+    $('#hmo_guarantor_table').DataTable().draw();
+    scion.create.sc_modal('hmo_guarantor_form').hide('all', modalHideFunction)
 }
 
 function error() {}
 
 function delete_success() {
-    $('#consultant_service_class_table').DataTable().draw();
+    $('#hmo_guarantor_table').DataTable().draw();
 }
 
 function delete_error() {}
@@ -54,8 +55,12 @@ function generateData() {
     form_data = {
         _token: _token,
         code: $('#code').val(),
-        description: $('#description').val(),
-        
+        guarantor_name: $('#guarantor_name').val(),
+        telephone: $('#telephone').val(),
+        fax_no: $('#fax_no').val(),
+        contact_no: $('#contact_no').val(),
+        email: $('#email').val(),
+        address: $('#address').val(),
     };
 
     return form_data;

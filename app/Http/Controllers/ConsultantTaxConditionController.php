@@ -38,7 +38,7 @@ class ConsultantTaxConditionController extends Controller
 
         $consultant_tax_condition = ConsultantTaxCondition::create($request->all());
 
-        $this->setup->set_log('Consultant Tax Condition Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the consultant tax condition record with the ID "'.$consultant_tax_condition->id. '"', request()->ip());
+        $this->setup->set_log('Consultant VAT Condition Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the consultant tax condition record with the ID "'.$consultant_tax_condition->id. '"', request()->ip());
 
         return response()->json(compact('validate'));
     }
@@ -47,7 +47,7 @@ class ConsultantTaxConditionController extends Controller
     {
         $consultant_tax_condition = ConsultantTaxCondition::where('id', $id)->orderBy('id')->firstOrFail();
 
-        $this->setup->set_log('Consultant Tax Condition Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the consultant tax condition record ID "'.$id. '"', request()->ip());
+        $this->setup->set_log('Consultant VAT Condition Record Viewed', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" viewed the consultant tax condition record ID "'.$id. '"', request()->ip());
 
         return response()->json(compact('consultant_tax_condition'));
     }
@@ -57,7 +57,7 @@ class ConsultantTaxConditionController extends Controller
         $request['updated_by'] = Auth::user()->id;
         ConsultantTaxCondition::find($id)->update($request->all());
 
-        $this->setup->set_log('Consultant Tax Condition Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the consultant tax condition record ID "'.$id. '"', request()->ip());
+        $this->setup->set_log('Consultant VAT Condition Record Updated', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" updated the consultant tax condition record ID "'.$id. '"', request()->ip());
 
         return "Record Saved";
     }
@@ -69,7 +69,7 @@ class ConsultantTaxConditionController extends Controller
         foreach($record as $item) {
             ConsultantTaxCondition::find($item)->delete();
 
-            $this->setup->set_log('Consultant Tax Condition Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the consultant tax condition record ID "'.$item. '"', request()->ip());
+            $this->setup->set_log('Consultant VAT Condition Record Deleted', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" deleted the consultant tax condition record ID "'.$item. '"', request()->ip());
 
         }
         

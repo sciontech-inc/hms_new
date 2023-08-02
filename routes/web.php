@@ -480,12 +480,20 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'EWTTaxDescriptionController@destroy'                            )->name('delete');
         });
 
-        Route::group(['prefix' => 'consultant_tax_condition'], function() {
+        Route::group(['prefix' => 'consultant_vat_condition'], function() {
             Route::get          ('/get',                            'ConsultantTaxConditionController@get'                             )->name('get');
             Route::post         ('/save',                           'ConsultantTaxConditionController@store'                           )->name('save');
             Route::get          ('/edit/{id}',                      'ConsultantTaxConditionController@edit'                            )->name('edit');
             Route::post         ('/update/{id}',                    'ConsultantTaxConditionController@update'                          )->name('update');
             Route::post         ('/destroy',                        'ConsultantTaxConditionController@destroy'                         )->name('delete');
+        });
+
+        Route::group(['prefix' => 'hmo_guarantor'], function() {
+            Route::get          ('/get',                            'HMOGuarantorController@get'                                       )->name('get');
+            Route::post         ('/save',                           'HMOGuarantorController@store'                                     )->name('save');
+            Route::get          ('/edit/{id}',                      'HMOGuarantorController@edit'                                      )->name('edit');
+            Route::post         ('/update/{id}',                    'HMOGuarantorController@update'                                    )->name('update');
+            Route::post         ('/destroy',                        'HMOGuarantorController@destroy'                                   )->name('delete');
         });
 
 

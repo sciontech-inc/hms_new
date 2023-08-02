@@ -37,6 +37,15 @@
         'data'=>array(
             array('id'=>'prc_license_type', 'title'=>'PRC LICENSE TYPE', 'icon'=>' fas fa-id-badge', 'active'=>true, 'disabled'=>false, 'function'=>true),
             array('id'=>'phic_group', 'title'=>'PHIC GROUP', 'icon'=>' fas fa-layer-group', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_category', 'title'=>'CATEGORY', 'icon'=>' fas fa-th-large', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_service_class', 'title'=>'SERVICE CLASS', 'icon'=>' fas fa-handshake', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_specialization', 'title'=>'SPECIALIZATION', 'icon'=>' fas fa-star', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_service_type', 'title'=>'SERVICE TYPE', 'icon'=>' fas fa-cog', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_class_code', 'title'=>'CLASS CODE', 'icon'=>' fas fa-laptop-code', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_department', 'title'=>'DEPARTMENT', 'icon'=>' fas fa-id-badge', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'ewt_tax_description', 'title'=>'EWT TAX DESCRIPTION', 'icon'=>' fas fa-receipt', 'active'=>false, 'disabled'=>false, 'function'=>true),
+            array('id'=>'consultant_vat_condition', 'title'=>'VAT CONDITION', 'icon'=>' fas fa-hand-holding-usd', 'active'=>false, 'disabled'=>false, 'function'=>true),
+
             
         )
     ])
@@ -51,6 +60,14 @@
                 <form class="form-record" method="post" id="consultantinformationForm">
                     @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.prc_license_type_tab')
                     @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.phic_group_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_category_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_service_class_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_specialization_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_service_type_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_class_code_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_department_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.ewt_tax_description_tab')
+                    @include('backend.pages.hms.maintenance.consultant_information_maintenance.consultant_information_tab.consultant_vat_condition_tab')
 
                 </form>
             </div>

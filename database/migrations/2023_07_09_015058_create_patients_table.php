@@ -33,7 +33,7 @@ class CreatePatientsTable extends Migration
             $table->text('nationality');
             $table->string('religion');
             $table->text('blood_type');
-            $table->string('occupation');
+            $table->string('occupation')->nullable();
             $table->longText('remarks')->nullable();
             $table->string('referred_by')->nullable();
             $table->string('contact_number_1')->nullable();

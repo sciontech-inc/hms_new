@@ -112,19 +112,6 @@ class Dev01_Seeder extends Seeder
         ],
         [
             //id = 10
-            'name' => 'STAFF MANAGEMENT',
-            'code' => 'staff_management_maintenance',
-            'sort_no' => '2',
-            'app_type_id' => '1',
-            'status' => '1',
-            'module' => '1',
-            'icon' => 'users-cog',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-            //id = 11
             'name' => 'SUPPLIES INVENTORY',
             'code' => 'supplies_inventory_maintenance',
             'sort_no' => '3',
@@ -137,7 +124,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-            //id = 12
+            //id = 11
             'name' => '201 File',
             'code' => '201_file',
             'sort_no' => '0',
@@ -150,7 +137,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-            //id = 13
+            //id = 12
             'name' => 'PATIENT MANAGEMENT',
             'code' => 'patient_management_maintenance',
             'sort_no' => '0',
@@ -161,7 +148,34 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+            //id = 13
+            'name' => 'CONSULTANT INFORMATION',
+            'code' => 'consultant_information_maintenance',
+            'sort_no' => '0',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '0',
+            'icon' => 'headset',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+            //id = 14
+            'name' => 'CONSULTANT INFORMATION',
+            'code' => 'consultant_information_maintenance',
+            'sort_no' => '0',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '0',
+            'icon' => 'headset',
+            'created_by' => '1',
+            'updated_by' => '1',
+
         ]
+        
     
     );
 
@@ -234,20 +248,9 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'DEPARTMENT',
-            'code' => 'department',
-            'app_id' => '10',
-            'sort_no' => '1',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
             'name' => 'SUPPLIER',
             'code' => 'supplier',
-            'app_id' => '11',
+            'app_id' => '10',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',
@@ -258,7 +261,7 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'MANUFACTURER',
             'code' => 'manufacturer',
-            'app_id' => '11',
+            'app_id' => '10',
             'sort_no' => '1',
             'status' => '1',
             'created_by' => '1',
@@ -269,7 +272,7 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'SERVICE TYPE',
             'code' => 'service_type',
-            'app_id' => '13',
+            'app_id' => '12',
             'sort_no' => '2',
             'status' => '1',
             'created_by' => '1',
@@ -280,119 +283,12 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'ALLERGIES',
             'code' => 'allergies',
-            'app_id' => '13',
+            'app_id' => '12',
             'sort_no' => '0',
             'status' => '1',
             'created_by' => '1',
             'updated_by' => '1',
 
-        ],
-        [
-
-            'name' => 'PRC LICENSE TYPE',
-            'code' => 'prc_license_type',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'PHIC GROUP',
-            'code' => 'phic_group',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'CATEGORY',
-            'code' => 'consultant_category',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'SERVICE CLASS',
-            'code' => 'consultant_service_class',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'SPECIALIZATION',
-            'code' => 'consultant_specialization',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'SERVICE TYPE',
-            'code' => 'consultant_service_type',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'CLASS CODE',
-            'code' => 'consultant_class_code',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'DEPARTMENT',
-            'code' => 'consultant_department',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-        ],
-        [
-
-            'name' => 'EWT TAX DESCRIPTION',
-            'code' => 'ewt_tax_description',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-        ],
-        [
-
-            'name' => 'VAT CONDITION',
-            'code' => 'consultant_vat_condition',
-            'app_id' => '10',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
         ]
         
         

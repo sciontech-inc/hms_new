@@ -244,6 +244,14 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'PatientOtherInformationController@edit'                        )->name('edit');
             Route::post         ('/update/{id}',                    'PatientOtherInformationController@update'                      )->name('update');
             Route::post         ('/destroy',                        'PatientOtherInformationController@destroy'                     )->name('delete');
+        });   
+
+        Route::group(['prefix' => 'guarantor_history'], function() {
+            Route::get          ('/get/{id}',                       'GuarantorHistoryController@get'                                )->name('get');
+            Route::post         ('/save',                           'GuarantorHistoryController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'GuarantorHistoryController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'GuarantorHistoryController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'GuarantorHistoryController@destroy'                            )->name('delete');
         });
 
         //End Patient Management

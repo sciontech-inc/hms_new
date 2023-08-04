@@ -21,10 +21,22 @@
         <div class="sc-modal-body">
             <form method="post" id="medicalcasesForm" class="form-record">
                 <div class="row">
+                <div class="col-6">
+                        <div class="form-group hospital_name">
+                            <label>HOSPITAL NAME</label>
+                            <input type="text" class="form-control" name="hospital_name" id="hospital_name"/>
+                        </div>
+                    </div>
                     <div class="col-6">
                         <div class="form-group date_recorded">
                             <label>DATE RECORDED</label>
                             <input type="date" class="form-control" name="date_recorded" id="date_recorded"/>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group icd10_description">
+                            <label>ICD10 DESCRIPTION <span class="required">*</span></label>
+                            <input type="text" class="form-control" name="icd10_description" id="icd10_description"/>
                         </div>
                     </div>
                     <div class="col-12">
@@ -62,6 +74,18 @@
                             <label>NURSING NOTES <span class="required">*</span></label>
                             <textarea type="text" class="form-control" name="nursing_notes" id="nursing_notes"></textarea>
                         </div> 
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group registration_date">
+                            <label>REGISTRATION DATE</label>
+                            <input type="date" class="form-control" name="registration_date" id="registration_date"/>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group discharge_date">
+                            <label>DISCHARGE DATE</label>
+                            <input type="date" class="form-control" name="discharge_date" id="discharge_date"/>
+                        </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group discharge_summary">

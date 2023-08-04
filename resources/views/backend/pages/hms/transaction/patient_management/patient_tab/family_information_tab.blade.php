@@ -22,6 +22,14 @@
             <form method="post" id="familyinformationForm" class="form-record">
                 <div class="row">
                     <div class="col-12">
+                        <div class="form-group set_as_emergency_contact">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-control custom-control-input" name="set_as_emergency_contact" id="set_as_emergency_contact">
+                                <span class="custom-control-label">SET AS EMERGENCY CONTACT</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
                         <div class="form-group family_fullname">
                             <label>FULL NAME <span class="required">*</span></label>
                             <input type="text" class="form-control" name="family_fullname" id="family_fullname"/>

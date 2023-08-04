@@ -51,7 +51,8 @@
             array('id'=>'vital_measurement', 'title'=>'VITAL SIGNS & MEASUREMENTS', 'icon'=>' fas fa-file-medical-alt', 'active'=>false, 'disabled'=>true, 'function'=>true),
             array('id'=>'family_medical_history', 'title'=>'FAMILY MEDICAL HISTORY', 'icon'=>' fas fa-user-clock', 'active'=>false, 'disabled'=>true, 'function'=>true),
             array('id'=>'social_history', 'title'=>'SOCIAL HISTORY', 'icon'=>' fas fa-user-friends', 'active'=>false, 'disabled'=>true, 'function'=>true),
-            array('id'=>'other_information', 'title'=>'OTHER INFORMATION', 'icon'=>' fas fa-exclamation-circle', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'guarantor_history', 'title'=>'GUARANTOR HISTORY', 'icon'=>' fas fa-exclamation-circle', 'active'=>false, 'disabled'=>true, 'function'=>true),
+            array('id'=>'other_information', 'title'=>'OTHER INFORMATION', 'icon'=>' fas fa-history', 'active'=>false, 'disabled'=>true, 'function'=>true),
             array('id'=>'document', 'title'=>'DOCUMENTS', 'icon'=>' fas fa-file-alt', 'active'=>false, 'disabled'=>true, 'function'=>true),
         )
     ])
@@ -75,6 +76,7 @@
                     @include('backend.pages.hms.transaction.patient_management.patient_tab.vital_measurement_tab')
                     @include('backend.pages.hms.transaction.patient_management.patient_tab.family_medical_history_tab')
                     @include('backend.pages.hms.transaction.patient_management.patient_tab.social_history_tab')
+                    @include('backend.pages.hms.transaction.patient_management.patient_tab.guarantor_history_tab')
                     @include('backend.pages.hms.transaction.patient_management.patient_tab.other_information_tab')
                     @include('backend.pages.hms.transaction.patient_management.patient_tab.document_tab')
                 </form>

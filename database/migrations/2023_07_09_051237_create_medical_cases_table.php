@@ -17,13 +17,17 @@ class CreateMedicalCasesTable extends Migration
             $table->bigIncrements('id');
             $table->string('patient_id');
             $table->string('date_recorded');
+            $table->string('hospital_name');
+            $table->string('icd10_description');
             $table->string('chief_complaint');
             $table->string('diagnostic_tests');
             $table->string('diagnosis');
             $table->string('prognosis');
             $table->string('physician_notes');
             $table->string('nursing_notes');
-            $table->string('discharge_summary');
+            $table->string('registration_date');
+            $table->string('discharge_date');
+            $table->string('discharge_summary')->nullable();
             $table->string('medical_case_remarks');
             $table->integer('workstation_id')->nullable();
             $table->unsignedBigInteger('created_by');

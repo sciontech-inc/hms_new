@@ -13,6 +13,7 @@ class FamilyInformation extends Model
     protected $fillable = [
 
         'patient_id',
+        'set_as_emergency_contact',
         'family_fullname',
         'family_birthdate',
         'family_relationship',

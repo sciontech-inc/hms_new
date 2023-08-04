@@ -22,10 +22,14 @@ class MedicalCaseController extends Controller
 
         $validate = $request->validate([
             'date_recorded' => 'required',
+            'hospital_name' => 'required',
+            'icd10_description' => 'required',
             'chief_complaint' => 'required',
             'diagnostic_tests' => 'required',
             'diagnosis' => 'required',
             'prognosis' => 'required',
+            'registration_date' => 'required',
+            'discharge_date' => 'required',
             'discharge_summary' => 'required'
         ]);
 

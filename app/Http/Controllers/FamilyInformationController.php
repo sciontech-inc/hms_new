@@ -29,6 +29,11 @@ class FamilyInformationController extends Controller
             'family_contact_no' => 'required'
         ]);
 
+        if($request->set_as_emergency_contact == 'on')
+        { 
+            $request['set_as_emergency_contact'] = 'EMERGENCY CONTACT';
+        }
+
         $request['workstation_id'] = Auth::user()->workstation_id;
         $request['created_by'] = Auth::user()->id;
         $request['updated_by'] = Auth::user()->id;

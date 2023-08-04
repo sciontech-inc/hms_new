@@ -203,6 +203,10 @@ function generateData() {
                 middlename: $('#middlename').val(),
                 lastname: $('#lastname').val(),
                 suffix: $('#suffix').val(),
+                mr_locator_no: $('#mr_locator_no').val(),
+                nickname: $('#nickname').val(),
+                alias: $('#alias').val(),
+                weight: $('#weight').val(),
                 birthdate: $('#birthdate').val(),
                 sex: $('#sex').val(),
                 citizenship: $('#citizenship').val(),
@@ -213,6 +217,25 @@ function generateData() {
                 nationality: $('#nationality').val(),
                 religion: $('#religion').val(),
                 blood_type: $('#blood_type').val(),
+                dialect: $('#dialect').val(),
+                temp: $('#temp').val(),
+                bp: $('#bp').val(),
+                ethnicity: $('#ethnicity').val(),
+                is_child: $('#is_child').val(),
+                is_hospital_employee: $('#is_hospital_employee').val(),
+                is_blacklisted: $('#is_blacklisted').val(),
+                is_personal_data_released: $('#is_personal_data_released').val(),
+                is_no_communication_from_company: $('#is_no_communication_from_company').val(),
+                passport_no: $('#passport_no').val(),
+                xray_file_no: $('#xray_file_no').val(),
+                is_confidential_patient: $('#is_confidential_patient').val(),
+                is_fictitious_birth_date: $('#is_fictitious_birth_date').val(),
+                birth_time: $('#birth_time').val(),
+                localization: $('#localization').val(),
+                industry: $('#industry').val(),
+                work_level: $('#work_level').val(),
+                company: $('#company').val(),
+                tin_no: $('#tin_no').val(),
                 occupation: $('#occupation').val(),
                 remarks: $('#remarks').val(),
                 referred_by: $('#referred_by').val(),
@@ -255,6 +278,7 @@ function generateData() {
             form_data = {
                 _token: _token,
                 patient_id: additional_id,
+                set_as_emergency_contact: $('#set_as_emergency_contact').val(),
                 family_fullname: $('#family_fullname').val(),
                 family_birthdate: $('#family_birthdate').val(),
                 family_relationship: $('#family_relationship').val(),
@@ -274,12 +298,16 @@ function generateData() {
                 _token: _token,
                 patient_id: additional_id,
                 date_recorded: $('#date_recorded').val(),
+                hospital_name: $('#hospital_name').val(),
+                icd10_description: $('#icd10_description').val(),
                 chief_complaint: $('#chief_complaint').val(),
                 diagnostic_tests: $('#diagnostic_tests').val(),
                 diagnosis: $('#diagnosis').val(),
                 prognosis: $('#prognosis').val(),
                 physician_notes: $('#physician_notes').val(),
                 nursing_notes: $('#nursing_notes').val(),
+                registration_date: $('#registration_date').val(),
+                discharge_date: $('#discharge_date').val(),
                 discharge_summary: $('#discharge_summary').val(),
                 medical_case_remarks: $('#medical_case_remarks').val(),
             };
@@ -520,6 +548,7 @@ function family_information_func() {
                 return html;
             }},
             { data: "id", title: "ID" },
+            { data: "set_as_emergency_contact", title: "SET AS EMERGENCY CONTACT" },
             { data: "family_fullname", title: "FULL NAME" },
             { data: "family_birthdate", title: "BIRTHDATE" },
             { data: "family_relationship", title: "RELATIONSHIP" },
@@ -879,6 +908,7 @@ function family_information_edit(url, id) {
         
         scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
         
+        $('#set_as_emergency_contact').val(response.family_information.set_as_emergency_contact);
         $('#family_fullname').val(response.family_information.family_fullname);
         $('#family_birthdate').val(response.family_information.family_birthdate);
         $('#family_relationship').val(response.family_information.family_relationship);
@@ -901,12 +931,16 @@ function medical_case_edit(url, id) {
         scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
         
         $('#date_recorded').val(response.medical_case.date_recorded);
+        $('#hospital_name').val(response.medical_case.hospital_name);
+        $('#icd10_description').val(response.medical_case.icd10_description);
         $('#chief_complaint').val(response.medical_case.chief_complaint);
         $('#diagnostic_tests').val(response.medical_case.diagnostic_tests);
         $('#diagnosis').val(response.medical_case.diagnosis);
         $('#prognosis').val(response.medical_case.prognosis);
         $('#physician_notes').val(response.medical_case.physician_notes);
         $('#nursing_notes').val(response.medical_case.nursing_notes);
+        $('#registration_date').val(response.medical_case.registration_date);
+        $('#discharge_date').val(response.medical_case.discharge_date);
         $('#discharge_summary').val(response.medical_case.discharge_summary);
         $('#medical_case_remarks').val(response.medical_case.medical_case_remarks);
 

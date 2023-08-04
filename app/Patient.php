@@ -38,6 +38,7 @@ class Patient extends Model
         'bp',
         'ethnicity',
         'is_child',
+        'non_local',
         'is_hospital_employee',
         'is_blacklisted',
         'is_personal_data_released',

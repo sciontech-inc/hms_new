@@ -42,6 +42,7 @@ class CreatePatientsTable extends Migration
             $table->text('bp')->nullable();
             $table->text('ethnicity')->nullable();
             $table->text('is_child')->nullable();
+            $table->text('non_local')->nullable();
             $table->text('is_hospital_employee')->nullable();
             $table->text('is_blacklisted')->nullable();
             $table->text('is_personal_data_released')->nullable();

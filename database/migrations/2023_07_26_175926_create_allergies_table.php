@@ -15,8 +15,8 @@ class CreateAllergiesTable extends Migration
     {
         Schema::create('allergies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('code');
-            $table->string('description');
+            $table->string('allergy_code');
+            $table->string('allergy_description');
             $table->integer('workstation_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');

@@ -283,31 +283,9 @@ class Dev01_Seeder extends Seeder
         ],
         [
 
-            'name' => 'SERVICE TYPE',
-            'code' => 'service_type',
-            'app_id' => '12',
-            'sort_no' => '2',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
-            'name' => 'ALLERGIES',
-            'code' => 'allergies',
-            'app_id' => '12',
-            'sort_no' => '0',
-            'status' => '1',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-
             'name' => 'TIME LOGS',
             'code' => 'time_logs',
-            'app_id' => '16',
+            'app_id' => '15',
             'sort_no' => '0',
             'status' => '1',
             'created_by' => '1',
@@ -318,7 +296,7 @@ class Dev01_Seeder extends Seeder
 
             'name' => 'SCHEDULING',
             'code' => 'scheduling',
-            'app_id' => '16',
+            'app_id' => '15',
             'sort_no' => '0',
             'status' => '1',
             'created_by' => '1',

@@ -502,6 +502,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'HMOGuarantorController@edit'                                      )->name('edit');
             Route::post         ('/update/{id}',                    'HMOGuarantorController@update'                                    )->name('update');
             Route::post         ('/destroy',                        'HMOGuarantorController@destroy'                                   )->name('delete');
+            Route::get          ('/list/{id}',                      'HMOGuarantorController@get_list'                                  )->name('list');
         });
 
 

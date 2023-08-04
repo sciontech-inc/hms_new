@@ -81,4 +81,15 @@ class HMOGuarantorController extends Controller
         
         return 'Record Deleted';
     }
+
+    // public function get_list($id) {
+
+    //     $data = null;
+
+    //     $data = Floor::get();
+
+    //     return response()->json(compact('data'));
+    // }
+
 }
+

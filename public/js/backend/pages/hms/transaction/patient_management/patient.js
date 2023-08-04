@@ -86,6 +86,10 @@ function success(record) {
                     $('#social_history_table').DataTable().draw();
                     scion.create.sc_modal('social_history_form').hide('all', modalHideFunction);
                     break;
+                case 'guarantory_history':
+                    $('#guarantory_history_table').DataTable().draw();
+                    scion.create.sc_modal('guarantory_history_form').hide('all', modalHideFunction);
+                    break;
                 case 'other_information':
                     $('#other_information_table').DataTable().draw();
                     scion.create.sc_modal('other_information_form').hide('all', modalHideFunction);
@@ -177,6 +181,12 @@ function delete_success() {
             scion.centralized_button(true, false, true, true);
 
             break;
+        case 'guarantor_history':
+            $('#guarantor_history_table').DataTable().draw();
+            actions = 'save';
+            scion.centralized_button(true, false, true, true);
+
+            break;
         case 'other_information':
             $('#other_information_table').DataTable().draw();
             actions = 'save';
@@ -256,9 +266,7 @@ function generateData() {
                 zip_code_2 : $('#zip_code_2').val(),
                 status: $('#status').val(),
                 profile_img: ($('#profile_img').val() !== ''?cropzeeGetImage('profile_img'):'')
-                
             };
-
 
             break;
         case 'patient_insurance':
@@ -347,7 +355,6 @@ function generateData() {
                 procedure_complications: $('#procedure_complications').val(),
                 procedure_sedation_used: $('#procedure_sedation_used').val(),
                 procedure_remarks: $('#procedure_remarks').val(),
-
             };
 
             actions = 'update';
@@ -371,7 +378,6 @@ function generateData() {
                 allergy_anaphylaxis: $('#allergy_anaphylaxis').val(),
                 allergy_testing: $('#allergy_testing').val(),
                 other_relevant_medical_history: $('#other_relevant_medical_history').val(),
-
             };
 
             actions = 'update';
@@ -384,7 +390,6 @@ function generateData() {
                 progress_date: $('#progress_date').val(),
                 progress_title: $('#progress_title').val(),
                 progress_notes: $('#progress_notes').val(),
-
             };
 
             actions = 'update';
@@ -403,7 +408,6 @@ function generateData() {
                 oxygen_saturation: $('#oxygen_saturation').val(),
                 pulse_rate: $('#pulse_rate').val(),
                 vital_remarks: $('#vital_remarks').val(),
-
             };
 
             actions = 'update';
@@ -424,7 +428,6 @@ function generateData() {
                 fm_lifestyle_factors: $('#fm_lifestyle_factors').val(),
                 fm_other_family_members_affected: $('#fm_other_family_members_affected').val(),
                 fm_remarks: $('#fm_remarks').val(),
-
             };
 
             actions = 'update';
@@ -437,7 +440,17 @@ function generateData() {
                 sh_record: $('#sh_record').val(),
                 sh_category: $('#sh_category').val(),
                 sh_details: $('#sh_details').val(),
-                
+            };
+
+            actions = 'update';
+
+                break;
+        case 'guarantor_history':
+            form_data = {
+                _token: _token,
+                patient_id: additional_id,
+                guarantor_id: $('#guarantor_id').val(),
+                account_no: $('#account_no').val(),
             };
 
             actions = 'update';
@@ -851,6 +864,52 @@ function social_history_func() {
     );
 }
 
+function guarantor_history_func() {
+
+    modal_content = 'guarantor_history';
+    module_content = 'guarantor_history';
+    module_url = '/actions/' + module_content;
+    actions = 'update';
+    module_type = 'custom';
+    
+    additional_id = record_id;
+
+    $.get('/actions/hmo_guarantor/get', function(response) {
+        $("#guarantor_id").html('');
+        $("#guarantor_id").append('<option></option>');
+        $.each(response.data, function(i,v) {
+            var o = new Option(v.guarantor_name, v.id);
+            
+            $(o).html(v.guarantor_name);
+            $("#guarantor_id").append(o);
+        });
+    });
+
+    scion.centralized_button(false, true, true, true);
+
+    if ($.fn.DataTable.isDataTable('#guarantor_history_table')) {
+        $('#guarantor_history_table').DataTable().destroy();
+    }
+
+
+    scion.create.table(
+        'guarantor_history_table',
+        module_url + '/get/' + record_id,
+        [
+            { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
+                var html = "";
+                html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
+                html += '<a href="#" class="align-middle edit" onclick="guarantor_history_edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                return html;
+            }},
+            { data: "id", title: "ID" },
+            { data: "guarantor_id", title: "GUARANTOR NAME" },
+            { data: "account_no", title: "ACCOUNT NO" },
+ 
+        ], 'Bfrtip', []
+    );
+}
+
 function other_information_func() {
 
     modal_content = 'other_information';
@@ -1093,6 +1152,20 @@ function social_history_edit(url, id) {
         $('#sh_details').val(response.social_history.sh_details);
 
         update_id = response.social_history.id;
+    });
+}
+
+// Edit Custom
+function guarantor_history_edit(url, id) {
+    $.get(url+id, function(response){
+        actions = 'update';
+        
+        scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+        
+        $('#guarantor_id').val(response.guarantor_history.guarantor_id);
+        $('#account_no').val(response.guarantor_history.account_no);
+
+        update_id = response.guarantor_history.id;
     });
 }
 

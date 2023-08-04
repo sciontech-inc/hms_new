@@ -12,8 +12,8 @@ class GuarantorHistory extends Model
     protected $fillable = [
         
         'patient_id',
-        'oi_description',
-        'oi_remarks',
+        'guarantor_id',
+        'account_no',
         'workstation_id',
         'created_by',
         'updated_by',

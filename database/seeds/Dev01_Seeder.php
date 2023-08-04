@@ -164,19 +164,6 @@ class Dev01_Seeder extends Seeder
         ],
         [
             //id = 14
-            'name' => 'CONSULTANT INFORMATION',
-            'code' => 'consultant_information_maintenance',
-            'sort_no' => '0',
-            'app_type_id' => '1',
-            'status' => '1',
-            'module' => '0',
-            'icon' => 'headset',
-            'created_by' => '1',
-            'updated_by' => '1',
-
-        ],
-        [
-            //id = 15
             'name' => 'HMOS / GUARANTORS',
             'code' => 'hmo_guarantor',
             'sort_no' => '0',
@@ -189,7 +176,7 @@ class Dev01_Seeder extends Seeder
 
         ],
         [
-            //id = 16
+            //id = 15
             'name' => 'TIMEKEEPING',
             'code' => 'timekeeping',
             'sort_no' => '0',

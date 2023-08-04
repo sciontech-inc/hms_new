@@ -34,6 +34,13 @@ var scion = {
                 $('.tab-list-menu-item ').prop('disabled', true);
                 record_id = additional_id;
             }
+            else if(module_type === "tab_maintenance") {
+                
+                $('.form-record')[0].reset();
+                scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
+
+                record_id = additional_id;
+            }
             else if(module_type === "transaction") {
 
                 record_length = $('.form-record').length - 1;
@@ -229,6 +236,16 @@ var scion = {
                     }
                     else if(module_type === "transaction") {
                         $('#' + tab_active).click();
+                    }
+                    else if(module_type === "tab_maintenance") {
+                        if(lookup_type !== "sub") {
+                            if(lookup_type === "modal_lookup") {
+                                scion.create.sc_modal(modal_content+"_form", page_title).show(modalShowFunction);
+                            }
+                            else {
+                                scion.create.sc_modal(modal_content+"_form", "UPDATE " + page_title).show(modalShowFunction);
+                            }
+                        }
                     }
                 }
             });

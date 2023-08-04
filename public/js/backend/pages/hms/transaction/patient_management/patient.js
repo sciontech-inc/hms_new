@@ -486,6 +486,38 @@ function general_func() {
     module_url = '/actions/' + module_content;
     module_type = 'transaction';
 
+    // $.get('/actions/hmo_guarantor/get', function(response) {
+    //     $("#guarantor_id").html('');
+    //     $("#guarantor_id").append('<option></option>');
+    //     $.each(response.data, function(i,v) {
+    //         var o = new Option(v.guarantor_name, v.id);
+            
+    //         $(o).html(v.guarantor_name);
+    //         $("#guarantor_id").append(o);
+    //     });
+    // });
+
+    // $.get('/actions/hmo_guarantor/get', function(response) {
+    //     $("#guarantor_id").html('');
+    //     $("#guarantor_id").append('<option></option>');
+    //     $.each(response.data, function(i,v) {
+    //         var o = new Option(v.guarantor_name, v.id);
+            
+    //         $(o).html(v.guarantor_name);
+    //         $("#guarantor_id").append(o);
+    //     });
+    // });
+
+    // $.get('/actions/hmo_guarantor/get', function(response) {
+    //     $("#guarantor_id").html('');
+    //     $("#guarantor_id").append('<option></option>');
+    //     $.each(response.data, function(i,v) {
+    //         var o = new Option(v.guarantor_name, v.id);
+            
+    //         $(o).html(v.guarantor_name);
+    //         $("#guarantor_id").append(o);
+    //     });
+    // });
     if(record_id !== '') {
         actions = 'update';
     }

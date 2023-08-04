@@ -5,7 +5,7 @@ $(function() {
     module_content = 'consultant_information_maintenance';
     module_url = '/actions/' + modal_content;
     module_type = 'transaction_2';
-    page_title = "Consultant Information";
+    page_title = "Consultant Information Maintenances";
     actions = 'save';
     tab_active = 'prc_license_type';
 

@@ -32,6 +32,16 @@ function success() {
                     $('#service_type_table').DataTable().draw();
                     scion.create.sc_modal('service_type_form').hide('all', modalHideFunction)
                     break;
+
+                case 'patient_industry':
+                    $('#patient_industry_table').DataTable().draw();
+                    scion.create.sc_modal('patient_industry_form').hide('all', modalHideFunction)
+                    break;
+
+                case 'patient_work_level':
+                    $('#patient_work_level_table').DataTable().draw();
+                    scion.create.sc_modal('patient_work_level_form').hide('all', modalHideFunction)
+                    break;
             }
 
             break;
@@ -48,6 +58,16 @@ function success() {
                 case 'service_type':
                     $('#service_type_table').DataTable().draw();
                     scion.create.sc_modal('service_type_form').hide('all', modalHideFunction)
+                    break;
+
+                case 'patient_industry':
+                    $('#patient_industry_table').DataTable().draw();
+                    scion.create.sc_modal('patient_industry_form').hide('all', modalHideFunction)
+                    break;
+
+                case 'patient_work_level':
+                    $('#patient_work_level_table').DataTable().draw();
+                    scion.create.sc_modal('patient_work_level_form').hide('all', modalHideFunction)
                     break;
             }
 
@@ -75,6 +95,20 @@ function delete_success() {
 
             break;
 
+        case 'patient_industry':
+            $('#patient_industry_table').DataTable().draw();
+            actions = 'save';
+            scion.centralized_button(true, false, true, true);
+
+            break;
+
+        case 'patient_work_level':
+            $('#patient_work_level_table').DataTable().draw();
+            actions = 'save';
+            scion.centralized_button(true, false, true, true);
+
+            break;
+
     }
 }
 
@@ -97,6 +131,22 @@ function generateData() {
                     _token: _token,
                     service_type: $('#service_type').val(),
                     service_description: $('#service_description').val(),
+                };
+                break;
+
+            case 'patient_industry':
+                form_data = {
+                    _token: _token,
+                    code: $('#code').val(),
+                    description: $('#description').val(),
+                };
+                break;
+
+            case 'patient_work_level':
+                form_data = {
+                    _token: _token,
+                    code: $('#code').val(),
+                    description: $('#description').val(),
                 };
                 break;
 
@@ -177,6 +227,73 @@ function service_type_func() {
 
 }
 
+function patient_industry_func() {
+
+    modal_content = 'patient_industry';
+    module_content = 'patient_industry';
+    module_url = '/actions/' + modal_content;
+    module_type = 'tab_maintenance';
+    page_title = "Patient Industry";
+    actions = 'save';
+
+    scion.centralized_button(false, true, true, true);
+
+    if ($.fn.DataTable.isDataTable('#patient_industry_table')) {
+        $('#patient_industry_table').DataTable().destroy();
+    }
+
+    scion.create.table(
+        module_content + '_table',  
+        module_url + '/get', 
+        [
+            { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
+                var html = "";
+                html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                return html;
+            }},
+            { data: "id", title: "ID" },
+            { data: "code", title: "CODE" },
+            { data: "description", title: "DESCRIPTION" },
+          
+        ], 'Bfrtip', []
+    );
+
+}
+
+function patient_work_level_func() {
+
+    modal_content = 'patient_work_level';
+    module_content = 'patient_work_level';
+    module_url = '/actions/' + modal_content;
+    module_type = 'tab_maintenance';
+    page_title = "Patient Work Level";
+    actions = 'save';
+
+    scion.centralized_button(false, true, true, true);
+
+    if ($.fn.DataTable.isDataTable('#patient_work_level_table')) {
+        $('#patient_work_level_table').DataTable().destroy();
+    }
+
+    scion.create.table(
+        module_content + '_table',  
+        module_url + '/get', 
+        [
+            { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
+                var html = "";
+                html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
+                html += '<a href="#" class="align-middle edit" onclick="scion.record.edit('+"'/actions/"+module_content+"/edit/', "+ row.id +')"><i class="fas fa-pen"></i></a>';
+                return html;
+            }},
+            { data: "id", title: "ID" },
+            { data: "code", title: "CODE" },
+            { data: "description", title: "DESCRIPTION" },
+          
+        ], 'Bfrtip', []
+    );
+
+}
 function modalShowFunction() {
     scion.centralized_button(true, false, true, true);
 }

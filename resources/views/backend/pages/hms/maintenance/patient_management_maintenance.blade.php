@@ -37,6 +37,8 @@
         'data'=>array(
             array('id'=>'allergies', 'title'=>'ALLERGIES', 'icon'=>' fas fa-virus', 'active'=>true, 'disabled'=>false, 'function'=>true),
             array('id'=>'service_type', 'title'=>'SERVICE TYPE', 'icon'=>' fas fa-clipboard-list', 'active'=>true, 'disabled'=>false, 'function'=>true),
+            array('id'=>'patient_industry', 'title'=>'PATIENT INDUSTRY', 'icon'=>' fas fa-industry', 'active'=>true, 'disabled'=>false, 'function'=>true),
+            array('id'=>'patient_work_level', 'title'=>'PATIENT WORK LEVEL', 'icon'=>' fas fa-briefcase', 'active'=>true, 'disabled'=>false, 'function'=>true),
        
         )
     ])
@@ -51,6 +53,8 @@
                 <form class="form-record" method="post" id="patientmanagementForm">
                     @include('backend.pages.hms.maintenance.patient_management_maintenance.patient_management_tab.allergies_tab')
                     @include('backend.pages.hms.maintenance.patient_management_maintenance.patient_management_tab.service_type_tab')
+                    @include('backend.pages.hms.maintenance.patient_management_maintenance.patient_management_tab.patient_industry_tab')
+                    @include('backend.pages.hms.maintenance.patient_management_maintenance.patient_management_tab.patient_work_level_tab')
 
                 </form>
             </div>

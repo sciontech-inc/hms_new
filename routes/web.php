@@ -416,12 +416,31 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/destroy',                        'AllergiesController@destroy'                                   )->name('delete');
         });
 
+        Route::group(['prefix' => 'patient_industry'], function() {
+            Route::get          ('/get',                            'PatientIndustryController@get'                                 )->name('get');
+            Route::post         ('/save',                           'PatientIndustryController@store'                               )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientIndustryController@edit'                                )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientIndustryController@update'                              )->name('update');
+            Route::post         ('/destroy',                        'PatientIndustryController@destroy'                             )->name('delete');
+
+        });
+
+        Route::group(['prefix' => 'patient_work_level'], function() {
+            Route::get          ('/get',                            'PatientWorkLevelController@get'                                )->name('get');
+            Route::post         ('/save',                           'PatientWorkLevelController@store'                              )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientWorkLevelController@edit'                               )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientWorkLevelController@update'                             )->name('update');
+            Route::post         ('/destroy',                        'PatientWorkLevelController@destroy'                            )->name('delete');
+
+        });
+
         Route::group(['prefix' => 'prc_license_type'], function() {
             Route::get          ('/get',                            'PRCLicenseTypeController@get'                                  )->name('get');
             Route::post         ('/save',                           'PRCLicenseTypeController@store'                                )->name('save');
             Route::get          ('/edit/{id}',                      'PRCLicenseTypeController@edit'                                 )->name('edit');
             Route::post         ('/update/{id}',                    'PRCLicenseTypeController@update'                               )->name('update');
             Route::post         ('/destroy',                        'PRCLicenseTypeController@destroy'                              )->name('delete');
+
         });
         
         Route::group(['prefix' => 'phic_group'], function() {

@@ -174,6 +174,32 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+            //id = 15
+            'name' => 'HMOS / GUARANTORS',
+            'code' => 'hmo_guarantor',
+            'sort_no' => '0',
+            'app_type_id' => '1',
+            'status' => '1',
+            'module' => '0',
+            'icon' => 'user-lock',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+            //id = 16
+            'name' => 'TIMEKEEPING',
+            'code' => 'timekeeping',
+            'sort_no' => '0',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '0',
+            'icon' => 'clock',
+            'created_by' => '1',
+            'updated_by' => '1',
+
         ]
         
     
@@ -289,7 +315,30 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+
+            'name' => 'TIME LOGS',
+            'code' => 'time_logs',
+            'app_id' => '16',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'SCHEDULING',
+            'code' => 'scheduling',
+            'app_id' => '16',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
         ]
+
         
         
        

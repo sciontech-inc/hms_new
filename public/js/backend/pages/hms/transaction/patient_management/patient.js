@@ -23,6 +23,27 @@ $(function() {
         allowedInputs: ['png','jpg','jpeg']
     });
 
+    $.get('/actions/patient_industry/get', function(response) {
+        $("#industry").html('');
+        $("#industry").append('<option></option>');
+        $.each(response.data, function(i,v) {
+            var o = new Option(v.code, v.id);
+            
+            $(o).html(v.code);
+            $("#industry").append(o);
+        });
+    });
+
+    $.get('/actions/patient_work_level/get', function(response) {
+        $("#work_level").html('');
+        $("#work_level").append('<option></option>');
+        $.each(response.data, function(i,v) {
+            var o = new Option(v.code, v.id);
+            
+            $(o).html(v.code);
+            $("#work_level").append(o);
+        });
+    });
 
 });
 
@@ -486,38 +507,8 @@ function general_func() {
     module_url = '/actions/' + module_content;
     module_type = 'transaction';
 
-    // $.get('/actions/hmo_guarantor/get', function(response) {
-    //     $("#guarantor_id").html('');
-    //     $("#guarantor_id").append('<option></option>');
-    //     $.each(response.data, function(i,v) {
-    //         var o = new Option(v.guarantor_name, v.id);
-            
-    //         $(o).html(v.guarantor_name);
-    //         $("#guarantor_id").append(o);
-    //     });
-    // });
+  
 
-    // $.get('/actions/hmo_guarantor/get', function(response) {
-    //     $("#guarantor_id").html('');
-    //     $("#guarantor_id").append('<option></option>');
-    //     $.each(response.data, function(i,v) {
-    //         var o = new Option(v.guarantor_name, v.id);
-            
-    //         $(o).html(v.guarantor_name);
-    //         $("#guarantor_id").append(o);
-    //     });
-    // });
-
-    // $.get('/actions/hmo_guarantor/get', function(response) {
-    //     $("#guarantor_id").html('');
-    //     $("#guarantor_id").append('<option></option>');
-    //     $.each(response.data, function(i,v) {
-    //         var o = new Option(v.guarantor_name, v.id);
-            
-    //         $(o).html(v.guarantor_name);
-    //         $("#guarantor_id").append(o);
-    //     });
-    // });
     if(record_id !== '') {
         actions = 'update';
     }

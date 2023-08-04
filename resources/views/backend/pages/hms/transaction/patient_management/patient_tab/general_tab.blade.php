@@ -293,14 +293,18 @@
         </div>
         <div class="col-4">
             <div class="form-group industry">
-                <label>INDUSTRY</label>
-                <input type="text" class="form-control" name="industry" id="industry"/>
+                <label>INDUSTRY <span class="required">*</span>:</label>
+                <select name="industry" id="industry" class="form-control">
+                    <option value=""></option>
+                </select>
             </div>
         </div>
         <div class="col-4">
             <div class="form-group work_level">
-                <label>WORK LEVEL</label>
-                <input type="text" class="form-control" name="work_level" id="work_level"/>
+                <label>WORK LEVEL <span class="required">*</span>:</label>
+                <select name="work_level" id="work_level" class="form-control">
+                    <option value=""></option>
+                </select>
             </div>
         </div>
         <div class="col-4">

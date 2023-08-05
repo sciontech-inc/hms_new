@@ -121,8 +121,8 @@ function generateData() {
             case 'allergies':
                 form_data = {
                     _token: _token,
-                    code: $('#code').val(),
-                    description: $('#description').val(),
+                    allergy_code: $('#allergy_code').val(),
+                    allergy_description: $('#allergy_description').val(),
                 };
                 break;
 
@@ -137,16 +137,16 @@ function generateData() {
             case 'patient_industry':
                 form_data = {
                     _token: _token,
-                    code: $('#code').val(),
-                    description: $('#description').val(),
+                    patient_industry_code: $('#patient_industry_code').val(),
+                    patient_industry_description: $('#patient_industry_description').val(),
                 };
                 break;
 
             case 'patient_work_level':
                 form_data = {
                     _token: _token,
-                    code: $('#code').val(),
-                    description: $('#description').val(),
+                    patient_work_level_code: $('#patient_work_level_code').val(),
+                    patient_work_level_description: $('#patient_work_level_description').val(),
                 };
                 break;
 
@@ -185,8 +185,8 @@ function allergies_func() {
                 return html;
             }},
             { data: "id", title: "ID" },
-            { data: "code", title: "CODE" },
-            { data: "description", title: "DESCRIPTION" },
+            { data: "allergy_code", title: "CODE" },
+            { data: "allergy_description", title: "DESCRIPTION" },
           
         ], 'Bfrtip', []
     );
@@ -253,8 +253,8 @@ function patient_industry_func() {
                 return html;
             }},
             { data: "id", title: "ID" },
-            { data: "code", title: "CODE" },
-            { data: "description", title: "DESCRIPTION" },
+            { data: "patient_industry_code", title: "CODE" },
+            { data: "patient_industry_description", title: "DESCRIPTION" },
           
         ], 'Bfrtip', []
     );
@@ -287,8 +287,8 @@ function patient_work_level_func() {
                 return html;
             }},
             { data: "id", title: "ID" },
-            { data: "code", title: "CODE" },
-            { data: "description", title: "DESCRIPTION" },
+            { data: "patient_work_level_code", title: "CODE" },
+            { data: "patient_work_level_description", title: "DESCRIPTION" },
           
         ], 'Bfrtip', []
     );

@@ -27,8 +27,8 @@ class PatientWorkLevelController extends Controller
     {
         $validate = $request->validate([
 
-            'code' => ['required'],
-            'description' => ['required'],
+            'patient_work_level_code' => ['required'],
+            'patient_work_level_description' => ['required'],
 
         ]);
         

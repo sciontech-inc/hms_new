@@ -10,8 +10,8 @@ class Allergies extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'code',
-        'description',
+        'allergy_code',
+        'allergy_description',
         'workstation_id',
         'created_by',
         'updated_by',

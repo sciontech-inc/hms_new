@@ -302,7 +302,29 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
-        ]
+        ],
+        [
+
+            'name' => 'PATIENT APPOINTMENT',
+            'code' => 'patient_appointment',
+            'app_id' => '12',
+            'sort_no' => '2',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'CHECK UP',
+            'code' => 'check_up',
+            'app_id' => '12',
+            'sort_no' => '3',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
 
         
         

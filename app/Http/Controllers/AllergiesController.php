@@ -28,8 +28,8 @@ class AllergiesController extends Controller
     {
         $validate = $request->validate([
 
-            'code' => ['required'],
-            'description' => ['required'],
+            'allergy_code' => ['required'],
+            'allergy_description' => ['required'],
 
         ]);
         

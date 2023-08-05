@@ -1,0 +1,20 @@
+<?php
+namespace App\Classes\TimeKeeping;
+
+class Scheduling {
+    public function query($first, $last) {
+        $script = "doctors.id, doctors.firstname, doctors.middlename, doctors.lastname,doctors.suffix,doctors.profile_img, 
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 1 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'sun',
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 2 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'mon',
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 3 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'tue',
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 4 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'wed',
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 5 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'thu',
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 6 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'fri',
+        MAX(CASE WHEN schedulings.date >= '".$first."' AND schedulings.date <= '".$last."' THEN (CASE WHEN DAYOFWEEK(schedulings.date) = 7 THEN CONCAT((CASE WHEN schedulings.start_time IS NOT NULL THEN DATE_FORMAT(schedulings.start_time, '%H:%i') ELSE '' END), ' - ', (CASE WHEN schedulings.end_time IS NOT NULL THEN DATE_FORMAT(schedulings.end_time, '%H:%i') ELSE '' END),'|',schedulings.type,'|',(CASE WHEN schedulings.type_description IS NOT NULL THEN schedulings.type_description ELSE 'WORK' END)) END) END) 'sat'";
+
+        return $script;
+    }
+
+    
+}
+?>

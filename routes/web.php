@@ -18,6 +18,10 @@ Route::group(['middleware' => ['auth']], function() {
         return view('backend.pages.dashboard');
     });
 
+    Route::get('/prescription', function () {
+        return view('backend.partial.component.prescription');
+    });
+
     Route::get('/hms', function () {
         return view('backend.pages.dashboard');
     });

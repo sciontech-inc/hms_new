@@ -12,6 +12,11 @@ use App\Events\FormSubmitted;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/home', function () {
+    return view('frontend.pages.home');
+});
+
 Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/', function () {

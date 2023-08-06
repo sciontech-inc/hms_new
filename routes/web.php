@@ -152,6 +152,14 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/save',                           'PatientRegisterController@store'                               )->name('save');
         });
 
+        Route::group(['prefix' => '/scheduling'], function (){
+            Route::get          ('/',                                'SchedulingsController@index'                              )->name('scheduling');
+            Route::get          ('/get/{department}/{first}/{last}', 'SchedulingsController@get'                                )->name('get_scheduling');
+            Route::post         ('/save',                            'SchedulingsController@save'                               )->name('save_scheduling');
+            Route::post         ('/copy_schedule',                   'SchedulingsController@copy_schedule'                      )->name('copy_schedule');
+            Route::post         ('/paste_schedule',                  'SchedulingsController@paste_schedule'                     )->name('paste_schedule');
+        });
+
         //Patient Management
 
         Route::group(['prefix' => 'patient'], function() {

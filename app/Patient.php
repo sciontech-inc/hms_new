@@ -75,4 +75,16 @@ class Patient extends Model
         'updated_by',
         'deleted_by'
     ];
+    
+    public function medical_case() {
+        return $this->hasMany(MedicalCase::class, 'patient_id', 'id');
+    }
+    
+    public function medicine_taken() {
+        return $this->hasMany(MedicineTaken::class, 'patient_id', 'id');
+    }
+    
+    public function allergies() {
+        return $this->hasMany(PatientAllergies::class, 'patient_id', 'id');
+    }
 }

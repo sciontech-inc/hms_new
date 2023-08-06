@@ -148,6 +148,15 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/info/{id}',                      'RoomsBedsDietaryController@get_info'                           )->name('info');
         });
         
+        Route::group(['prefix' => 'patient_appointment'], function() {
+            Route::get          ('/get',                            'PatientAppointmentController@get'                              )->name('get');
+            Route::post         ('/save',                           'PatientAppointmentController@store'                            )->name('save');
+            Route::get          ('/edit/{id}',                      'PatientAppointmentController@edit'                             )->name('edit');
+            Route::post         ('/update/{id}',                    'PatientAppointmentController@update'                           )->name('update');
+            Route::post         ('/destroy',                        'PatientAppointmentController@destroy'                          )->name('delete');
+            Route::get          ('/list/{id}',                      'PatientAppointmentController@get_list'                         )->name('list');
+        });
+        
         Route::group(['prefix' => 'patient_register'], function() {
             Route::post         ('/save',                           'PatientRegisterController@store'                               )->name('save');
         });
@@ -158,6 +167,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post         ('/save',                            'SchedulingsController@save'                               )->name('save_scheduling');
             Route::post         ('/copy_schedule',                   'SchedulingsController@copy_schedule'                      )->name('copy_schedule');
             Route::post         ('/paste_schedule',                  'SchedulingsController@paste_schedule'                     )->name('paste_schedule');
+            Route::post         ('/get-schedule',                    'SchedulingsController@get_schedule'                       )->name('get_schedule');
         });
 
         //Patient Management
@@ -276,6 +286,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/edit/{id}',                      'DoctorController@edit'                                        )->name('edit');
             Route::post         ('/update/{id}',                    'DoctorController@update'                                      )->name('update');
             Route::post         ('/destroy',                        'DoctorController@destroy'                                     )->name('delete');
+            Route::get          ('/list/{id}',                      'DoctorController@get_list'                                    )->name('list');
         });
 
         Route::group(['prefix' => 'doctor_qualification'], function() {

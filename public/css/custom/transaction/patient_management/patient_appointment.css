@@ -1,0 +1,91 @@
+a.fc-event {
+    background-color: #fff !important;
+    padding: 0px;
+    color: #000 !important;
+    border: 0px;
+}
+
+.fc-event-main {
+    color: #000 !important;
+}
+
+td.fc-list-event-title {
+    width: 100%;
+}
+
+.event-card {
+    padding: 5px;
+}
+
+.event-card .reason {
+    font-size: 14px !important;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.appointment-info  {
+    padding: 5px;
+}
+
+.fc-popover {
+    width: 300px;
+}
+
+.status-0 {
+    background: #ffd4d4 !important;
+}
+
+.status-1 {
+    background: #b2ffb2 !important;
+}
+
+.status-2 {
+    background: #ffd1b2 !important;
+}
+
+.status-3 {
+    background: #b2ffff !important;
+}
+
+.status-4 {
+    background: #b2e0ff !important;
+}
+
+div#appointment_display_status>span {
+    padding: 0px 10px !important;
+    font-size: 15px;
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.sc-xl {
+    max-width: 90%;
+    width: 100%;
+}
+
+#patient_appointment_view table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#patient_appointment_view table th {
+    padding: 2px 5px !important;
+    background: #2166a3;
+    border: 1px solid #2166a3;
+    color: #fff;
+}
+
+table#history_medical_condition td,
+table#history_allergies td,
+table#history_medication td   {
+    padding: 3px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.history-title {
+    margin-bottom: 5px;
+    font-weight: bold !important;
+    color: #000;
+}

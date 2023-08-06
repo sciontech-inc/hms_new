@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\PatientAppointment;
 use App\Schedulings;
 use App\Doctor;
 use App\Classes\TimeKeeping\Scheduling;
@@ -73,5 +74,19 @@ class SchedulingsController extends Controller
         $request['updated_by'] = Auth::user()->id;
 
         Schedulings::create($request->all());
+    }
+
+    public function get_schedule(Request $request) {
+        $schedulings = Schedulings::where('doctors_id', $request->doctors_id)->where('date', '=', $request->date)->first();
+        $time = array();
+
+        if($schedulings !== null) {
+            for($i=strtotime($schedulings->start_time); $i<strtotime($schedulings->end_time); $i+=3600){
+                if(PatientAppointment::where('doctor_id', $request->doctors_id)->where('date', '=', $request->date)->where('time', '=', date("H:i",$i))->where('appointment_status', '!=', '0')->count() === 0) {
+                    array_push($time, date("H:i",$i));
+                }
+            }
+        }
+        return response()->json(compact('time'));
     }
 }

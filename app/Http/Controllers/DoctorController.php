@@ -163,4 +163,16 @@ class DoctorController extends Controller
         return 'Record Deleted';
     }
 
+    public function get_list($id) {
+        $data = null;
+
+        if($id === "all") {
+            $data = Doctor::where('status', 1)->get();
+        }
+        else {
+            $data = Doctor::where('id', $id)->where('status', 1)->get();
+        }
+        
+        return response()->json(compact('data'));
+    }
 }

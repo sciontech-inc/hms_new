@@ -826,7 +826,7 @@ span.custom-modal-close {
 .sc-modal {
     height: 100% !important;
     position: fixed;
-    z-index: 100;
+    z-index: 10000;
     width: calc(100% - 100px);
     margin-top: -15px;
     display: none;

@@ -161,8 +161,10 @@
                         <p style="margin: 0px; color: #535353; font-size: 14px; margin-top: -5px; margin-left: 50px;"><span>1 Tablet - 0 - 1 tablet for 14 days</span></p>
                     </div>
                 </div>
-                <div class="col-12">
-                    <p style="margin: 0px; font-size: 16px; color: #086f9e; font-weight: bold; margin-left: 50px;"><span>3. COVID-19 RT PCR</span></p>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-12">
+                        <p style="margin: 0px; font-size: 16px; color: #086f9e; font-weight: bold; margin-left: 50px;"><span>3. COVID-19 RT PCR</span></p>
+                    </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-12">

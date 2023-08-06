@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Traits\GlobalFunction;
 use App\Patient;
+use App\User;
 use Auth;
+use Hash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -124,6 +126,10 @@ class PatientController extends Controller
         $request['updated_by'] = Auth::user()->id;
 
         $patient = Patient::create($request->all());
+        
+        $password = str_replace(" ","",$request->lastname).str_replace("-","",$request->birthdate);
+        $data = array('firstname' => $request->firstname, 'lastname' => $request->lastname, 'email' => $request->email, 'password' => Hash::make($password), 'status' => 1, 'workstation_id' => 1, 'created_by' => 1, 'updated_by' => 1);
+        User::create($data);
 
         $this->setup->set_log('Patient Record Created', '"'.Auth::user()->firstname.' '.(Auth::user()->middlename!==null&&Auth::user()->middlename!==''?Auth::user()->middlename.' ':'').Auth::user()->lastname.'" created the patient record ID "'.$patient->patient_id.'"', request()->ip());
 

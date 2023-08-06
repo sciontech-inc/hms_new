@@ -85,17 +85,17 @@ function calendarView() {
         selectable: true,
         dayMaxEvents: true, 
         select: function(arg) {
-            var title = prompt('Event Title:');
-            if (title) {
-                calendar.addEvent({
-                    title: title,
-                    start: arg.start,
-                    end: arg.end,
-                    allDay: arg.allDay
-                })
-            }
-            calendar.unselect()
-            console.log(arg);
+            // var title = prompt('Event Title:');
+            // if (title) {
+            //     calendar.addEvent({
+            //         title: title,
+            //         start: arg.start,
+            //         end: arg.end,
+            //         allDay: arg.allDay
+            //     })
+            // }
+            // calendar.unselect()
+            // console.log(arg);
         },
         eventClick: function(arg) {
             var el = arg.el.children[0];
@@ -184,7 +184,7 @@ function calendarView() {
                 $('table#history_medical_condition tbody').html(table_medical_case);
                 $('table#history_allergies tbody').html(table_allergies);
                 $('table#history_medication tbody').html(table_medication);
-                
+
                 scion.create.sc_modal('patient_appointment_view', 'PATIENT APPOINTMENT').show(modalShowFunction);
             });
             

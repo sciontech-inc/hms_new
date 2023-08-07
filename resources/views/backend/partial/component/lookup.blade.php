@@ -34,23 +34,26 @@
         $('.sc-modal').delegate('#lookup_{{$id}}_table tbody tr','dblclick', function () {
             var data = $('#lookup_{{$id}}_table').DataTable().row(this).data();
             
-            scion.record.edit('/actions/{{$lookup_module}}/edit/', data.id);
             scion.create.sc_modal('lookup_{{$id}}', '').hide('{{$modal_type}}');
 
             if(lookup_type !== 'sub') {
                 scion.centralized_button(false, false, false, true);
                 if(lookup_type === 'modal_lookup') {
                     record_id = null;
-                    $('.tab-list-menu-item ').prop('disabled', true);
+                    $('.tab-list-menu-item:not(.active)').prop('disabled', true);
                 }
                 else {
                     $('.tab-list-menu-item ').removeAttr('disabled');
+                    scion.record.edit('/actions/{{$lookup_module}}/edit/', data.id);
                 }
             }
             else {
                 $('.tab-list-menu-item ').removeAttr('disabled');
             }
-            
+
+            if(typeof(displayLookupData) != "undefined"){
+                displayLookupData(data);
+            }
 
         });
     });

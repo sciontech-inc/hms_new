@@ -5,28 +5,24 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class VitalMeasurement extends Model
+class Vitals extends Model
 {
     use SoftDeletes;
-    
+
     protected $fillable = [
-        'patient_id',
-        'vital_date',
-        'vital_time',
-        'blood_pressure',
+        'check_up_id',
+        'datetime',
         'heart_rate',
-        'temperature',
+        'blood_pressure',
         'respiratory_rate',
+        'temperature',
         'oxygen_saturation',
-        'pulse_rate',
-        'vital_remarks',
-        'height',
         'weight',
+        'height',
         'workstation_id',
         'created_by',
         'updated_by',
-        'deleted_by'
-
+        'deleted_by',
     ];
-
+    
 }

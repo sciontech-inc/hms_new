@@ -163,7 +163,9 @@ var scion = {
                                         $('#'+k).prop('checked', v === 1?true:false);
                                     }
                                     else if($('#'+k)[0].type === 'file') {
-                                        $('.image-previewer').attr('src', '/images'+storage_url+'/'+v+'');
+                                        if(typeof(storage_url) != "undefined"){
+                                            $('.image-previewer').attr('src', '/images'+storage_url+'/'+v+'');
+                                        }
                                     }
                                     else if($('#'+k)[0].type === 'fieldset') {
                                         var val = v;

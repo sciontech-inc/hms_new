@@ -4,8 +4,6 @@ $(function() {
     module_content = 'patient_admission';
     modal_content = 'patient_admission';
     module_url = '/actions/' + module_content;
-    module_type = 'transaction';
-    page_title = 'PATIENT REGISTER';
     tab_active = 'general';
     page_title = "PATIENT ADMISSION";
     actions = 'save';
@@ -290,4 +288,10 @@ function roomSelect(_func) {
             }
         });
     });
+}
+
+function displayLookupData(data) {
+    $('#patient_id').val(data.patient_id);
+    $('#id').val(data.id);
+
 }

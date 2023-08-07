@@ -157,6 +157,24 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/list/{id}',                      'PatientAppointmentController@get_list'                         )->name('list');
         });
         
+        Route::group(['prefix' => 'check_up'], function() {
+            Route::get          ('/get',                            'CheckUpController@get'                                         )->name('get');
+            Route::post         ('/save',                           'CheckUpController@store'                                       )->name('save');
+            Route::get          ('/edit/{id}',                      'CheckUpController@edit'                                        )->name('edit');
+            Route::post         ('/update/{id}',                    'CheckUpController@update'                                      )->name('update');
+            Route::post         ('/destroy',                        'CheckUpController@destroy'                                     )->name('delete');
+            Route::get          ('/list/{id}',                      'CheckUpController@get_list'                                    )->name('list');
+        });
+        
+        Route::group(['prefix' => 'vitals'], function() {
+            Route::get          ('/get',                            'VitalsController@get'                                          )->name('get');
+            Route::post         ('/save',                           'VitalsController@store'                                        )->name('save');
+            Route::get          ('/edit/{id}',                      'VitalsController@edit'                                         )->name('edit');
+            Route::post         ('/update/{id}',                    'VitalsController@update'                                       )->name('update');
+            Route::post         ('/destroy',                        'VitalsController@destroy'                                      )->name('delete');
+            Route::get          ('/list/{id}',                      'VitalsController@get_list'                                     )->name('list');
+        });
+
         Route::group(['prefix' => 'patient_register'], function() {
             Route::post         ('/save',                           'PatientRegisterController@store'                               )->name('save');
         });

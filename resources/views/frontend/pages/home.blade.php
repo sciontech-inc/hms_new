@@ -32,15 +32,15 @@
                     <div class="row">
                         <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
                             <div class="hero__caption">
-                                <span>Committed to success</span>
+                                <span>Committed your health</span>
                                 <h1 class="cd-headline letters scale">We care about your 
                                     <strong class="cd-words-wrapper">
                                         <b class="is-visible">health</b>
-                                        <b>sushi</b>
-                                        <b>steak</b>
+                                        <b>wellness</b>
+                                        <b>journey</b>
                                     </strong>
                                 </h1>
-                                <p data-animation="fadeInLeft" data-delay="0.1s">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi uquip ex ea commodo consequat is aute irure.</p>
+                                <p data-animation="fadeInLeft" data-delay="0.1s">We envision a future where healthcare organizations seamlessly manage patient data, enabling accurate diagnoses, personalized treatments, and improved patient outcomes.</p>
                                 <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.5s">Appointment <i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
@@ -152,8 +152,8 @@
                         <div class="row align-items-center no-gutters">
                             <div class="col-lg-7">
                                 <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                    <h3>Experience the difference that compassionate care and expert knowledge can make in your dental journey. </h3 >
+                                    <p>Your dental health is her priority, and together, you'll achieve a smile that radiates confidence and well-being.</p>
                                     <a href="#" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -269,7 +269,7 @@
                 <div class="col-lg-6">
                     <div class="section-tittle text-center mb-100">
                         <span>Our Gellary</span>
-                        <h2>Our Medical Camp</h2>
+                        <h2>Our Medical Team</h2>
                     </div>
                 </div>
             </div>
@@ -339,7 +339,7 @@
                             </div>
                             <div class="founder-text">
                                 <span>Margaret Lawson</span>
-                                <p>Chif Photographer</p>
+                                <p>Chief Photographer</p>
                             </div>
                         </div>
                     </div>
@@ -372,7 +372,7 @@
                         </div>
                         <div class="team-caption">
                             <h3><a href="#">Alvin Maxwell</a></h3>
-                            <span>Creative UI Designer</span>
+                            <span>Doctor</span>
                             <!-- Team social -->
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -390,7 +390,7 @@
                         </div>
                         <div class="team-caption">
                             <h3><a href="#">Maria Smith</a></h3>
-                            <span>Agency Manager</span>
+                            <span>Doctor</span>
                             <!-- Team social -->
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -408,7 +408,7 @@
                         </div>
                         <div class="team-caption">
                             <h3><a href="#">Angela Doe</a></h3>
-                            <span>Designer</span>
+                            <span>Doctor</span>
                             <!-- Team social -->
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>

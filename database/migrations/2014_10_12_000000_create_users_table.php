@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('profile_img')->default('default.jpg');
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('status');
+            $table->integer('account_type')->default(1);
             $table->integer('workstation_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');

@@ -12,7 +12,33 @@ use App\Events\FormSubmitted;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/home', function () {
+    return view('frontend.pages.home');
+});
+
+Route::get('/contact', function () {
+    return view('frontend.pages.contact');
+});
+
+Route::get('/about', function () {
+    return view('frontend.pages.about');
+});
+
 Route::group(['middleware' => ['auth']], function() {
+
+    // Patient Front
+
+    Route::get('/dashboard', function () {
+        return view('frontend.pages.dashboard');
+    });
+
+    Route::get('/set_appointment', function () {
+        return view('frontend.pages.appointment.appointment');
+    });
+
+    // End Patient Front
+
 
     Route::get('/', function () {
         return view('backend.pages.dashboard');

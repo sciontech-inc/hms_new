@@ -32,7 +32,7 @@
                                         <li><a href="/about">About</a></li>
                                         <li><a href="/contact">Contact</a></li>
                                         @if (Auth::check())
-                                        <li><a href="/appointment">Appointment</a></li>
+                                        <li><a href="/set_appointment">Appointment</a></li>
                                         @endif
                                     </ul>
                                 </nav>

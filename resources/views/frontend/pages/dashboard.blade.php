@@ -88,7 +88,7 @@
                             </li>
                            
                             <li class="nav-item">
-                                <a class="nav-link" id="Blood-tab" data-toggle="tab" href="/logout" role="tab" aria-controls="contact" aria-selected="false">
+                                <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">
                                     <h4>Logout</h4>
                                 </a>
                             </li>
@@ -114,7 +114,7 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td><img src="frontend/img/elements/f1.png" alt="flag">Doctor Jose Reyes, MD</td>
+                                        <td><img src="frontend/img/elements/f1.png" alt="flag">Dr. Jose Reyes, MD</td>
                                         <td>August 9, 2023 - 10:00AM</td>
                                         <td>Regular health checkups to monitor overall health and catch potential issues early.</td>
                                         <td>Pending</td>
@@ -272,11 +272,42 @@
     </div>
     <!-- department area_end  -->
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h2>Are you sure you want to logout?</h2>
+        </div>
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-modal btn-secondary" data-dismiss="modal">Close</button>
+            <a href="/logout" class="btn btn-modal btn-primary">Logout</a>
+        </div>
+        </div>
+    </div>
+    </div>
 @endsection
 
 @section('styles')
 
 <style>
+    a.nav-link {
+        cursor: pointer;
+    }
+    a.btn.btn-modal {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+    button.btn.btn-modal {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
     .department_area .depart_ment_tab .nav li {
         flex: 19.5% 0 0;
     }

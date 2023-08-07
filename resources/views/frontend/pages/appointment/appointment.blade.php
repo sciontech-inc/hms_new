@@ -14,20 +14,22 @@
                         </div>
                         <p>Appointment details are required for your medical record. Please fill in all the details below.</p>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="single-element-widget mt-30">
                                     <h3 class="mb-30">SELECT DOCTOR</h3>
-                                    <div class="default-select" id="default-select"">
+                                    <div class="default-select" id="default-select">
                                         <select>
-                                            <option value=" 1">English</option>
-                                            <option value="1">Spanish</option>
-                                            <option value="1">Arabic</option>
-                                            <option value="1">Portuguise</option>
-                                            <option value="1">Bengali</option>
+                                            <option readonly>Select Doctor</option>
+                                            <option value="1">Dr. Jose Reyes, MD</option>
+                                            <option value="1">Dra. Rose Buenaventura, MD</option>
+                                            <option value="1">Dra. Allison Cortez, MD</option>
+                                       
                                         </select>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="single-element-widget mt-30">
                                     <h3 class="mb-30">SELECT DATE </h3>
@@ -36,6 +38,27 @@
                                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
                                             class="single-input">
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single-element-widget mt-30">
+                                    <h3 class="mb-30">SELECT TIME </h3>
+                                    <div class="mt-10">
+                                        <input type="time" name="last_name" placeholder="Last Name"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
+                                            class="single-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="single-element-widget mt-30">
+                                    <h3 class="mb-30">REASON </h3>
+                                <div class="mt-10">
+									<textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
+										onblur="this.placeholder = 'Message'" required></textarea>
+								</div>
                                 </div>
                             </div>
                         </div>

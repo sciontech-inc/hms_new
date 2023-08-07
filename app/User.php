@@ -28,7 +28,9 @@ class User extends Authenticatable
         'workstation_id',
         'created_by',
         'updated_by',
-        'status'
+        'status',
+        'account_type'
+
     ];
 
     protected $hidden = [

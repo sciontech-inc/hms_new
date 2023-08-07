@@ -28,16 +28,26 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="contact.html">Appointment</a></li>
+                                        <li><a href="/home">Home</a></li>
+                                        <li><a href="/about">About</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                        @if (Auth::check())
+                                        <li><a href="/appointment">Appointment</a></li>
+                                        @endif
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="/hms" class="btn header-btn">Patient Login</a>
-                            </div>
+                            @if (Auth::check())
+                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                    <a href="/dashboard" class="btn header-btn">Patient Dashboard</a>
+                                </div>
+                            @endif
+                            @if (Auth::guest())
+                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                    <a href="/hms" class="btn header-btn">Patient Login</a>
+                                </div>
+                            @endif
+                           
                         </div>
                     </div>   
                     <!-- Mobile Menu -->

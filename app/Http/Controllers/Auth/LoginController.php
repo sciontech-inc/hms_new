@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -25,7 +26,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/hms';
+    // protected $redirectTo = '/hms';
+
+    protected function redirectTo()
+    {
+        if (Auth::user()->account_type == 2) {
+            return '/dashboard';
+        }
+        return '/hms';
+    }
 
     /**
      * Create a new controller instance.

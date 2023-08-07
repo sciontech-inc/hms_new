@@ -23,6 +23,12 @@
 	<link rel="stylesheet" href="{{asset('/frontend/css/slick.css')}}">
 	<link rel="stylesheet" href="{{asset('/frontend/css/nice-select.css')}}">
 	<link rel="stylesheet" href="{{asset('/frontend/css/style.css')}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    @yield('scripts')
+    @yield('styles')
+
 </head>
 <body>
     @include('frontend.partial.header')
@@ -67,6 +73,6 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{{asset('/frontend/js/plugins.js')}}"></script>
     <script src="{{asset('/frontend/js/main.js')}}"></script>
-    
+
     </body>
 </html>

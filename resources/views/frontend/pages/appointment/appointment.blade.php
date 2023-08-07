@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="single-element-widget mt-30">
-                                    <h3 class="mb-30">SELECT DATE </h3>
+                                    <h3 class="mb-30">PREFERRED DATE </h3>
                                     <div class="mt-10">
                                         <input type="date" name="last_name" placeholder="Last Name"
                                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="single-element-widget mt-30">
-                                    <h3 class="mb-30">SELECT TIME </h3>
+                                    <h3 class="mb-30">PREFERRED TIME </h3>
                                     <div class="mt-10">
                                         <input type="time" name="last_name" placeholder="Last Name"
                                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
@@ -91,6 +91,12 @@
     }
     .mb-30 {
         margin-top: 30px;
+    }
+    .single-textarea {
+        font-size: 12px;
+    }
+    .single-input {
+        font-size: 12px;
     }
 </style>
 @endsection

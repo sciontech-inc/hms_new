@@ -11,15 +11,15 @@
                     <div class="row">
                         <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
                             <div class="hero__caption">
-                                <span>Committed to success</span>
+                                <span>Committed to your health</span>
                                 <h1 class="cd-headline letters scale">We care about your 
                                     <strong class="cd-words-wrapper">
                                         <b class="is-visible">health</b>
-                                        <b>sushi</b>
-                                        <b>steak</b>
+                                        <b>wellness</b>
+                                        <b>journey</b>
                                     </strong>
                                 </h1>
-                                <p data-animation="fadeInLeft" data-delay="0.1s">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi uquip ex ea commodo consequat is aute irure.</p>
+                                <p data-animation="fadeInLeft" data-delay="0.1s">We envision a future where healthcare organizations seamlessly manage patient data, enabling accurate diagnoses, personalized treatments, and improved patient outcomes.</p>
                                 <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.5s">Appointment <i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
@@ -59,9 +59,9 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle section-tittle2 mb-35">
                             <span>About Our Company</span>
-                            <h2>Welcome To Our Hospital</h2>
+                            <h2>SHARP MedIQ</h2>
                         </div>
-                        <p>There arge many variations ohf pacgssages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.</p>
+                        <p>We Care About Your Health Journey, Every Step of the Way.</p>
                         <div class="about-btn1 mb-30">
                             <a href="about.html" class="btn about-btn">Find Doctors .<i class="ti-arrow-right"></i></a>
                         </div>

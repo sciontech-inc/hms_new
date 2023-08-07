@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVitalMeasurementsTable extends Migration
+class CreateCheckUpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,30 +13,28 @@ class CreateVitalMeasurementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vital_measurements', function (Blueprint $table) {
+        Schema::create('check_ups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('patient_id');
-            $table->string('vital_date');
-            $table->string('vital_time');
-            $table->string('blood_pressure');
-            $table->string('heart_rate');
-            $table->string('temperature');
-            $table->string('respiratory_rate');
-            $table->string('oxygen_saturation');
-            $table->string('pulse_rate');
-            $table->string('vital_remarks');
-            $table->string('height');
-            $table->string('weight');
-            $table->integer('workstation_id')->nullable();
+            $table->datetime('datetime');
+            $table->unsignedBigInteger('doctor_id');
+            $table->string('reason')->nullable();
+            $table->string('attachment')->nullable();
+            $table->integer('check_up_status');
+            $table->integer('workstation_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->integer('deleted_by')->nullable();
             $table->softDeletes();
             $table->timestamps();
-
+            
             $table->foreign('patient_id')
                 ->references('id')
                 ->on('patients');
+
+            $table->foreign('doctor_id')
+                ->references('id')
+                ->on('doctors');
 
             $table->foreign('created_by')
                 ->references('id')
@@ -55,6 +53,6 @@ class CreateVitalMeasurementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vital_measurements');
+        Schema::dropIfExists('check_ups');
     }
 }

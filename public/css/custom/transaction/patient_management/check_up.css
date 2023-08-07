@@ -1,0 +1,27 @@
+
+.col-12.patient_lookup .form-group {
+    display: flex !important;
+}
+
+.col-12.patient_lookup label {
+    max-width: 33.33333%;
+    flex: 0 0 33.33333%;
+}
+
+table#check_up_table tbody tr td {
+    padding: 10px;
+    border-bottom: 1px solid #cccc!important;
+    font-weight: bold;
+}
+
+table#check_up_table tbody tr {
+    cursor: pointer;
+}
+
+table#check_up_table tbody tr:hover {
+    background: #cccc !important;
+}
+
+form#check_upForm {
+    margin-bottom: 50px;
+}

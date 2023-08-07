@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVitalMeasurementsTable extends Migration
+class CreateVitalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,30 +13,27 @@ class CreateVitalMeasurementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vital_measurements', function (Blueprint $table) {
+        Schema::create('vitals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('patient_id');
-            $table->string('vital_date');
-            $table->string('vital_time');
-            $table->string('blood_pressure');
+            $table->unsignedBigInteger('check_up_id');
+            $table->datetime('patient_id');
             $table->string('heart_rate');
+            $table->string('blood_pressure');
+            $table->string('respiratory_rat');
             $table->string('temperature');
-            $table->string('respiratory_rate');
             $table->string('oxygen_saturation');
-            $table->string('pulse_rate');
-            $table->string('vital_remarks');
-            $table->string('height');
             $table->string('weight');
-            $table->integer('workstation_id')->nullable();
+            $table->string('height');
+            $table->integer('workstation_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->integer('deleted_by')->nullable();
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('patient_id')
+            
+            $table->foreign('check_up_id')
                 ->references('id')
-                ->on('patients');
+                ->on('check_ups');
 
             $table->foreign('created_by')
                 ->references('id')
@@ -55,6 +52,6 @@ class CreateVitalMeasurementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vital_measurements');
+        Schema::dropIfExists('vitals');
     }
 }

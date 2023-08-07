@@ -127,59 +127,65 @@
                     <h3>MEDICAL HISTORY</h3>
                     <br>
                     <div class="history-title">MEDICAL CONDITION:</div>
-                    <table id="history_medical_condition">
-                        <thead>
-                            <th>DATE RECORD</th>
-                            <th>HOSPITAL NAME</th>
-                            <th>IDC10 DESCRIPTION</th>
-                            <th>CHIEF COMPLAINT</th>
-                            <th>DIAGNOSTIC TESTS</th>
-                            <th>DIAGNOSIS</th>
-                            <th>PROGNOSIS</th>
-                            <th>PHYSICIAN NOTES</th>
-                            <th>NURSING NOTES</th>
-                            <th>REGISTRATION DATE</th>
-                            <th>DISCHARGE DATE</th>
-                            <th>DISCHARGE SUMMARY</th>
-                            <th>MEDICAL CASE REMARKS</th>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div style="overflow: auto;">
+                        <table id="history_medical_condition">
+                            <thead>
+                                <th>DATE RECORD</th>
+                                <th>HOSPITAL NAME</th>
+                                <th>IDC10 DESCRIPTION</th>
+                                <th>CHIEF COMPLAINT</th>
+                                <th>DIAGNOSTIC TESTS</th>
+                                <th>DIAGNOSIS</th>
+                                <th>PROGNOSIS</th>
+                                <th>PHYSICIAN NOTES</th>
+                                <th>NURSING NOTES</th>
+                                <th>REGISTRATION DATE</th>
+                                <th>DISCHARGE DATE</th>
+                                <th>DISCHARGE SUMMARY</th>
+                                <th>MEDICAL CASE REMARKS</th>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
 
                     <div class="history-title">ALLERGIES:</div>
-                    <table id="history_allergies">
-                        <thead>
-                            <th>ALLERGEN</th>
-                            <th>REACTION</th>
-                            <th>SEVERITY</th>
-                            <th>DATE OF ONSET</th>
-                            <th>TREATMENT</th>
-                            <th>DURATION</th>
-                            <th>SOURCE OF INFORMATION</th>
-                            <th>KNOWN CROSS-REACTIVES</th>
-                            <th>CURRENT MANAGEMENT PLAN</th>
-                            <th>MEDICATIONS TO AVOID</th>
-                            <th>SEVERITY OF REACTION TO EACH MEDICATION</th>
-                            <th>ANAPHYLAXIS</th>
-                            <th>ALLERGY TESTING</th>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div style="overflow: auto;">
+                        <table id="history_allergies">
+                            <thead>
+                                <th>ALLERGEN</th>
+                                <th>REACTION</th>
+                                <th>SEVERITY</th>
+                                <th>DATE OF ONSET</th>
+                                <th>TREATMENT</th>
+                                <th>DURATION</th>
+                                <th>SOURCE OF INFORMATION</th>
+                                <th>KNOWN CROSS-REACTIVES</th>
+                                <th>CURRENT MANAGEMENT PLAN</th>
+                                <th>MEDICATIONS TO AVOID</th>
+                                <th>SEVERITY OF REACTION TO EACH MEDICATION</th>
+                                <th>ANAPHYLAXIS</th>
+                                <th>ALLERGY TESTING</th>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
 
                     <div class="history-title">CURRENT MEDICATION:</div>
-                    <table id="history_medication">
-                        <thead>
-                            <th>MEDICINE</th>
-                            <th>DOSES</th>
-                            <th>ROUTES OF ADMINISTRATION</th>
-                            <th>TYPE</th>
-                            <th>DURATION</th>
-                            <th>REASON</th>
-                            <th>COMPLIANCE</th>
-                            <th>REMARKS</th>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div style="overflow: auto;">
+                        <table id="history_medication">
+                            <thead>
+                                <th>MEDICINE</th>
+                                <th>DOSES</th>
+                                <th>ROUTES OF ADMINISTRATION</th>
+                                <th>TYPE</th>
+                                <th>DURATION</th>
+                                <th>REASON</th>
+                                <th>COMPLIANCE</th>
+                                <th>REMARKS</th>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

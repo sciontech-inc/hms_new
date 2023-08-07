@@ -100,6 +100,7 @@ function calendarView() {
         eventClick: function(arg) {
             var el = arg.el.children[0];
             var data_id = $('#' + el.id).attr('data-id');
+            
 
             $.get(module_url + '/list/' + data_id, function(response) {
                 var record = response.data;
@@ -185,7 +186,8 @@ function calendarView() {
                 $('table#history_allergies tbody').html(table_allergies);
                 $('table#history_medication tbody').html(table_medication);
 
-                scion.create.sc_modal('patient_appointment_view', 'PATIENT APPOINTMENT').show(modalShowFunction);
+                scion.create.sc_modal('patient_appointment_view', 'PATIENT APPOINTMENT').show();
+                scion.centralized_button(true, true, true, true);
             });
             
         },

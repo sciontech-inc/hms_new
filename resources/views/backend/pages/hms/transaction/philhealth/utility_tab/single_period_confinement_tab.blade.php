@@ -20,9 +20,9 @@
             </div>
         </div>
         <div class="col-12">
-            <div class="form-group pPatientMiddleName">
-                <label>PATIENT MIDDLE NAME <span class="required">*</span>:</label>
-                <input type="text" class="form-control" name="pPatientMiddleName" id="pPatientMiddleName"/>
+            <div class="form-group pPatientLastName">
+                <label>PATIENT LAST NAME <span class="required">*</span>:</label>
+                <input type="text" class="form-control" name="pPatientLastName" id="pPatientLastName"/>
             </div>
         </div>
         <div class="col-12">

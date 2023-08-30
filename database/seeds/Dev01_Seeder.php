@@ -187,6 +187,19 @@ class Dev01_Seeder extends Seeder
             'created_by' => '1',
             'updated_by' => '1',
 
+        ],
+        [
+            //id = 15
+            'name' => 'PHILHEALTH',
+            'code' => 'philhealth',
+            'sort_no' => '0',
+            'app_type_id' => '2',
+            'status' => '1',
+            'module' => '1',
+            'icon' => 'laptop-medical',
+            'created_by' => '1',
+            'updated_by' => '1',
+
         ]
         
     
@@ -325,8 +338,28 @@ class Dev01_Seeder extends Seeder
             'updated_by' => '1',
 
         ],
+        [
 
-        
+            'name' => 'CLAIMS ELIGIBILITY',
+            'code' => 'claims_eligibility',
+            'app_id' => '16',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
+        [
+
+            'name' => 'UTILITY',
+            'code' => 'philhealth_utility',
+            'app_id' => '16',
+            'sort_no' => '0',
+            'status' => '1',
+            'created_by' => '1',
+            'updated_by' => '1',
+
+        ],
         
        
     );

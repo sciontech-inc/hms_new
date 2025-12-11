@@ -614,16 +614,15 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 Route::prefix('forms')->group(function () {
-
-    Route::view('/orders', 'backend.pages.hms.forms.pcf_forms.html.orders_form_html')
-        ->name('forms.orders');
-
-    Route::view('/consent', 'backend.pages.hms.forms.pcf_forms.html.consent_form_html')
-        ->name('forms.consent');
-
-    Route::view('/doctor-order', 'backend.pages.hms.forms.pcf_forms.html.doctors_order_html')
-        ->name('forms.doctor_order');
-
+    Route::view('/doctor-order', 'backend.pages.hms.forms.pcf_forms.html.doctors_order_html')->name('forms.doctor_order');
+    Route::view('/consent', 'backend.pages.hms.forms.pcf_forms.html.consent_html')->name('forms.consent');
+    Route::view('/dental-health', 'backend.pages.hms.forms.pcf_forms.html.dental_health_html')->name('forms.dental_health');
+    Route::view('/laboratory', 'backend.pages.hms.forms.pcf_forms.html.laboratory_html')->name('forms.laboratory');
+    Route::view('/medical-referral', 'backend.pages.hms.forms.pcf_forms.html.medical_referral_html')->name('forms.medical_referral');
+    Route::view('/medication', 'backend.pages.hms.forms.pcf_forms.html.medication_html')->name('forms.medication');
+    Route::view('/physical', 'backend.pages.hms.forms.pcf_forms.html.physical_html')->name('forms.physical');
+    Route::view('/soap', 'backend.pages.hms.forms.pcf_forms.html.soap_html')->name('forms.soap');
+    Route::view('/xray', 'backend.pages.hms.forms.pcf_forms.html.xray_html')->name('forms.xray');
 });
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

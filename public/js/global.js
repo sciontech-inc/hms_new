@@ -545,26 +545,32 @@ var scion = {
     },
     print() {
         if(selected_print !== null) {
-            var divContents = document.getElementById(selected_print).innerHTML;
-            var a = window.open('', '', 'height=800, width=1200');
-            a.document.write('<html>');
-            a.document.write('<head>');
-            a.document.write('<link href="/css/custom.css" rel="stylesheet"></link>');
-            a.document.write('<link href="/css/custom/'+modal_content+'.css" rel="stylesheet"></link>');
-            a.document.write('</head>');
-            a.document.write('<body id="print_canvas">');
-            a.document.write(divContents);
-            a.document.write('</body></html>');
-            a.document.close();
+            if(selected_print == 'iframe') {
+                const iframe = document.querySelector('iframe');
+                iframe.contentWindow.focus();
+                iframe.contentWindow.print();
+            } else {
+                var divContents = document.getElementById(selected_print).innerHTML;
+                var a = window.open('', '', 'height=800, width=1200');
+                a.document.write('<html>');
+                a.document.write('<head>');
+                a.document.write('<link href="/css/custom.css" rel="stylesheet"></link>');
+                a.document.write('<link href="/css/custom/'+modal_content+'.css" rel="stylesheet"></link>');
+                a.document.write('</head>');
+                a.document.write('<body id="print_canvas">');
+                a.document.write(divContents);
+                a.document.write('</body></html>');
+                a.document.close();
 
-            setTimeout(function() {
-                a.print();
-            }, 2000);
+                setTimeout(function() {
+                    a.print();
+                }, 2000);
+            }  
+        } else {
+             $('.buttons-print').click()
+            
+            }
         }
-        else {
-            $('.buttons-print').click()
-        }
-    }
 }
 
 $('body').delegate('form input[type="text"]:not(.lowercase), form textarea', 'keyup', function() {

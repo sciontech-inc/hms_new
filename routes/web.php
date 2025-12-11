@@ -613,6 +613,19 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 
+Route::prefix('forms')->group(function () {
+
+    Route::view('/orders', 'backend.pages.hms.forms.pcf_forms.html.orders_form_html')
+        ->name('forms.orders');
+
+    Route::view('/consent', 'backend.pages.hms.forms.pcf_forms.html.consent_form_html')
+        ->name('forms.consent');
+
+    Route::view('/doctor-order', 'backend.pages.hms.forms.pcf_forms.html.doctors_order_html')
+        ->name('forms.doctor_order');
+
+});
+
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Auth::routes();
 

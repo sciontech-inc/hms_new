@@ -6,7 +6,7 @@
 @section('title', "INFORM CONCENT FORM")
 
 @section('breadcrumbs')
-    <span>FORMS / PCF FORMS </span> / <span class="highlight">INFORM CONCENT FORM</span>
+    <span>FORMS / PCF FORMS </span> / <span class="highlight">INFORM CONCENT</span>
 @endsection
 
 @section('content')

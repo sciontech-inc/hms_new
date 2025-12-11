@@ -623,6 +623,8 @@ Route::prefix('forms')->group(function () {
     Route::view('/physical', 'backend.pages.hms.forms.pcf_forms.html.physical_html')->name('forms.physical');
     Route::view('/soap', 'backend.pages.hms.forms.pcf_forms.html.soap_html')->name('forms.soap');
     Route::view('/xray', 'backend.pages.hms.forms.pcf_forms.html.xray_html')->name('forms.xray');
+    Route::view('/maternal', 'backend.pages.hms.forms.birth_form.html.maternal_html')->name('forms.maternal');
+    Route::view('/newborn', 'backend.pages.hms.forms.birth_form.html.newborn_html')->name('forms.newborn');
 });
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

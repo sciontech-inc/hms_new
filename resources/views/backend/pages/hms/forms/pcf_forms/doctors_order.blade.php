@@ -3,10 +3,10 @@
 @endphp
 @extends('backend.master.index')
 
-@section('title', 'ROOMS AND BEDS')
+@section('title', "DOCTOR'S ORDER FORM")
 
 @section('breadcrumbs')
-    <span>TRANSACTION / NURSE STATION </span> / <span class="highlight">ROOMS AND BEDS</span>
+    <span>FORMS / PCF FORMS </span> / <span class="highlight">DOCTOR'S ORDER</span>
 @endsection
 
 @section('content')

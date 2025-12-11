@@ -3,10 +3,10 @@
 @endphp
 @extends('backend.master.index')
 
-@section('title', "INFORM CONCENT FORM")
+@section('title', "INFORM CONSENT FORM")
 
 @section('breadcrumbs')
-    <span>FORMS / PCF FORMS </span> / <span class="highlight">INFORM CONCENT</span>
+    <span>FORMS / PCF FORMS </span> / <span class="highlight">INFORM CONSENT</span>
 @endsection
 
 @section('content')

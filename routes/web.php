@@ -608,6 +608,54 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get          ('/list/{id}',                      'RoleSetupController@get_list'                                  )->name('list');
         });
 
+        Route::group(['prefix' => 'category_test'], function() {
+            Route::get          ('/get',                            'LabTestCategoryController@get'                                        )->name('get');
+            Route::get          ('/record',                         'LabTestCategoryController@record'                                        )->name('get');
+            Route::get          ('/sub-categories/{id}',            'LabTestCategoryController@getByCategory'                                        )->name('get');
+            Route::post         ('/save',                           'LabTestCategoryController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'LabTestCategoryController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'LabTestCategoryController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'LabTestCategoryController@destroy'                                    )->name('delete');
+        });
+
+        Route::group(['prefix' => 'sub_category'], function() {
+            Route::get          ('/get/{id}',                       'LabTestSubCategoryController@get'                                        )->name('get');
+            Route::post         ('/save',                           'LabTestSubCategoryController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'LabTestSubCategoryController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'LabTestSubCategoryController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'LabTestSubCategoryController@destroy'                                    )->name('delete');
+        });
+
+        Route::group(['prefix' => 'sub_range'], function() {
+            Route::get          ('/get/{id}',                       'LabTestSubRangeController@get'                                        )->name('get');
+            Route::post         ('/save',                           'LabTestSubRangeController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'LabTestSubRangeController@edit'                                       )->name('edit');
+            Route::get          ('/sub-ranges/{id}',                'LabTestSubRangeController@getRanges'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'LabTestSubRangeController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'LabTestSubRangeController@destroy'                                    )->name('delete');
+        });
+
+        Route::group(['prefix' => 'lab_perform'], function() {
+            Route::get          ('/',                               'LabTestController@index'                                      )->name('get');
+            Route::get          ('/get',                            'LabTestController@get'                                        )->name('get');
+            Route::get          ('/validated/get',                  'LabTestController@validated_get'                                        )->name('get');
+            Route::get          ('/noted/get',                      'LabTestController@noted_get'                                        )->name('get');
+            Route::post         ('/save',                           'LabTestController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'LabTestController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'LabTestController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'LabTestController@destroy'                                    )->name('delete');
+            Route::post         ('/validate/{id}',                  'LabTestController@validateTest'                               )->name('lab_tests.validate');
+            Route::post         ('/noted/{id}',                     'LabTestController@noteTest'                               )->name('lab_tests.validate');
+            Route::post         ('/release/{id}',                   'LabTestController@releaseTest'                               )->name('lab_tests.validate');
+        });
+
+        Route::group(['prefix' => 'lab_test'], function() {
+            Route::get          ('/get/{id}',                       'LabTestDetailController@get'                                        )->name('get');
+            Route::post         ('/save',                           'LabTestDetailController@store'                                      )->name('save');
+            Route::get          ('/edit/{id}',                      'LabTestDetailController@edit'                                       )->name('edit');
+            Route::post         ('/update/{id}',                    'LabTestDetailController@update'                                     )->name('update');
+            Route::post         ('/destroy',                        'LabTestDetailController@destroy'                                    )->name('delete');
+        });
     });
 
 
@@ -625,6 +673,7 @@ Route::prefix('forms')->group(function () {
     Route::view('/xray', 'backend.pages.hms.forms.pcf_forms.html.xray_html')->name('forms.xray');
     Route::view('/maternal', 'backend.pages.hms.forms.birth_form.html.maternal_html')->name('forms.maternal');
     Route::view('/newborn', 'backend.pages.hms.forms.birth_form.html.newborn_html')->name('forms.newborn');
+    Route::view('/laboratory_test', 'backend.pages.hms.transaction.patient_management.html.laboratory_html')->name('forms.laboratory_test');
 });
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -66,9 +66,9 @@
             <div class="form-group check_up_status">
                 <label>STATUS <span class="required">*</span></label>
                 <select name="check_up_status" id="check_up_status" class="form-control">
-                    <option value=""></option>
                     <option value="0">CANCELED</option>
                     <option value="1">COMPLETED</option>
+                    <option value="2" selected>PENDING</option>
                 </select>
             </div>
         </div>

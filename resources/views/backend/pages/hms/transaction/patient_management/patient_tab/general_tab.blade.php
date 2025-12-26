@@ -295,7 +295,19 @@
             <div class="form-group industry">
                 <label>INDUSTRY <span class="required">*</span>:</label>
                 <select name="industry" id="industry" class="form-control">
-                    <option value=""></option>
+                    <option value="">-- Select Industry --</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Education">Education</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Government">Government</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Others">Others</option>
                 </select>
             </div>
         </div>
@@ -303,7 +315,17 @@
             <div class="form-group work_level">
                 <label>WORK LEVEL <span class="required">*</span>:</label>
                 <select name="work_level" id="work_level" class="form-control">
-                    <option value=""></option>
+                    <option value="">-- Select Work Level --</option>
+                    <option value="Entry Level">Entry Level</option>
+                    <option value="Skilled Worker">Skilled Worker</option>
+                    <option value="Junior Staff">Junior Staff</option>
+                    <option value="Senior Staff">Senior Staff</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Executive">Executive</option>
+                    <option value="Self-Employed">Self-Employed</option>
+                    <option value="Freelancer">Freelancer</option>
+                    <option value="Unemployed">Unemployed</option>
                 </select>
             </div>
         </div>

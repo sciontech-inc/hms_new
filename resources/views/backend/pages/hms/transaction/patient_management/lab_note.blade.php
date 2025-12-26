@@ -86,8 +86,16 @@
                         <input type="text" class="form-control" id="physician_name" name="physician_name" required/>
                     </div>
                     <div class="form-group col-12">
-                        <label for="">PHYSICIAN NAME:</label>
+                        <label for="">DATE COLLECTED:</label>
                         <input type="datetime-local" class="form-control" name="datetime_collected" id="datetime_collected"/>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">DATE RELEASED:</label>
+                        <input type="datetime-local" class="form-control" name="datetime_released" id="datetime_released"/>
+                    </div>
+                    <div class="form-group col-12 unit_of_measure">
+                        <label for="">CLINICAL NOTES:</label>
+                        <textarea class="form-control" name="clinical_notes" id="clinical_notes" cols="30" rows="10"></textarea>
                     </div>
                       <div class="form-group col-12 test_name">
                         <label for="">STATUS</label>

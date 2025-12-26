@@ -17,7 +17,7 @@ class LabTestController extends Controller
 
     public function get() {
         if(request()->ajax()) {
-            return datatables()->of(LabTest::where('result_status', 'PENDING')->with('patient', 'performedBy', 'validatedBy', 'notedBy')->get())
+            return datatables()->of(LabTest::with('patient', 'performedBy', 'validatedBy', 'notedBy')->get())
             ->addIndexColumn()
             ->make(true);
         }
@@ -25,7 +25,7 @@ class LabTestController extends Controller
 
     public function validated_get() {
         if(request()->ajax()) {
-            return datatables()->of(LabTest::where('result_status', 'PERFORMED')->with('patient', 'performedBy', 'validatedBy', 'notedBy')->get())
+            return datatables()->of(LabTest::where('result_status', '!=','PENDING')->with('patient', 'performedBy', 'validatedBy', 'notedBy')->get())
             ->addIndexColumn()
             ->make(true);
         }

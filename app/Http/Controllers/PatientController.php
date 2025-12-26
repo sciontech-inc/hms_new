@@ -30,7 +30,7 @@ class PatientController extends Controller
             ->make(true);
         }
     }
-     
+
     public function store(Request $request)
     {
         $user_firstname = Patient::where('firstname', $request->firstname)->count();

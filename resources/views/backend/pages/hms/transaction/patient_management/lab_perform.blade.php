@@ -80,7 +80,7 @@
                         <input type="text" class="form-control" id="physician_name" name="physician_name" required/>
                     </div>
                     <div class="form-group col-12">
-                        <label for="">PHYSICIAN NAME:</label>
+                        <label for="">DATE COLLECTED:</label>
                         <input type="datetime-local" class="form-control" name="datetime_collected" id="datetime_collected"/>
                     </div>
                       <div class="form-group col-12 test_name">

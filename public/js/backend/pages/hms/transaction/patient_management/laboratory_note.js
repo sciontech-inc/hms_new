@@ -21,9 +21,9 @@ $(function() {
             { data: "id", title:"<input type='checkbox' class='multi-checkbox' onclick='scion.table.checkAll()'/>", render: function(data, type, row, meta) {
                 var html = "";
                 html += '<input type="checkbox" class="single-checkbox" value="'+row.id+'" onclick="scion.table.checkOne()"/>';
-                html += '<a class="align-middle edit" onclick="scion.record.edit('+"'"+module_url+"/edit/', "+ row.id + ' )"><i class="fas fa-pen"></i></a>';
+                html += '<a class="align-middle edit" id="'+row.patient_id+'" onclick="scion.record.edit('+"'"+module_url+"/edit/', "+ row.id + ' )"><i class="fas fa-pen"></i></a>';
                 html += '<a class="align-middle" onclick="labTestRecord('+row.id+' )"><i class="fas fa-list" style="color:gray"></i></a>';
-                html += '<a class="align-middle edit" onclick="forRelease('+ row.id + ' )"><i class="fas fa-check"></i></a>';
+                html += '<a class="align-middle" onclick="forRelease('+ row.id + ' )"><i class="fas fa-check"></i></a>';
 
                 return html;
             }},
@@ -65,6 +65,26 @@ $(function() {
         ], 'Bfrtip', []
     );
 
+
+  $(document).on('click', '.edit', function() {
+    let id = this.id; // better than using this.id for numeric IDs
+
+    $.ajax({
+        url: `/actions/patient/edit/${id}`,
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response) {
+                displayLookupData(response.patient);
+                actions = 'update';
+            }
+        },
+        error: function(xhr) {
+            alert('Failed to fetch patient data');
+            console.error(xhr);
+        }
+    });
+});
 
     $('#sub_category_id').on('change', function() {
         let subCategoryId = $(this).val();
@@ -191,6 +211,8 @@ function generateData() {
                 request_number: $('#request_number').val(),
                 physician_name: $('#physician_name').val(),
                 datetime_collected: $('#datetime_collected').val(),
+                datetime_released: $('#datetime_released').val(),
+                clinical_notes: $('#clinical_notes').val(),
             };
             break;
         case 'lab_test':
